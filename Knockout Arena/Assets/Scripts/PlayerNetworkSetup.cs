@@ -8,13 +8,13 @@ public class PlayerNetworkSetup : NetworkBehaviour {
     Camera cam;
 
 	// Use this for initialization
-	void Awake () {
+	void Start () {
         Debug.Log("Häräsin");
         Debug.Log(isLocalPlayer);
         if (isLocalPlayer)
         {
             Debug.Log("asd");
-            cam.enabled = true;
+            transform.FindChild("PlayerCamera").gameObject.SetActive(true);
         }
 	}
 	
