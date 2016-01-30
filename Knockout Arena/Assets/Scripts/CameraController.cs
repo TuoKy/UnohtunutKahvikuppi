@@ -9,8 +9,6 @@ public class CameraController : MonoBehaviour
     public Transform cameraParent;
 
     private Vector2 oldMousePos;
-    private float zoomlvl = 0.5f;
-
 
     // Use this for initialization
     void Start()
