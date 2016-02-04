@@ -5,16 +5,13 @@ using System.Collections;
 public class CameraController : MonoBehaviour
 {
 
-    public int Speed;
+    public float speed;
+    public float cameraSensitivity = 0.5f;
+    public bool invertXAxis = false;
     public Transform cameraParent;
 
     private Vector2 oldMousePos;
-
-    // Use this for initialization
-    void Start()
-    {
-
-    }
+    private float totalXRotation;
 
     // Update is called once per frame
     void Update()
@@ -22,22 +19,27 @@ public class CameraController : MonoBehaviour
         float moveHorizontal = Input.GetAxis("Horizontal");
         float moveVertical = Input.GetAxis("Vertical");
 
-        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical) * Time.deltaTime * Speed;
+        Vector3 movement = new Vector3(moveHorizontal, 0.0f, moveVertical) * Time.deltaTime * speed;
         cameraParent.Translate(movement, Space.Self);
+        
+        totalXRotation = (Input.mousePosition.x - oldMousePos.x) * cameraSensitivity;
 
-        if (Input.GetMouseButton(1))
+        if (invertXAxis)
         {
-            cameraParent.Rotate(0, oldMousePos.x - Input.mousePosition.x, 0);
+            totalXRotation *= -1;
         }
+
+        cameraParent.Rotate(0, totalXRotation, 0);
+        
         oldMousePos = Input.mousePosition;
 
 
 
     }
 
-    public void setSpeed(int value)
+    public void setSpeed(float value)
     {
-        Speed = value;
+        speed = value;
     }
 
     public void setPosition(Transform kohde)
