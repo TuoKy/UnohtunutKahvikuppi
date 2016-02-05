@@ -14,7 +14,7 @@ public class MainMenuManager : MonoBehaviour {
 
     public void OptionsScreen()
     {
-
+        //TODO: Switch to options scene? Or activate & deactivate different buttons.
     }
 
     public void ExitGame()

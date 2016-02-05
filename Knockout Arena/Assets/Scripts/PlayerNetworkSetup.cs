@@ -9,17 +9,17 @@ public class PlayerNetworkSetup : NetworkBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Debug.Log("Häräsin");
+        Debug.Log("Spawning player.");
         Debug.Log(isLocalPlayer);
         if (isLocalPlayer)
         {
-            Debug.Log("asd");
-            transform.FindChild("PlayerCamera").gameObject.SetActive(true);
+            Debug.Log("Activating local player.");
+            ActivateChildObjects();
         }
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
+    void ActivateChildObjects()
+    {
+        transform.FindChild("PlayerCamera").gameObject.SetActive(true);
+    }
 }
