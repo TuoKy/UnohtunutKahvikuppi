@@ -15,6 +15,10 @@ public class CameraController : MonoBehaviour
     private Vector2 oldMousePos;
     private float totalXRotation;
 
+    private float zoomlvl = 0.5f;
+    public int zoomMin;
+    public int zoomMax;
+
     void Update()
     {
         CalculateActualDirection();
@@ -25,11 +29,21 @@ public class CameraController : MonoBehaviour
 
         parent.Rotate(0, totalXRotation, 0);
 
+        HasZoom();
+
     }
 
     void FixedUpdate()
     {
         transform.parent.GetComponent<Rigidbody>().AddForce(movement, ForceMode.Force);
+    }
+
+    private void HasZoom()
+    {
+        float moveZoom = Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * speed;
+        zoomlvl -= moveZoom;
+        zoomlvl = Mathf.Clamp(zoomlvl, 0.0f, 1.0f);
+        transform.position = transform.parent.position + transform.rotation * new Vector3(0.48f, 1.01f, zoomMin - zoomlvl * zoomMax);
     }
 
     private void CalculateActualDirection()
