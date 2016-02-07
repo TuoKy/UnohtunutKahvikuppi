@@ -4,6 +4,8 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour
 {
+    public float posX, posY; 
+
     public float speed = 700f;
     public Vector3 actualDirection, movement;
     public Transform parent;
@@ -29,7 +31,7 @@ public class CameraController : MonoBehaviour
         float moveZoom = Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * speed;
         zoomlvl -= moveZoom;
         zoomlvl = Mathf.Clamp(zoomlvl, 0.0f, 1.0f);
-        transform.position = transform.parent.position + transform.rotation * new Vector3(0.48f, 1.01f, zoomMin - zoomlvl * zoomMax);
+        transform.position = transform.parent.position + transform.rotation * new Vector3(posX, posY, zoomMin - zoomlvl * zoomMax);
     }
 
     private void CalculateActualDirection()

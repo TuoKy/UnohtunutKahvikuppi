@@ -9,11 +9,8 @@ public class PlayerNetworkSetup : NetworkBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        Debug.Log("Spawning player.");
-        Debug.Log(isLocalPlayer);
         if (isLocalPlayer)
         {
-            Debug.Log("Activating local player.");
             ActivateChildObjects();
         }
 	}
