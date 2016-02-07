@@ -4,7 +4,6 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour
 {
-
     public float speed = 700f;
     public Vector3 actualDirection, movement;
     public Transform parent;
@@ -16,29 +15,16 @@ public class CameraController : MonoBehaviour
     private float totalXRotation;
 
     private float zoomlvl = 0.5f;
-    public int zoomMin;
-    public int zoomMax;
+    public int zoomMin, zoomMax;
 
     void Update()
     {
-        CalculateActualDirection();
+        CamXRotation();
 
-        movement = actualDirection * Time.deltaTime * speed;
-
-        CalculateTotalXRotation();
-
-        parent.Rotate(0, totalXRotation, 0);
-
-        HasZoom();
-
+        Zoom();
     }
 
-    void FixedUpdate()
-    {
-        transform.parent.GetComponent<Rigidbody>().AddForce(movement, ForceMode.Force);
-    }
-
-    private void HasZoom()
+    private void Zoom()
     {
         float moveZoom = Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * speed;
         zoomlvl -= moveZoom;
@@ -56,7 +42,7 @@ public class CameraController : MonoBehaviour
         actualDirection = transform.TransformDirection(direction);
     }
 
-    private void CalculateTotalXRotation()
+    private void CamXRotation()
     {
         totalXRotation = (Input.mousePosition.x - oldMousePos.x) * cameraSensitivity;
 
@@ -65,6 +51,8 @@ public class CameraController : MonoBehaviour
             totalXRotation *= -1;
         }
         oldMousePos = Input.mousePosition;
+
+        parent.Rotate(0, totalXRotation, 0);
     }
 
     public void setSpeed(float value)
