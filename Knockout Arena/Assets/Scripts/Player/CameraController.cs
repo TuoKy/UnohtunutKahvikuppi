@@ -4,13 +4,13 @@ using System.Collections;
 
 public class CameraController : MonoBehaviour
 {
-    public float posX, posY; 
+    public float posX, posY;
 
     public float speed = 700f;
     public Vector3 actualDirection, movement;
     public Transform parent;
 
-    public float cameraSensitivity = 0.5f;
+    public float cameraSensitivity = 3f;
     public bool invertXAxis = false;
 
     private Vector2 oldMousePos;
@@ -19,9 +19,19 @@ public class CameraController : MonoBehaviour
     private float zoomlvl = 0.5f;
     public int zoomMin, zoomMax;
 
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+    }
+
     void Update()
     {
         CamXRotation();
+
+        if (Input.GetKeyDown(KeyCode.LeftAlt))
+        {
+            ToggleCursorLock();
+        }
 
         Zoom();
     }
@@ -46,15 +56,28 @@ public class CameraController : MonoBehaviour
 
     private void CamXRotation()
     {
-        totalXRotation = (Input.mousePosition.x - oldMousePos.x) * cameraSensitivity;
+        totalXRotation = (Input.GetAxis("Mouse X")) * cameraSensitivity;
 
         if (invertXAxis)
         {
             totalXRotation *= -1;
         }
-        oldMousePos = Input.mousePosition;
 
         parent.Rotate(0, totalXRotation, 0);
+    }
+
+    private void ToggleCursorLock()
+    {
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
     }
 
     public void setSpeed(float value)
