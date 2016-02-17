@@ -20,13 +20,15 @@ public class PlayerController : MonoBehaviour {
     private Collider[] groundCollisions;
     private float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
-    public Transform groundCheck;
+    private Transform groundCheck;
 
     // Use this for initialization
     void Start () {
         rb = transform.parent.GetComponent<Rigidbody>();
         distToGround = transform.parent.GetComponent<Collider>().bounds.extents.y;
-	}
+        groundCheck = gameObject.transform;
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -56,10 +58,12 @@ public class PlayerController : MonoBehaviour {
     {
         // transform.parent.GetComponent<Rigidbody>().AddForce(movement, ForceMode.Force);
         //transform.parent.GetComponent<Rigidbody>().velocity = movement;
+
         groundCollisions = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, groundLayer);
+        if (groundCollisions.Length > 0) grounded = true;
+        else grounded = false;
 
-
-        grounded = IsGrounded();
+        //grounded = IsGrounded();
         
     }
 
