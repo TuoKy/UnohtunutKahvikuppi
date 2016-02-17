@@ -10,11 +10,17 @@ public class PlayerController : MonoBehaviour {
     public float acceleration = 150f;
     public float maxSpeed = 5f;
 
-    public float jumpStrength = 500f;
-    private bool grounded;
     private float distToGround;
 
     private Rigidbody rb;
+
+    // for jumping
+    public float jumpStrength = 500f;
+    private bool grounded;
+    private Collider[] groundCollisions;
+    private float groundCheckRadius = 0.2f;
+    public LayerMask groundLayer;
+    public Transform groundCheck;
 
     // Use this for initialization
     void Start () {
@@ -50,6 +56,8 @@ public class PlayerController : MonoBehaviour {
     {
         // transform.parent.GetComponent<Rigidbody>().AddForce(movement, ForceMode.Force);
         //transform.parent.GetComponent<Rigidbody>().velocity = movement;
+        groundCollisions = Physics.OverlapSphere(groundCheck.position, groundCheckRadius, groundLayer);
+
 
         grounded = IsGrounded();
         
