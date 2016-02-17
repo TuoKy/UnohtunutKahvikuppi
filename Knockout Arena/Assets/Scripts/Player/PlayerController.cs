@@ -7,17 +7,19 @@ public class PlayerController : MonoBehaviour {
     public Vector3 actualDirection, movement;
     public Transform parent;
 
-    public float acceleration = 20f;
-    public float maxSpeed = 10f;
+    public float acceleration = 150f;
+    public float maxSpeed = 5f;
 
-    public float jumpStrength = 150f;
+    public float jumpStrength = 500f;
     private bool grounded;
+    private float distToGround;
 
     private Rigidbody rb;
 
     // Use this for initialization
     void Start () {
         rb = transform.parent.GetComponent<Rigidbody>();
+        distToGround = transform.parent.GetComponent<Collider>().bounds.extents.y;
 	}
 	
 	// Update is called once per frame
@@ -25,8 +27,8 @@ public class PlayerController : MonoBehaviour {
         CalculateActualDirection();
 
         //movement = actualDirection * Time.deltaTime * speed;
-        //movement = actualDirection.normalized * acceleration;
-        movement = actualDirection * acceleration;
+        movement = actualDirection.normalized * acceleration;
+        //movement = actualDirection * acceleration;
 
         // transform.parent.GetComponent<Rigidbody>().velocity = movement;
 
@@ -50,6 +52,7 @@ public class PlayerController : MonoBehaviour {
         //transform.parent.GetComponent<Rigidbody>().velocity = movement;
 
         grounded = IsGrounded();
+        
     }
 
     private void CalculateActualDirection()
@@ -76,8 +79,9 @@ public class PlayerController : MonoBehaviour {
     // check if player touches ground
     bool IsGrounded()
     {
+        
 
-        return false;
+        return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
     }
 
     // limit player's velocity in xz-axis
