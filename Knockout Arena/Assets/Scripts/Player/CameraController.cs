@@ -49,7 +49,6 @@ public class CameraController : MonoBehaviour
         zoomlvl = Mathf.Clamp(zoomlvl, 0.0f, 1.0f);
         newPosition = transform.parent.position + transform.rotation * new Vector3(posX, posY, zoomMin - zoomlvl * zoomMax);
         transform.position = Vector3.Lerp(transform.position, newPosition, cameraZoomDamp * Time.deltaTime);
-        Debug.Log(zoomlvl +", "+moveZoom);
     }
 
     void CalculateActualDirection()
