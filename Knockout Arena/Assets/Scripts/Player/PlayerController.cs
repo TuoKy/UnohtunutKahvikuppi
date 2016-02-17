@@ -76,12 +76,31 @@ public class PlayerController : MonoBehaviour {
         rb.AddForce(new Vector3(0, jumpStrength, 0));
     }
 
+    /*void OnCollisionStay(Collision info)
+    {
+        grounded = true;
+    }
+
+    void OnCollisionExit(Collision info)
+    {
+        grounded = true;
+
+    }*/
+
     // check if player touches ground
     bool IsGrounded()
     {
-        
+        //int layerMask = 1 << LayerMask.NameToLayer("Ground");
 
-        return Physics.Raycast(transform.position, -Vector3.up, distToGround + 0.1f);
+        //Bounds meshBounds = transform.parent.GetComponent<MeshFilter>().mesh.bounds;
+
+        /*if (Physics.Raycast(transform.parent.transform.position+ meshBounds.center, Vector3.down, meshBounds.extents.y, layerMask))
+        {
+            return true;
+        }*/
+        //return false;
+
+        return Physics.Raycast(transform.parent.transform.position, Vector3.down, distToGround + 0.1f);
     }
 
     // limit player's velocity in xz-axis
