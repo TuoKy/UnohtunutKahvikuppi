@@ -12,6 +12,7 @@ public class PlayerNetworkSetup : NetworkBehaviour {
         if (isLocalPlayer)
         {
             ActivateChildObjects();
+            GetComponent<PlayerController>().enabled = true;
         }
 	}
 

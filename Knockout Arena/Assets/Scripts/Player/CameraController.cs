@@ -11,6 +11,8 @@ public class CameraController : MonoBehaviour
     public Transform parent;
 
     public float cameraSensitivity = 3f;
+    public float cameraZoomSensitivity = 10f;
+    public float cameraZoomDamp = 5f;
     public bool invertXAxis = false;
 
     private Vector2 oldMousePos;
@@ -26,7 +28,10 @@ public class CameraController : MonoBehaviour
 
     void Update()
     {
-        CamXRotation();
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+            CamXRotation();
+        } 
 
         if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
@@ -36,15 +41,17 @@ public class CameraController : MonoBehaviour
         Zoom();
     }
 
-    private void Zoom()
+    void Zoom()
     {
-        float moveZoom = Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * speed;
+        float moveZoom = Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * cameraZoomSensitivity;
+        Vector3 newPosition = new Vector3();
         zoomlvl -= moveZoom;
         zoomlvl = Mathf.Clamp(zoomlvl, 0.0f, 1.0f);
-        transform.position = transform.parent.position + transform.rotation * new Vector3(posX, posY, zoomMin - zoomlvl * zoomMax);
+        newPosition = transform.parent.position + transform.rotation * new Vector3(posX, posY, zoomMin - zoomlvl * zoomMax);
+        transform.position = Vector3.Lerp(transform.position, newPosition, cameraZoomDamp * Time.deltaTime);
     }
 
-    private void CalculateActualDirection()
+    void CalculateActualDirection()
     {
         float verticalInput = Input.GetAxis("Vertical");
         float horizontalInput = Input.GetAxis("Horizontal");
@@ -54,7 +61,7 @@ public class CameraController : MonoBehaviour
         actualDirection = transform.TransformDirection(direction);
     }
 
-    private void CamXRotation()
+    void CamXRotation()
     {
         totalXRotation = (Input.GetAxis("Mouse X")) * cameraSensitivity;
 
@@ -66,7 +73,7 @@ public class CameraController : MonoBehaviour
         parent.Rotate(0, totalXRotation, 0);
     }
 
-    private void ToggleCursorLock()
+    void ToggleCursorLock()
     {
         if (Cursor.lockState == CursorLockMode.Locked)
         {

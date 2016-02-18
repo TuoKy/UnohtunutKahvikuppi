@@ -7,6 +7,20 @@ public class MainMenuManager : MonoBehaviour {
 
 	public static MainMenuManager Instance { get; private set; }
 
+    void Start()
+    {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    void FixedUpdate()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            ExitGame();
+        }
+    }
+
     public void StartGame()
     {
         SceneManager.LoadScene("ArenaScene");

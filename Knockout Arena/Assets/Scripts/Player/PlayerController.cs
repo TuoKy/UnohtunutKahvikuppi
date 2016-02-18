@@ -1,33 +1,35 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour {
 
     public float speed = 10f;
     public Vector3 actualDirection, movement;
-    public Transform parent;
 
-    public float acceleration = 20f;
-    public float maxSpeed = 10f;
-    public float jumpStrength = 250f;
-    private bool grounded;
+    public float acceleration = 150f;
+    public float maxSpeed = 5f;
+
+    private float distToGround;
 
     private Rigidbody rb;
 
+    // for jumping
+    public float jumpStrength = 500f;
+    private bool grounded;
+    private float groundCheckRadius = 0.2f;
+
     // Use this for initialization
     void Start () {
-        rb = transform.parent.GetComponent<Rigidbody>();
-	}
+        rb = GetComponent<Rigidbody>();
+        distToGround = GetComponent<Collider>().bounds.extents.y;
+    }
 	
 	// Update is called once per frame
 	void Update () {
         CalculateActualDirection();
-        //movement = actualDirection * Time.deltaTime * speed;
-        //movement = actualDirection.normalized * acceleration;
-        movement = actualDirection * acceleration;
 
-        // transform.parent.GetComponent<Rigidbody>().velocity = movement;
-        //rb.velocity = movement;
+        movement = actualDirection.normalized * acceleration;
 
         rb.AddForce(movement);
 
@@ -39,14 +41,12 @@ public class PlayerController : MonoBehaviour {
         rb.AddForce(Physics.gravity * rb.mass);
 
         LimitVelocity();
+        
     }
 
     void FixedUpdate()
     {
-        // transform.parent.GetComponent<Rigidbody>().AddForce(movement, ForceMode.Force);
-        // transform.parent.GetComponent<Rigidbody>().velocity = movement;
-
-        grounded = IsGrounded();
+        
     }
 
     private void CalculateActualDirection()
@@ -54,24 +54,31 @@ public class PlayerController : MonoBehaviour {
         float verticalInput = Input.GetAxis("Vertical");
         float horizontalInput = Input.GetAxis("Horizontal");
 
-        Vector3 direction = new Vector3(horizontalInput, 0.0f, verticalInput);
-       
+        Vector3 direction = new Vector3(horizontalInput, 0, verticalInput);
+
         actualDirection = transform.TransformDirection(direction);
         // TODO: Find neater solution
         actualDirection.Set(actualDirection.x, 0, actualDirection.z);
+
     }
 
-    // make player jump
     void Jump()
     {
-        transform.parent.GetComponent<Rigidbody>().AddForce(new Vector3(0, jumpStrength, 0));
+        if(grounded)
+        rb.AddForce(new Vector3(0, jumpStrength, 0));
     }
 
-    // check if player touches ground
-    bool IsGrounded()
+    void OnCollisionStay(Collision info)
     {
+        // check if player touches ground
+        if (info.gameObject.CompareTag("Ground"))
+        grounded = true;
+    }
 
-        return false;
+    void OnCollisionExit(Collision info)
+    {
+        if (info.gameObject.CompareTag("Ground"))
+            grounded = false;
     }
 
     // limit player's velocity in xz-axis
