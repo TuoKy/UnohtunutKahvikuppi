@@ -92,9 +92,9 @@ public class CameraController : MonoBehaviour
         speed = value;
     }
 
-    public void setPosition(Transform kohde)
+    public void setPosition(Transform target)
     {
-        parent.position = kohde.position;
+        parent.position = target.position;
     }
 
 }
