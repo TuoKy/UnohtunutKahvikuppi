@@ -6,11 +6,20 @@ public class PlayerSynchPos : NetworkBehaviour
 {
     [SyncVar]
     private Vector3 syncPos;
+    [SyncVar]
+    private Quaternion synchPlayerRotation;
+    [SyncVar]
+    private Quaternion synchCamRotation;
 
     [SerializeField]
     Transform myTransform;
     [SerializeField]
     float lerpRate = 15;
+
+    private Vector3 lastPos;
+    private float threshold = 0.5f;
+    private Quaternion lastRot;
+
 
 	// Use this for initialization
 	void Start () {
@@ -24,8 +33,10 @@ public class PlayerSynchPos : NetworkBehaviour
 
     void FixedUpdate()
     {
-        transmitPos();
+        TransmitPos();
+        TransmitRot();
         LerpPosition();
+        
     }
 
     void LerpPosition()
@@ -33,6 +44,7 @@ public class PlayerSynchPos : NetworkBehaviour
         if (!isLocalPlayer)
         {
             myTransform.position = Vector3.Lerp(myTransform.position, syncPos, Time.deltaTime * lerpRate);
+            transform.rotation = Quaternion.Lerp(transform.rotation, synchPlayerRotation, Time.deltaTime * lerpRate);
         }
     }
 
@@ -43,12 +55,32 @@ public class PlayerSynchPos : NetworkBehaviour
         syncPos = pos;
     }
 
+    [Command]
+    void CmdProvideRotToServer(Quaternion rot)
+    {
+        synchPlayerRotation = rot;
+    }
+
     [ClientCallback]
-    void transmitPos()
+    void TransmitPos()
+    {
+        if (isLocalPlayer && Vector3.Distance(myTransform.position, lastPos) > threshold)
+        {
+            CmdProvidePosToServer(myTransform.position);
+            lastPos = myTransform.position;
+        }
+    }
+
+    [ClientCallback]
+    void TransmitRot()
     {
         if (isLocalPlayer)
         {
-            CmdProvidePosToServer(myTransform.position);
+            if(Quaternion.Angle(myTransform.rotation, lastRot) > threshold)
+            {
+                CmdProvideRotToServer(myTransform.rotation);
+                lastRot = myTransform.rotation;
+            }
         }
     }
 
