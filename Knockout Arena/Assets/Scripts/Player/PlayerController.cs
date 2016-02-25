@@ -4,20 +4,14 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour {
 
-    public float speed = 10f;
+    public float speed = 400f;
     public Vector3 actualDirection, movement;
-
-    public float acceleration = 150f;
-    public float maxSpeed = 5f;
-
-    private float distToGround;
 
     private Rigidbody rb;
 
     // for jumping
-    public float jumpStrength = 500f;
+    public float jumpStrength = 60f;
     private bool grounded;
-    private float groundCheckRadius = 0.2f;
 
     //For attacks
     public GameObject attackHitboxLeftHand;
@@ -26,31 +20,23 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
-        distToGround = GetComponent<Collider>().bounds.extents.y;
     }
 	
 	// Update is called once per frame
 	void Update () {
         CalculateActualDirection();
+        movement = actualDirection.normalized * Time.deltaTime * speed;
 
-        movement = actualDirection.normalized * acceleration;
-
-        rb.AddForce(movement);
-
-        if (Input.GetButtonDown("Jump"))
+        // Jump
+        if (Input.GetButtonDown("Jump") && grounded)
         {
-            Jump();
+            rb.velocity += new Vector3(0, jumpStrength, 0);
         }
-
-        rb.AddForce(Physics.gravity * rb.mass);
-
-        LimitVelocity();
-        
     }
 
     void FixedUpdate()
     {
-        
+        rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
     }
 
     private void CalculateActualDirection()
@@ -61,15 +47,9 @@ public class PlayerController : MonoBehaviour {
         Vector3 direction = new Vector3(horizontalInput, 0, verticalInput);
 
         actualDirection = transform.TransformDirection(direction);
-        // TODO: Find neater solution
+
         actualDirection.Set(actualDirection.x, 0, actualDirection.z);
 
-    }
-
-    void Jump()
-    {
-        if(grounded)
-        rb.AddForce(new Vector3(0, jumpStrength, 0));
     }
 
     void OnCollisionStay(Collision info)
@@ -85,14 +65,4 @@ public class PlayerController : MonoBehaviour {
             grounded = false;
     }
 
-    // limit player's velocity in xz-axis
-    void LimitVelocity()
-    {
-        Vector2 xzVel = new Vector2(rb.velocity.x, rb.velocity.z);
-        if(xzVel.magnitude > maxSpeed)
-        {
-            xzVel = xzVel.normalized * maxSpeed;
-            rb.velocity = new Vector3(xzVel.x, rb.velocity.y, xzVel.y);
-        }
-    }
 }

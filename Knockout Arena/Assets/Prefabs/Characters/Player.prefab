@@ -1081,12 +1081,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cccb136c0857ac4dad14465d9df94d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 400
   actualDirection: {x: 0, y: 0, z: 0}
   movement: {x: 0, y: 0, z: 0}
-  acceleration: 150
-  maxSpeed: 5
-  jumpStrength: 500
+  jumpStrength: 30
+  attackHitboxLeftHand: {fileID: 0}
+  attackHitboxRightHand: {fileID: 0}
 --- !u!124 &12491456
 Behaviour:
   m_ObjectHideFlags: 1
@@ -1312,6 +1312,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: zoomMin
       value: -2
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: speed
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: jumpStrength
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
