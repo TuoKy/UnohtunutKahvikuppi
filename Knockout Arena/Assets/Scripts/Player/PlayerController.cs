@@ -19,6 +19,10 @@ public class PlayerController : MonoBehaviour {
     private bool grounded;
     private float groundCheckRadius = 0.2f;
 
+    //For attacks
+    public GameObject attackHitboxLeftHand;
+    public GameObject attackHitboxRightHand;
+
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
