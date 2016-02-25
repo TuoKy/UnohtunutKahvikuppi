@@ -260,6 +260,8 @@ GameObject:
   - 114: {fileID: 11459600}
   - 114: {fileID: 11407236}
   - 114: {fileID: 11463664}
+  - 114: {fileID: 11497212}
+  - 114: {fileID: 11452352}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -502,7 +504,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 141216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.70736986, y: 0.46240097, z: -0.7828999}
+  m_LocalPosition: {x: 6.6333623, y: 0.46240175, z: 5.3222055}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 423188}
@@ -1025,6 +1027,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 2007420}
+--- !u!114 &11452352
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: becbab8f4fc1e1f4d9db5cbd4c9bf527, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnPoints: {fileID: 0}
 --- !u!114 &11459600
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1087,6 +1101,17 @@ MonoBehaviour:
   jumpStrength: 30
   attackHitboxLeftHand: {fileID: 0}
   attackHitboxRightHand: {fileID: 0}
+--- !u!114 &11497212
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 141216}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dd9d2862088697438b04560e20dbc2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!124 &12491456
 Behaviour:
   m_ObjectHideFlags: 1
@@ -1285,6 +1310,10 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: spawnPoints.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.x
       value: 0
