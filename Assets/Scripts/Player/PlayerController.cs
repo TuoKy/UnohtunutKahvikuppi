@@ -17,9 +17,13 @@ public class PlayerController : MonoBehaviour {
     public GameObject attackHitboxLeftHand;
     public GameObject attackHitboxRightHand;
 
+    // For animations
+    private Animator anim;
+
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
+        anim = GetComponent<Animator>();
     }
 	
 	// Update is called once per frame
@@ -30,8 +34,21 @@ public class PlayerController : MonoBehaviour {
         // Jump
         if (Input.GetButtonDown("Jump") && grounded)
         {
+            anim.SetBool("Jumping", true);
             rb.velocity += new Vector3(0, jumpStrength, 0);
         }
+
+        // Animation
+        if (movement.x != 0 || movement.z != 0)
+        {
+            anim.SetBool("Moving", true);
+        }
+        else
+        {
+            anim.SetBool("Moving", false);
+        }
+
+
     }
 
     void FixedUpdate()
@@ -56,7 +73,10 @@ public class PlayerController : MonoBehaviour {
     {
         // check if player touches ground
         if (info.gameObject.CompareTag("Ground"))
-        grounded = true;
+        {
+            grounded = true;
+            //anim.SetBool("Jumping", false);
+        }
     }
 
     void OnCollisionExit(Collision info)
@@ -65,4 +85,12 @@ public class PlayerController : MonoBehaviour {
             grounded = false;
     }
 
+    void OnCollisionEnter(Collision info)
+    {
+        if (info.gameObject.CompareTag("Ground"))
+        {
+            //grounded = true;
+            anim.SetBool("Jumping", false);
+        }
+    }
 }
