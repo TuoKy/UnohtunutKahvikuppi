@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Death
+  - Weapon
   layers:
   - Default
   - TransparentFX

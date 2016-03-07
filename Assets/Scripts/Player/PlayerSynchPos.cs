@@ -36,7 +36,6 @@ public class PlayerSynchPos : NetworkBehaviour
         TransmitPos();
         TransmitRot();
         LerpPosition();
-        
     }
 
     void LerpPosition()
@@ -45,6 +44,7 @@ public class PlayerSynchPos : NetworkBehaviour
         {
             myTransform.position = Vector3.Lerp(myTransform.position, syncPos, Time.deltaTime * lerpRate);
             transform.rotation = Quaternion.Lerp(transform.rotation, synchPlayerRotation, Time.deltaTime * lerpRate);
+            
         }
     }
 
@@ -83,5 +83,4 @@ public class PlayerSynchPos : NetworkBehaviour
             }
         }
     }
-
 }

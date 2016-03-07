@@ -10,7 +10,7 @@ public class PlayerController : MonoBehaviour {
     private Rigidbody rb;
 
     // for jumping
-    public float jumpStrength = 60f;
+    public float jumpStrength = 15f;
     private bool grounded;
 
     //For attacks
@@ -48,9 +48,28 @@ public class PlayerController : MonoBehaviour {
             anim.SetBool("Moving", false);
         }
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            anim.SetBool("Moving", false);
+            anim.SetTrigger("RightPunch");
+        }
+
+        //TODO: Fix block animation premature looping
+        if (Input.GetMouseButton(1))
+        {
+            anim.SetBool("Moving", false);
+            anim.SetBool("Blocking", true);
+
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            anim.SetBool("Blocking", false);
+        }
 
     }
 
+    //TODO: Can player move while attacking?
     void FixedUpdate()
     {
         rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
@@ -75,7 +94,6 @@ public class PlayerController : MonoBehaviour {
         if (info.gameObject.CompareTag("Ground"))
         {
             grounded = true;
-            //anim.SetBool("Jumping", false);
         }
     }
 
@@ -89,7 +107,6 @@ public class PlayerController : MonoBehaviour {
     {
         if (info.gameObject.CompareTag("Ground"))
         {
-            //grounded = true;
             anim.SetBool("Jumping", false);
         }
     }

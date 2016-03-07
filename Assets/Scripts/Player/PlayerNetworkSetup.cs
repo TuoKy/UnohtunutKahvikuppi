@@ -13,8 +13,15 @@ public class PlayerNetworkSetup : NetworkBehaviour {
         {
             ActivateChildObjects();
             GetComponent<PlayerController>().enabled = true;
+
+            GetComponent<NetworkAnimator>().SetParameterAutoSend(3, true);
         }
 	}
+
+    public override void PreStartClient()
+    {
+        GetComponent<NetworkAnimator>().SetParameterAutoSend(3, true);
+    }
 
     void ActivateChildObjects()
     {
