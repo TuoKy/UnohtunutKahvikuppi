@@ -26,6 +26,8 @@ public class PlayerController : MonoBehaviour {
         anim = GetComponent<Animator>();
     }
 	
+
+    //TODO: Think where to put controls
 	// Update is called once per frame
 	void Update () {
         CalculateActualDirection();
@@ -46,12 +48,6 @@ public class PlayerController : MonoBehaviour {
         else
         {
             anim.SetBool("Moving", false);
-        }
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            anim.SetBool("Moving", false);
-            anim.SetTrigger("RightPunch");
         }
 
         //TODO: Fix block animation premature looping

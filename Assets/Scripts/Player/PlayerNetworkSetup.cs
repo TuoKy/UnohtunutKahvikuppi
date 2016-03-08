@@ -7,6 +7,8 @@ public class PlayerNetworkSetup : NetworkBehaviour {
     [SerializeField]
     Camera cam;
 
+    public NetworkAnimator netAnim;
+
 	// Use this for initialization
 	void Start () {
         if (isLocalPlayer)
@@ -18,9 +20,22 @@ public class PlayerNetworkSetup : NetworkBehaviour {
         }
 	}
 
+
+    //TODO: make variable in which tell how many parameters there are
+    public override void OnStartLocalPlayer()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            netAnim.SetParameterAutoSend(i, true);
+        }
+    }
+
     public override void PreStartClient()
     {
-        GetComponent<NetworkAnimator>().SetParameterAutoSend(3, true);
+        for (int i = 0; i < 5; i++)
+        {
+            netAnim.SetParameterAutoSend(i, true);
+        }
     }
 
     void ActivateChildObjects()

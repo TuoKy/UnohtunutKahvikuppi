@@ -43,8 +43,7 @@ public class PlayerSynchPos : NetworkBehaviour
         if (!isLocalPlayer)
         {
             myTransform.position = Vector3.Lerp(myTransform.position, syncPos, Time.deltaTime * lerpRate);
-            transform.rotation = Quaternion.Lerp(transform.rotation, synchPlayerRotation, Time.deltaTime * lerpRate);
-            
+            transform.rotation = Quaternion.Lerp(transform.rotation, synchPlayerRotation, Time.deltaTime * lerpRate);            
         }
     }
 
