@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class PlayerAnimations : NetworkBehaviour
 {
@@ -9,8 +10,13 @@ public class PlayerAnimations : NetworkBehaviour
     //For attacks
     public GameObject attackHitboxLeftHand;
     public GameObject attackHitboxRightHand;
-
+    public Text debugText;
 	
+    void Start()
+    {
+        debugText = GameObject.Find("debugText").GetComponent<Text>();
+    }
+
 	void Update () {
         if (isLocalPlayer)
         {
@@ -29,22 +35,31 @@ public class PlayerAnimations : NetworkBehaviour
     }
 
     [ClientRpc]
-    private void RpcSetTrigger(string trigger)
+    void RpcSetTrigger(string trigger)
     {
         anim.SetTrigger(trigger);
     }
 
-    public void ActivateRightHandAttackBox()
+    [Command]
+    public void CmdActivateRightHandAttackBox()
     {
         if (isLocalPlayer)
         {
+            Debug.Log("local");
+            debugText.text = "local";
             attackHitboxRightHand.SetActive(true);
             attackHitboxRightHand.GetComponent<DeactivateMe>().setCooldown(0.5f);
+            RpcActivateRightHandAttackBox();
         }
     }
 
-    public void DisableRightHandAttackBox()
+    [ClientCallback]
+    void RpcActivateRightHandAttackBox()
     {
-
+        Debug.Log("server");
+        debugText.text = "server";
+        attackHitboxRightHand.SetActive(true);
+        attackHitboxRightHand.GetComponent<DeactivateMe>().setCooldown(0.5f);
     }
+    
 }

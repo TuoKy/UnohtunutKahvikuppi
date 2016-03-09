@@ -14365,7 +14365,7 @@ AnimationClip:
   m_GenerateMotionCurves: 0
   m_Events:
   - time: 0.29166666
-    functionName: ActivateRightHandAttackBox
+    functionName: CmdActivateRightHandAttackBox
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
