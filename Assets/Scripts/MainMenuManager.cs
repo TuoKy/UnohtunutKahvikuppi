@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour {
 
 	public static MainMenuManager Instance { get; private set; }
+    public Transform MainMenu, OptionsMenu;
 
     void Start()
     {
@@ -26,9 +27,10 @@ public class MainMenuManager : MonoBehaviour {
         SceneManager.LoadScene("ArenaScene");
     }
 
-    public void OptionsScreen()
+    public void OptionsScreen(bool isOptionsMenu)
     {
-        //TODO: Switch to options scene? Or activate & deactivate different buttons.
+        OptionsMenu.gameObject.SetActive(isOptionsMenu);
+        MainMenu.gameObject.SetActive(!isOptionsMenu);
     }
 
     public void ExitGame()
