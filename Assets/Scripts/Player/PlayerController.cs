@@ -63,6 +63,12 @@ public class PlayerController : MonoBehaviour {
             anim.SetBool("Blocking", false);
         }
 
+        // Hadouken animation
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            anim.SetTrigger("Hadouken");
+        }
+
     }
 
     //TODO: Can player move while attacking?
