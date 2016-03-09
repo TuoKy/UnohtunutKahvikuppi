@@ -6,18 +6,17 @@ public class PlayerAnimations : NetworkBehaviour
 {
     public Animator anim;
 
-	// Use this for initialization
-	void Start () {
+    //For attacks
+    public GameObject attackHitboxLeftHand;
+    public GameObject attackHitboxRightHand;
+
 	
-	}
-	
-	// Update is called once per frame
 	void Update () {
         if (isLocalPlayer)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                CmdSetTrigger("RightPunch");
+                CmdSetTrigger("RightPunch");        
             }
         }
     }
@@ -25,7 +24,7 @@ public class PlayerAnimations : NetworkBehaviour
     [Command]
     public void CmdSetTrigger(string trigger)
     {
-        anim.SetTrigger(trigger);
+        //anim.SetTrigger(trigger);
         RpcSetTrigger(trigger);
     }
 
@@ -33,5 +32,19 @@ public class PlayerAnimations : NetworkBehaviour
     private void RpcSetTrigger(string trigger)
     {
         anim.SetTrigger(trigger);
+    }
+
+    public void ActivateRightHandAttackBox()
+    {
+        if (isLocalPlayer)
+        {
+            attackHitboxRightHand.SetActive(true);
+            attackHitboxRightHand.GetComponent<DeactivateMe>().setCooldown(0.5f);
+        }
+    }
+
+    public void DisableRightHandAttackBox()
+    {
+
     }
 }

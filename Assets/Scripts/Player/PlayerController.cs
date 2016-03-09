@@ -13,10 +13,6 @@ public class PlayerController : MonoBehaviour {
     public float jumpStrength = 15f;
     private bool grounded;
 
-    //For attacks
-    public GameObject attackHitboxLeftHand;
-    public GameObject attackHitboxRightHand;
-
     // For animations
     private Animator anim;
 
