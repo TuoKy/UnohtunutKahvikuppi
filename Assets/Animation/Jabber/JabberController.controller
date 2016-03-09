@@ -486,17 +486,14 @@ AnimatorStateMachine:
     m_Position: {x: 264, y: 216, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110205200}
-<<<<<<< HEAD:Assets/Animation/Jabber/JabberController.controller
     m_Position: {x: 696, y: 216, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110234054}
     m_Position: {x: 480, y: 216, z: 0}
-=======
     m_Position: {x: 708, y: 216, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 110291288}
     m_Position: {x: 84, y: 24, z: 0}
->>>>>>> origin/master:Assets/Animation/Player/JabberController.controller
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: 110106516}
