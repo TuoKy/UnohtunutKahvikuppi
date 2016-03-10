@@ -19,10 +19,6 @@ public class PlayerCollide : MonoBehaviour {
         {
             gameObject.GetComponent<PlayerScore>().ReSpawn();
         }
-    }
-
-    void OnCollide(Collider info)
-    {
         if (info.gameObject.CompareTag("Weapon"))
         {
             Debug.Log("Osui");

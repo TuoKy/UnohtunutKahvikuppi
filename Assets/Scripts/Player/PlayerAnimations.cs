@@ -82,14 +82,11 @@ public class PlayerAnimations : NetworkBehaviour
     [Command]
     public void CmdActivateRightHandAttackBox()
     {
-        if (isLocalPlayer)
-        {
             Debug.Log("local");
             debugText.text = "local";
             attackHitboxRightHand.SetActive(true);
             attackHitboxRightHand.GetComponent<DeactivateMe>().setCooldown(0.5f);
             RpcActivateRightHandAttackBox();
-        }
     }
 
     [ClientCallback]
