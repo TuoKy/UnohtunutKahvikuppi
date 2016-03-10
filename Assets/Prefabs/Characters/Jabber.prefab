@@ -703,7 +703,6 @@ GameObject:
   - 114: {fileID: 11495112}
   - 114: {fileID: 11450244}
   - 54: {fileID: 5444146}
-  - 114: {fileID: 11405658}
   - 114: {fileID: 11400556}
   - 65: {fileID: 6505978}
   m_Layer: 0
@@ -1244,7 +1243,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.9039345, y: 0.46240062, z: -2.7563858}
+  m_LocalPosition: {x: 8.925042, y: 0.4624008, z: 0.010043299}
   m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
   m_Children:
   - {fileID: 424058}
@@ -1586,25 +1585,6 @@ MonoBehaviour:
   attackHitboxLeftHand: {fileID: 100114}
   attackHitboxRightHand: {fileID: 135640}
   debugText: {fileID: 11468898, guid: 1c465490eda2dcd4685aac77a0132bb4, type: 2}
---- !u!114 &11405658
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 187140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1590678366, guid: 870353891bb340e2b2a9c8707e7419ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Animator: {fileID: 9515654}
-  m_ParameterSendBits: 31
-  param0: 
-  param1: 
-  param2: 
-  param3: 
-  param4: 
-  param5: 
 --- !u!114 &11413800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1717,7 +1697,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 2082752}
-  netAnim: {fileID: 11405658}
+  netAnim: {fileID: 0}
 --- !u!114 &11472278
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour {
     // for jumping
     public float jumpStrength = 15f;
     private bool grounded;
+    public bool Grounded { get { return grounded; } set { grounded = value; } }
+
 
     // For animations
     private Animator anim;
@@ -22,54 +24,32 @@ public class PlayerController : MonoBehaviour {
         anim = GetComponent<Animator>();
     }
 	
-
-    //TODO: Think where to put controls
 	// Update is called once per frame
 	void Update () {
         CalculateActualDirection();
-        movement = actualDirection.normalized * Time.deltaTime * speed;
+        
 
         // Jump
         if (Input.GetButtonDown("Jump") && grounded)
         {
-            anim.SetBool("Jumping", true);
             rb.velocity += new Vector3(0, jumpStrength, 0);
         }
 
         // Animation
         if (movement.x != 0 || movement.z != 0)
         {
-            anim.SetBool("Moving", true);
+            GetComponent<PlayerAnimations>().CmdSetBool("Moving", true);
         }
         else
         {
-            anim.SetBool("Moving", false);
+            GetComponent<PlayerAnimations>().CmdSetBool("Moving", false);
         }
-
-        //TODO: Fix block animation premature looping
-        if (Input.GetMouseButton(1))
-        {
-            anim.SetBool("Moving", false);
-            anim.SetBool("Blocking", true);
-
-        }
-
-        if (Input.GetMouseButtonUp(1))
-        {
-            anim.SetBool("Blocking", false);
-        }
-
-        // Hadouken animation
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            anim.SetTrigger("Hadouken");
-        }
-
     }
 
     //TODO: Can player move while attacking?
     void FixedUpdate()
     {
+        movement = actualDirection.normalized * Time.deltaTime * speed;
         rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
     }
 
@@ -84,28 +64,5 @@ public class PlayerController : MonoBehaviour {
 
         actualDirection.Set(actualDirection.x, 0, actualDirection.z);
 
-    }
-
-    void OnCollisionStay(Collision info)
-    {
-        // check if player touches ground
-        if (info.gameObject.CompareTag("Ground"))
-        {
-            grounded = true;
-        }
-    }
-
-    void OnCollisionExit(Collision info)
-    {
-        if (info.gameObject.CompareTag("Ground"))
-            grounded = false;
-    }
-
-    void OnCollisionEnter(Collision info)
-    {
-        if (info.gameObject.CompareTag("Ground"))
-        {
-            anim.SetBool("Jumping", false);
-        }
     }
 }
