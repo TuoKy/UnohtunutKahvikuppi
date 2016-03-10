@@ -28,4 +28,28 @@ public class PlayerCollide : MonoBehaviour {
             Debug.Log("Osui");
         }
     }
+
+    void OnCollisionStay(Collision info)
+    {
+        // check if player touches ground
+        if (info.gameObject.CompareTag("Ground"))
+        {
+            GetComponent<PlayerController>().Grounded = true;
+        }
+    }
+
+    void OnCollisionExit(Collision info)
+    {
+        if (info.gameObject.CompareTag("Ground"))
+            GetComponent<PlayerController>().Grounded = false;  
+    }
+
+    void OnCollisionEnter(Collision info)
+    {
+        if (info.gameObject.CompareTag("Ground"))
+        {
+            GetComponent<PlayerAnimations>().CmdSetBool("Jumping", false);
+        }
+    }
+
 }
