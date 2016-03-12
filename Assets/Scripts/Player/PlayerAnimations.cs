@@ -82,8 +82,6 @@ public class PlayerAnimations : NetworkBehaviour
     [Command]
     public void CmdActivateRightHandAttackBox()
     {
-            Debug.Log("local");
-            debugText.text = "local";
             attackHitboxRightHand.SetActive(true);
             attackHitboxRightHand.GetComponent<DeactivateMe>().setCooldown(0.5f);
             RpcActivateRightHandAttackBox();
@@ -92,8 +90,6 @@ public class PlayerAnimations : NetworkBehaviour
     [ClientCallback]
     void RpcActivateRightHandAttackBox()
     {
-        Debug.Log("server");
-        debugText.text = "server";
         attackHitboxRightHand.SetActive(true);
         attackHitboxRightHand.GetComponent<DeactivateMe>().setCooldown(0.5f);
     }

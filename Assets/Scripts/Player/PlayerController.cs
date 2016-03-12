@@ -4,24 +4,16 @@ using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour {
 
-    public float speed = 400f;
+    public Player player;
+
     public Vector3 actualDirection, movement;
 
     private Rigidbody rb;
 
-    // for jumping
-    public float jumpStrength = 15f;
-    private bool grounded;
-    public bool Grounded { get { return grounded; } set { grounded = value; } }
-
-
-    // For animations
-    private Animator anim;
-
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
-        anim = GetComponent<Animator>();
+        player = new Player();
     }
 	
 	// Update is called once per frame
@@ -30,9 +22,9 @@ public class PlayerController : MonoBehaviour {
         
 
         // Jump
-        if (Input.GetButtonDown("Jump") && grounded)
+        if (Input.GetButtonDown("Jump") && player.Grounded)
         {
-            rb.velocity += new Vector3(0, jumpStrength, 0);
+            rb.velocity += new Vector3(0, player.JumpStrength, 0);
         }
 
         // Animation
@@ -49,7 +41,7 @@ public class PlayerController : MonoBehaviour {
     //TODO: Can player move while attacking?
     void FixedUpdate()
     {
-        movement = actualDirection.normalized * Time.deltaTime * speed;
+        movement = actualDirection.normalized * Time.deltaTime * player.Speed;
         rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
     }
 

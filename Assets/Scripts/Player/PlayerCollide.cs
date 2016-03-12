@@ -3,16 +3,6 @@ using System.Collections;
 
 public class PlayerCollide : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     void OnTriggerEnter(Collider info)
     {
         if (info.gameObject.CompareTag("Death"))
@@ -30,14 +20,14 @@ public class PlayerCollide : MonoBehaviour {
         // check if player touches ground
         if (info.gameObject.CompareTag("Ground"))
         {
-            GetComponent<PlayerController>().Grounded = true;
+            GetComponent<PlayerController>().player.Grounded = true;
         }
     }
 
     void OnCollisionExit(Collision info)
     {
         if (info.gameObject.CompareTag("Ground"))
-            GetComponent<PlayerController>().Grounded = false;  
+            GetComponent<PlayerController>().player.Grounded = false;  
     }
 
     void OnCollisionEnter(Collision info)
