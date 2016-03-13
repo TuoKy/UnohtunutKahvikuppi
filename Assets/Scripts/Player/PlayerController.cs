@@ -6,8 +6,6 @@ public class PlayerController : MonoBehaviour {
 
     public Player player;
 
-    public Vector3 actualDirection, movement;
-
     private Rigidbody rb;
 
     // Use this for initialization
@@ -28,7 +26,7 @@ public class PlayerController : MonoBehaviour {
         }
 
         // Animation
-        if (movement.x != 0 || movement.z != 0)
+        if (player.Movement.x != 0 || player.Movement.z != 0)
         {
             GetComponent<PlayerAnimations>().CmdSetBool("Moving", true);
         }
@@ -41,8 +39,8 @@ public class PlayerController : MonoBehaviour {
     //TODO: Can player move while attacking?
     void FixedUpdate()
     {
-        movement = actualDirection.normalized * Time.deltaTime * player.Speed;
-        rb.velocity = new Vector3(movement.x, rb.velocity.y, movement.z);
+        player.Movement = player.ActualDirection.normalized * Time.deltaTime * player.Speed;
+        rb.velocity = new Vector3(player.Movement.x, rb.velocity.y, player.Movement.z);
     }
 
     private void CalculateActualDirection()
@@ -52,9 +50,9 @@ public class PlayerController : MonoBehaviour {
 
         Vector3 direction = new Vector3(horizontalInput, 0, verticalInput);
 
-        actualDirection = transform.TransformDirection(direction);
+        player.ActualDirection = transform.TransformDirection(direction);
 
-        actualDirection.Set(actualDirection.x, 0, actualDirection.z);
+        player.ActualDirection.Set(player.ActualDirection.x, 0, player.ActualDirection.z);
 
     }
 }

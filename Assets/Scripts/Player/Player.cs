@@ -10,6 +10,7 @@ public class Player {
     private float speed = 400f;
     private float jumpStrength = 15f;
     private bool grounded;
+    private Vector3 actualDirection, movement;
 
     public string CharacterName { get { return characterName; } set { characterName = value; } }
     public float KnockoutPercent { get { return knockoutPercent; } }
@@ -17,6 +18,8 @@ public class Player {
     public float Speed { get { return speed; } }
     public float JumpStrength { get { return jumpStrength; } }
     public bool Grounded { get { return grounded; } set { grounded = value; } }
+    public Vector3 ActualDirection { get { return actualDirection; } set { actualDirection = value; } }
+    public Vector3 Movement { get { return movement; } set { movement = value; } }
 
     public Player()
     {
