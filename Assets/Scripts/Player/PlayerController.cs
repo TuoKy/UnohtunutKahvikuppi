@@ -64,6 +64,12 @@ public class PlayerController : MonoBehaviour {
             GetComponent<PlayerAnimations>().CmdSetTrigger("Hadouken");
         }
 
+        // Right long punch animation
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            GetComponent<PlayerAnimations>().CmdSetTrigger("RightLongPunch");
+        }
+
     }
 
     //TODO: Can player move while attacking?
