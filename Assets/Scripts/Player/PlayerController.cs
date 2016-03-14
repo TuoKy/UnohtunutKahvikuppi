@@ -18,7 +18,6 @@ public class PlayerController : MonoBehaviour {
 	void Update () {
         CalculateActualDirection();
         
-
         // Jump
         if (Input.GetButtonDown("Jump") && player.Grounded)
         {
@@ -34,6 +33,37 @@ public class PlayerController : MonoBehaviour {
         {
             GetComponent<PlayerAnimations>().CmdSetBool("Moving", false);
         }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            GetComponent<PlayerAnimations>().CmdSetTrigger("RightPunch");
+        }
+
+        // Jump
+        if (Input.GetButtonDown("Jump"))
+        {
+            GetComponent<PlayerAnimations>().CmdSetBool("Jumping", true);
+        }
+
+        //TODO: Fix block animation premature looping
+        if (Input.GetMouseButton(1))
+        {
+            GetComponent<PlayerAnimations>().CmdSetBool("Moving", false);
+            GetComponent<PlayerAnimations>().CmdSetBool("Blocking", true);
+
+        }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            GetComponent<PlayerAnimations>().CmdSetBool("Blocking", false);
+        }
+
+        // Hadouken animation
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            GetComponent<PlayerAnimations>().CmdSetTrigger("Hadouken");
+        }
+
     }
 
     //TODO: Can player move while attacking?

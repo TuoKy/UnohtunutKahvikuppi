@@ -17,44 +17,6 @@ public class PlayerAnimations : NetworkBehaviour
         debugText = GameObject.Find("debugText").GetComponent<Text>();
     }
 
-	void Update () {
-        if (isLocalPlayer)
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                CmdSetTrigger("RightPunch");        
-            }
-
-            // Jump
-            if (Input.GetButtonDown("Jump"))
-            {
-                CmdSetBool("Jumping", true);
-            }
-
-            //TODO: Fix block animation premature looping
-            if (Input.GetMouseButton(1))
-            {
-                CmdSetBool("Moving", false);
-                CmdSetBool("Blocking", true);
-
-            }
-
-            if (Input.GetMouseButtonUp(1))
-            {
-                CmdSetBool("Blocking", false);
-            }
-
-            // Hadouken animation
-            if (Input.GetKeyDown(KeyCode.H))
-            {
-                CmdSetTrigger("Hadouken");
-            }
-
-
-
-        }
-    }
-
     [Command]
     public void CmdSetTrigger(string trigger)
     {
@@ -79,6 +41,8 @@ public class PlayerAnimations : NetworkBehaviour
         anim.SetBool(trigger, value);
     }
 
+
+    //Hitbox activations etc
     [Command]
     public void CmdActivateRightHandAttackBox()
     {
