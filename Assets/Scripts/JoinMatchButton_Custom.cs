@@ -4,5 +4,5 @@ using UnityEngine.UI;
 
 public class JoinMatchButton_Custom : Button {
 
-    MatchDesc match;
+    public MatchDesc match;
 }

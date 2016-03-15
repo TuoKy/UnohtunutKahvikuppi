@@ -7,6 +7,22 @@ using System.Collections.Generic;
 
 public class NetworkManager_Custom : NetworkManager {
 
+    public GameObject matchButtonPrefab;
+    public Transform buttonGrid;
+    /*private static NetworkManager_Custom _instance;
+
+    public static NetworkManager_Custom instance
+    {
+        get
+        {
+            //If _instance hasn't been set yet, we grab it from the scene!
+            //This will only happen the first time this reference is used.
+            if (_instance == null)
+                _instance = GameObject.FindObjectOfType<NetworkManager_Custom>();
+            return _instance;
+        }
+    }*/
+
     public void LanHostStart()
     {
         NetworkManager.singleton.StartHost();
@@ -28,14 +44,6 @@ public class NetworkManager_Custom : NetworkManager {
         NetworkManager.singleton.matchMaker.CreateMatch("testi", 4, true, "", NetworkManager.singleton.OnMatchCreate);
     }
 
-    /*public override void OnMatchCreate(CreateMatchResponse matchInfo)
-    {
-        if (matchInfo.success)
-        {
-            StartHost(new MatchInfo(matchInfo));
-        }
-    }*/
-
     public void MatchList()
     {
         NetworkManager.singleton.matchMaker.ListMatches(0, 10, "", NetworkManager.singleton.OnMatchList);
@@ -43,16 +51,13 @@ public class NetworkManager_Custom : NetworkManager {
 
     public override void OnMatchList(ListMatchResponse matchList)
     {
-        List<MatchDesc> m_roomList = new List<MatchDesc>();
-        m_roomList.Clear();
         foreach (MatchDesc match in matchList.matches)
         {
-            m_roomList.Add(match);
-        }
-        //TestiFunktio!!!! REMOVE LATER!
-        if(m_roomList != null)
-        {
-            MatchJoinTest(m_roomList[0]);
+            GameObject temp = Instantiate(matchButtonPrefab) as GameObject;
+            Button tempButton = temp.GetComponent<Button>();
+            temp.transform.SetParent(buttonGrid, false);
+            tempButton.GetComponentInChildren<Text>().text = match.name;
+            tempButton.onClick.AddListener(() => { MatchJoinTest(match); });
         }
     }
 
