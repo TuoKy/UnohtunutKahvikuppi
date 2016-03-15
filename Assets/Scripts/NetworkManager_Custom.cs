@@ -41,7 +41,13 @@ public class NetworkManager_Custom : NetworkManager {
 
     public void MatchCreate()
     {
-        NetworkManager.singleton.matchMaker.CreateMatch("testi", 4, true, "", NetworkManager.singleton.OnMatchCreate);
+        string matchName = GameObject.Find("MatchNameField").transform.FindChild("Text").GetComponent<Text>().text;
+
+        //Check the match has a name
+        if(matchName != "")
+        {
+            NetworkManager.singleton.matchMaker.CreateMatch(matchName, 4, true, "", NetworkManager.singleton.OnMatchCreate);
+        }
     }
 
     public void MatchList()
@@ -64,5 +70,42 @@ public class NetworkManager_Custom : NetworkManager {
     public void MatchJoinTest(MatchDesc match)
     {
         NetworkManager.singleton.matchMaker.JoinMatch(match.networkId, "", NetworkManager.singleton.OnMatchJoined);
+    }
+
+    void OnLevelWasLoaded(int level)
+    {
+        if(level == 0)
+        {
+            SetupMenuSceneButtons();
+        }
+        else
+        {
+            SetupOtherSceneButtons();
+        }
+    }
+
+    IEnumerable SetupMenuSceneButtons()
+    {
+        yield return new WaitForSeconds(0.3f);
+        GameObject.Find("LanHostButton").GetComponent<Button>().onClick.RemoveAllListeners();
+        GameObject.Find("LanHostButton").GetComponent<Button>().onClick.AddListener(LanHostStart);
+
+        GameObject.Find("LanClientButton").GetComponent<Button>().onClick.RemoveAllListeners();
+        GameObject.Find("LanClientButton").GetComponent<Button>().onClick.AddListener(LanGameJoin);
+
+        GameObject.Find("InternetButton").GetComponent<Button>().onClick.RemoveAllListeners();
+        GameObject.Find("InternetButton").GetComponent<Button>().onClick.AddListener(MatchMakerStart);
+
+        GameObject.Find("InternetHostButton").GetComponent<Button>().onClick.RemoveAllListeners();
+        GameObject.Find("InternetHostButton").GetComponent<Button>().onClick.AddListener(MatchCreate);
+
+        //Ei ehkä toimi testaa!
+        GameObject.Find("FindMatchButton").GetComponent<Button>().onClick.RemoveAllListeners();
+        GameObject.Find("FindMatchButton").GetComponent<Button>().onClick.AddListener(MatchList);
+    }
+
+    void SetupOtherSceneButtons()
+    {
+
     }
 }

@@ -155,6 +155,7 @@ Canvas:
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -1605,7 +1606,7 @@ GameObject:
   - 114: {fileID: 553737423}
   - 114: {fileID: 553737422}
   m_Layer: 5
-  m_Name: InputField
+  m_Name: MatchNameField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
