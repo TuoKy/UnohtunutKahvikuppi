@@ -22,6 +22,7 @@ public class PlayerController : MonoBehaviour {
         if (Input.GetButtonDown("Jump") && player.Grounded)
         {
             rb.velocity += new Vector3(0, player.JumpStrength, 0);
+            GetComponent<PlayerAnimations>().CmdSetBool("Jumping", true);
         }
 
         // Animation
@@ -42,7 +43,7 @@ public class PlayerController : MonoBehaviour {
         // Jump
         if (Input.GetButtonDown("Jump"))
         {
-            GetComponent<PlayerAnimations>().CmdSetBool("Jumping", true);
+            
         }
 
         //TODO: Fix block animation premature looping

@@ -12,7 +12,7 @@ public class PlayerCollide : NetworkBehaviour{
         }
         if (info.gameObject.CompareTag("Weapon"))
         {
-            info.gameObject.GetComponent<PlayerAnimations>();
+            info.gameObject.GetComponent<PlayerAnimations>().CmdSetTrigger("Knockback");
         }
     }
 
