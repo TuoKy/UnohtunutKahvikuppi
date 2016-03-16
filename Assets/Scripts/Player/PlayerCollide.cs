@@ -12,7 +12,7 @@ public class PlayerCollide : NetworkBehaviour{
         }
         if (info.gameObject.CompareTag("Weapon"))
         {
-            Debug.Log("Osui");
+            info.gameObject.GetComponent<PlayerAnimations>
         }
     }
 
