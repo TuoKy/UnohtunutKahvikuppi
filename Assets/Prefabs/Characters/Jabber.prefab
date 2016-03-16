@@ -239,8 +239,9 @@ GameObject:
   - 65: {fileID: 6530828}
   - 114: {fileID: 11418394}
   - 114: {fileID: 11497042}
+  - 114: {fileID: 11472230}
   m_Layer: 0
-  m_Name: RightHandAttackBox
+  m_Name: RightPunchAttackBox
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1584,7 +1585,6 @@ MonoBehaviour:
   anim: {fileID: 9515654}
   attackHitboxLeftHand: {fileID: 100114}
   attackHitboxRightHand: {fileID: 135640}
-  debugText: {fileID: 11468898, guid: 1c465490eda2dcd4685aac77a0132bb4, type: 2}
 --- !u!114 &11413800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1698,6 +1698,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 2082752}
+--- !u!114 &11472230
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 135640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9b3e92c7b3b2c94d95bcb93d4037ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 1
+  damage: 5
+  direction: {x: 0, y: 0, z: 0}
 --- !u!114 &11472278
 MonoBehaviour:
   m_ObjectHideFlags: 1

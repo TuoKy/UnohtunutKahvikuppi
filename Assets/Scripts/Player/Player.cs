@@ -38,6 +38,11 @@ public class Player {
         knockoutPercent = 0f;
     }
 
+    public void TakeDamage(float damage)
+    {
+        knockoutPercent += damage;
+    }
+
     public void ReturnToDefaultSpeed()
     {
         speed = defaultSpeed;

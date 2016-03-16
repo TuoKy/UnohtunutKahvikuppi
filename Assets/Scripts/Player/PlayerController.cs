@@ -35,11 +35,6 @@ public class PlayerController : MonoBehaviour {
             GetComponent<PlayerAnimations>().CmdSetBool("Moving", false);
         }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            GetComponent<PlayerAnimations>().CmdSetTrigger("RightPunch");
-        }
-
         //TODO: Fix block animation premature looping
         if (Input.GetMouseButtonDown(1))
         {
@@ -51,18 +46,20 @@ public class PlayerController : MonoBehaviour {
             GetComponent<PlayerAnimations>().CmdSetBool("Blocking", false);
         }
 
-        // Hadouken animation
+        if (Input.GetMouseButtonDown(0))
+        {
+            GetComponent<PlayerAnimations>().CmdSetTrigger("RightPunch");
+        }
+
         if (Input.GetKeyDown(KeyCode.H))
         {
             GetComponent<PlayerAnimations>().CmdSetTrigger("Hadouken");
         }
 
-        // Right long punch animation
         if (Input.GetKeyDown(KeyCode.G))
         {
             GetComponent<PlayerAnimations>().CmdSetTrigger("RightLongPunch");
         }
-
     }
 
     //TODO: Can player move while attacking?
@@ -72,9 +69,10 @@ public class PlayerController : MonoBehaviour {
         rb.velocity = new Vector3(player.Movement.x, rb.velocity.y, player.Movement.z);
     }
 
-    public void GetKnockedBack()
+    public void GetHitByAttack(Attack attack)
     {
-
+        //player.TakeDamage(attack.damage);
+        rb.AddForce(10, 0, 0);
     }
 
     private void CalculateActualDirection()
@@ -87,6 +85,5 @@ public class PlayerController : MonoBehaviour {
         player.ActualDirection = transform.TransformDirection(direction);
 
         player.ActualDirection.Set(player.ActualDirection.x, 0, player.ActualDirection.z);
-
     }
 }
