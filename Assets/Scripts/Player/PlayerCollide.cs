@@ -8,11 +8,16 @@ public class PlayerCollide : NetworkBehaviour{
     {
         if (info.gameObject.CompareTag("Death"))
         {
-            gameObject.GetComponent<PlayerScore>().ReSpawn();
+            gameObject.GetComponent<PlayerScore>().StartReSpawn();
         }
         if (info.gameObject.CompareTag("Weapon"))
         {
-            info.gameObject.GetComponent<PlayerAnimations>().CmdSetTrigger("Knockback");
+            GetComponent<PlayerAnimations>().CmdSetTrigger("Knockback");
+            GetComponent<PlayerController>().GetHitByAttack(info.gameObject.GetComponent<Attack>());
+        }
+        if (info.gameObject.CompareTag("CameraTrigger"))
+        {
+            transform.FindChild("PlayerCamera").GetComponent<CameraController>().setFalltoDeathPosition();
         }
     }
 

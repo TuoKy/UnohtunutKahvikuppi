@@ -88,4 +88,14 @@ public class CameraController : MonoBehaviour
         parent.position = target.position;
     }
 
+
+    //TODO: Fix and set rotation
+    public void setFalltoDeathPosition()
+    {
+        /*
+        transform.SetParent(null);
+        transform.rotation = new Quaternion(80,0,0,)
+        */     
+    }
+
 }

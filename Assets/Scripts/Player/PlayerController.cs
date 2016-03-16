@@ -35,23 +35,10 @@ public class PlayerController : MonoBehaviour {
             GetComponent<PlayerAnimations>().CmdSetBool("Moving", false);
         }
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            GetComponent<PlayerAnimations>().CmdSetTrigger("RightPunch");
-        }
-
-        // Jump
-        if (Input.GetButtonDown("Jump"))
-        {
-            
-        }
-
         //TODO: Fix block animation premature looping
-        if (Input.GetMouseButton(1))
+        if (Input.GetMouseButtonDown(1))
         {
-            GetComponent<PlayerAnimations>().CmdSetBool("Moving", false);
             GetComponent<PlayerAnimations>().CmdSetBool("Blocking", true);
-
         }
 
         if (Input.GetMouseButtonUp(1))
@@ -59,13 +46,16 @@ public class PlayerController : MonoBehaviour {
             GetComponent<PlayerAnimations>().CmdSetBool("Blocking", false);
         }
 
-        // Hadouken animation
+        if (Input.GetMouseButtonDown(0))
+        {
+            GetComponent<PlayerAnimations>().CmdSetTrigger("RightPunch");
+        }
+
         if (Input.GetKeyDown(KeyCode.H))
         {
             GetComponent<PlayerAnimations>().CmdSetTrigger("Hadouken");
         }
 
-        // Right long punch animation
         if (Input.GetKeyDown(KeyCode.G))
         {
             GetComponent<PlayerAnimations>().CmdSetTrigger("RightLongPunch");
@@ -75,7 +65,6 @@ public class PlayerController : MonoBehaviour {
         {
             GameManager.instance.ActivatePauseMenu();
         }
-
     }
 
     //TODO: Can player move while attacking?
@@ -83,6 +72,12 @@ public class PlayerController : MonoBehaviour {
     {
         player.Movement = player.ActualDirection.normalized * Time.deltaTime * player.Speed;
         rb.velocity = new Vector3(player.Movement.x, rb.velocity.y, player.Movement.z);
+    }
+
+    public void GetHitByAttack(Attack attack)
+    {
+        //player.TakeDamage(attack.damage);
+        rb.AddForce(10, 0, 0);
     }
 
     private void CalculateActualDirection()
@@ -95,6 +90,5 @@ public class PlayerController : MonoBehaviour {
         player.ActualDirection = transform.TransformDirection(direction);
 
         player.ActualDirection.Set(player.ActualDirection.x, 0, player.ActualDirection.z);
-
     }
 }

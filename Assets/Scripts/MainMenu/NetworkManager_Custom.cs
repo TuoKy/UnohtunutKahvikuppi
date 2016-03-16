@@ -10,19 +10,6 @@ public class NetworkManager_Custom : NetworkManager {
     public GameObject matchButtonPrefab;
     public Transform buttonGrid;
     public List<GameObject> matchButtonList;
-    /*private static NetworkManager_Custom _instance;
-
-    public static NetworkManager_Custom instance
-    {
-        get
-        {
-            //If _instance hasn't been set yet, we grab it from the scene!
-            //This will only happen the first time this reference is used.
-            if (_instance == null)
-                _instance = GameObject.FindObjectOfType<NetworkManager_Custom>();
-            return _instance;
-        }
-    }*/
 
     public void LanHostStart()
     {
@@ -36,7 +23,6 @@ public class NetworkManager_Custom : NetworkManager {
 
     public void LanGameJoin()
     {
-        //NetworkManager.singleton.networkAddress = "localhost";
         NetworkManager.singleton.StartClient();
     }
 
