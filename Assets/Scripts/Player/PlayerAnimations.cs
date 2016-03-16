@@ -10,12 +10,6 @@ public class PlayerAnimations : NetworkBehaviour
     //For attacks
     public GameObject attackHitboxLeftHand;
     public GameObject attackHitboxRightHand;
-    public Text debugText;
-	
-    void Start()
-    {
-        debugText = GameObject.Find("debugText").GetComponent<Text>();
-    }
 
     [Command]
     public void CmdSetTrigger(string trigger)
