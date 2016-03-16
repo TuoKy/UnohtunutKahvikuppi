@@ -6,10 +6,11 @@ using UnityEngine.SceneManagement;
 public class MainMenuManager : MonoBehaviour {
 
 	public static MainMenuManager Instance { get; private set; }
-    public Transform MainMenu, OptionsMenu;
+    public Transform mainMenu, oldMenu;
 
     void Start()
     {
+        oldMenu = mainMenu;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
     }
@@ -27,10 +28,11 @@ public class MainMenuManager : MonoBehaviour {
         SceneManager.LoadScene("ArenaScene");
     }
 
-    public void OptionsScreen(bool isOptionsMenu)
+    public void GenericMenuChange(Transform newMenu)
     {
-        OptionsMenu.gameObject.SetActive(isOptionsMenu);
-        MainMenu.gameObject.SetActive(!isOptionsMenu);
+        newMenu.gameObject.SetActive(true);
+        oldMenu.gameObject.SetActive(false);
+        oldMenu = newMenu;
     }
 
     public void ExitGame()

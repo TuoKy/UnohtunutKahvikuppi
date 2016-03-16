@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Death
   - Weapon
+  - OptionsMenu
   layers:
   - Default
   - TransparentFX
