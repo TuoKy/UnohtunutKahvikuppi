@@ -7,12 +7,22 @@ public class MainMenuManager : MonoBehaviour {
 
 	public static MainMenuManager Instance { get; private set; }
     public Transform mainMenu, oldMenu;
+    public GameObject canvas;
 
     void Start()
     {
         oldMenu = mainMenu;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+    }
+
+    void Awake()
+    {
+        foreach(Transform panel in canvas.transform)
+        {
+            panel.gameObject.SetActive(false);
+        }
+        mainMenu.gameObject.SetActive(true);
     }
 
     void FixedUpdate()

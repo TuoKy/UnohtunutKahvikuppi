@@ -961,6 +961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainMenu: {fileID: 1660145202}
   oldMenu: {fileID: 0}
+  canvas: {fileID: 10558975}
 --- !u!4 &322275075
 Transform:
   m_ObjectHideFlags: 0
@@ -989,7 +990,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &323260916
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1060,7 +1061,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &350870811
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1394,7 +1395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &464028858
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1742,7 +1743,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &558059750
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4238,7 +4239,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1616309465
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4508,8 +4509,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 317566983}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0.21759143}
-  m_AnchorMax: {x: 1, y: 0.8275914}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}

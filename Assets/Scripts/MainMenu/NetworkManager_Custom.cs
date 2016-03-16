@@ -29,6 +29,11 @@ public class NetworkManager_Custom : NetworkManager {
         NetworkManager.singleton.StartHost();
     }
 
+    public void LanHostStop()
+    {
+        NetworkManager.singleton.StopHost();
+    }
+
     public void LanGameJoin()
     {
         //NetworkManager.singleton.networkAddress = "localhost";
@@ -92,7 +97,7 @@ public class NetworkManager_Custom : NetworkManager {
     {
         if(level == 0)
         {
-            SetupMenuSceneButtons();
+            MainMenuSceneButtons();
         }
         else
         {
@@ -100,7 +105,7 @@ public class NetworkManager_Custom : NetworkManager {
         }
     }
 
-    IEnumerable SetupMenuSceneButtons()
+    IEnumerable MainMenuSceneButtons()
     {
         yield return new WaitForSeconds(0.3f);
         GameObject.Find("LanHostButton").GetComponent<Button>().onClick.RemoveAllListeners();
@@ -122,6 +127,7 @@ public class NetworkManager_Custom : NetworkManager {
 
     void SetupOtherSceneButtons()
     {
-
+        GameObject.Find("DisconnectButton").GetComponent<Button>().onClick.RemoveAllListeners();
+        GameObject.Find("DisconnectButton").GetComponent<Button>().onClick.AddListener(NetworkManager.singleton.StopHost);
     }
 }
