@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class PlayerCollide : MonoBehaviour {
+public class PlayerCollide : NetworkBehaviour{
 
     void OnTriggerEnter(Collider info)
     {
@@ -18,7 +19,7 @@ public class PlayerCollide : MonoBehaviour {
     void OnCollisionStay(Collision info)
     {
         // check if player touches ground
-        if (info.gameObject.CompareTag("Ground"))
+        if (isLocalPlayer && info.gameObject.CompareTag("Ground"))
         {
             GetComponent<PlayerController>().player.Grounded = true;
         }
@@ -26,7 +27,7 @@ public class PlayerCollide : MonoBehaviour {
 
     void OnCollisionExit(Collision info)
     {
-        if (info.gameObject.CompareTag("Ground"))
+        if (isLocalPlayer && info.gameObject.CompareTag("Ground"))
             GetComponent<PlayerController>().player.Grounded = false;  
     }
 
