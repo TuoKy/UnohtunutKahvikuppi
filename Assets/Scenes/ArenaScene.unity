@@ -1380,7 +1380,6 @@ Transform:
   - {fileID: 1914955649}
   - {fileID: 482980612}
   m_Father: {fileID: 0}
-<<<<<<< HEAD
   m_RootOrder: 5
 --- !u!1 &2020410865
 GameObject:
@@ -1515,9 +1514,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.02, y: 0.019999996, z: 0.019999996}
   m_Center: {x: -0.00072489586, y: 0.0036465921, z: 0.004315585}
-=======
   m_RootOrder: 4
->>>>>>> NetworkManagerToMainMenu
 --- !u!1 &2074162029
 GameObject:
   m_ObjectHideFlags: 0
