@@ -9,6 +9,7 @@ public class NetworkManager_Custom : NetworkManager {
 
     public GameObject matchButtonPrefab;
     public Transform buttonGrid;
+    public List<GameObject> matchButtonList;
     /*private static NetworkManager_Custom _instance;
 
     public static NetworkManager_Custom instance
@@ -57,6 +58,11 @@ public class NetworkManager_Custom : NetworkManager {
 
     public override void OnMatchList(ListMatchResponse matchList)
     {
+        if(matchButtonList != null)
+        {
+            DestroyMatchButtons();
+        }
+        matchButtonList = new List<GameObject>();
         foreach (MatchDesc match in matchList.matches)
         {
             GameObject temp = Instantiate(matchButtonPrefab) as GameObject;
@@ -64,7 +70,17 @@ public class NetworkManager_Custom : NetworkManager {
             temp.transform.SetParent(buttonGrid, false);
             tempButton.GetComponentInChildren<Text>().text = match.name;
             tempButton.onClick.AddListener(() => { MatchJoinTest(match); });
+            matchButtonList.Add(temp);
         }
+    }
+
+    void DestroyMatchButtons()
+    {
+        foreach(GameObject objectToDestroy in matchButtonList)
+        {
+            Destroy(objectToDestroy);
+        }
+        matchButtonList.Clear();
     }
 
     public void MatchJoinTest(MatchDesc match)
