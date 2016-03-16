@@ -13,6 +13,7 @@ public class PlayerCollide : NetworkBehaviour{
         if (info.gameObject.CompareTag("Weapon"))
         {
             info.gameObject.GetComponent<PlayerAnimations>().CmdSetTrigger("Knockback");
+            info.gameObject.GetComponent<PlayerController>().GetKnockedBack();
         }
         if (info.gameObject.CompareTag("CameraTrigger"))
         {
