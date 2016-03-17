@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1011 &101100000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: UpperBody
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Character
+    m_Weight: 0
+  - m_Path: Skeleton
+    m_Weight: 0
+  - m_Path: Skeleton/Root
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg control.L
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg control.L/Foot roll.L
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L/Leg ik.L_end
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg control.L/Foot.L
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg control.L/Foot.L/Toes.L
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg control.L/Foot.L/Toes.L/Toes.L_end
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg control.L/Toes control.L
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg control.L/Toes control.L/Toes control.L_end
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg control.R
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg control.R/Foot roll.R
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R/Leg ik.R_end
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg control.R/Foot.R
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg control.R/Foot.R/Toes.R
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg control.R/Foot.R/Toes.R/Toes.R_end
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg control.R/Toes control.R
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg control.R/Toes control.R/Toes control.R_end
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg pole target.L
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg pole target.L/Leg pole target.L_end
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg pole target.R
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Leg pole target.R/Leg pole target.R_end
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Lower Torso
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Lower Torso/Upper Leg.L
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L/Lower Leg.L_end
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Lower Torso/Upper Leg.R
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R/Lower Leg.R_end
+    m_Weight: 0
+  - m_Path: Skeleton/Root/Lower Torso/Upper Torso
+    m_Weight: 1
+  - m_Path: Skeleton/Root/Lower Torso/Upper Torso/Neck
+    m_Weight: 1
+  - m_Path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head
+    m_Weight: 1
+  - m_Path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head/Head_end
+    m_Weight: 1
+  - m_Path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L
+    m_Weight: 1
+  - m_Path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L
+    m_Weight: 1
+  - m_Path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L
+    m_Weight: 1
+  - m_Path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L
+    m_Weight: 1
+  - m_Path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L/Fingers.L_end
+    m_Weight: 1
+  - m_Path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R
+    m_Weight: 1
+  - m_Path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R
+    m_Weight: 1
+  - m_Path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R
+    m_Weight: 1
+  - m_Path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R
+    m_Weight: 1
+  - m_Path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/Fingers.R_end
+    m_Weight: 1
