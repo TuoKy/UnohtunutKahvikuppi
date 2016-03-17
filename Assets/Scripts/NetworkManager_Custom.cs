@@ -78,7 +78,7 @@ public class NetworkManager_Custom : NetworkManager {
     {
         if(level == 0)
         {
-            SetupMenuSceneButtons();
+            StartCoroutine(SetupMenuSceneButtons());
         }
         else
         {
@@ -86,12 +86,15 @@ public class NetworkManager_Custom : NetworkManager {
         }
     }
 
-    IEnumerable SetupMenuSceneButtons()
+    IEnumerator SetupMenuSceneButtons()
     {
         yield return new WaitForSeconds(0.3f);
+        GameObject.Find("TempLanHostButton").GetComponent<Button>().onClick.RemoveAllListeners();
+        GameObject.Find("TempLanHostButton").GetComponent<Button>().onClick.AddListener(LanHostStart);
+
         GameObject.Find("LanHostButton").GetComponent<Button>().onClick.RemoveAllListeners();
         GameObject.Find("LanHostButton").GetComponent<Button>().onClick.AddListener(LanHostStart);
-
+        //Debug.Log(GameObject.Find("LanHostButton").GetComponent<Button>());
         GameObject.Find("LanClientButton").GetComponent<Button>().onClick.RemoveAllListeners();
         GameObject.Find("LanClientButton").GetComponent<Button>().onClick.AddListener(LanGameJoin);
 
