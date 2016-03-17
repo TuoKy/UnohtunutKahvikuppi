@@ -11,6 +11,7 @@ public class Player {
     private float jumpStrength = 15f;
     private bool grounded;
     private Vector3 actualDirection, movement;
+    private int lives = 3; //Default value. Remember to add option somewhere for players to adjust
 
     public string CharacterName { get { return characterName; } set { characterName = value; } }
     public float KnockoutPercent { get { return knockoutPercent; } }
@@ -20,6 +21,8 @@ public class Player {
     public bool Grounded { get { return grounded; } set { grounded = value; } }
     public Vector3 ActualDirection { get { return actualDirection; } set { actualDirection = value; } }
     public Vector3 Movement { get { return movement; } set { movement = value; } }
+
+    public int Lives { get { return lives; } set { lives = value; } }
 
     public Player()
     {

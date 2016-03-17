@@ -13,6 +13,7 @@ public class PlayerNetworkSetup : NetworkBehaviour {
         {
             ActivateChildObjects();
             GetComponent<PlayerController>().enabled = true;
+            GetComponent<PlayerScore>().enabled = true;
         }
 	}
 

@@ -41,19 +41,35 @@ public class PlayerScore : MonoBehaviour {
 
     public void StartReSpawn()
     {
+        //Add various stuff regarding death and respawn here
+
+        //Start countdown before respawning
         StartCoroutine(PauseBetweenRespawn());
     }
 
     IEnumerator PauseBetweenRespawn()
     {
-        while (elapsedTime < 6)
-        {            
+        if (GetComponent<PlayerController>().player.Lives > 0)
+        {
+            while (elapsedTime < 6)
+            {            
             countDownText.text = elapsedTime.ToString();
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(0.5f);
             elapsedTime++;
+            }
+
+            GetComponent<PlayerController>().player.Lives -= 1;
+            gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            countDownText.text = "";
+            ReSpawn();
         }
-        gameObject.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
-        countDownText.text = "";
-        ReSpawn();
+        else
+        {
+           countDownText.text = "You lost";
+           GetComponent<Rigidbody>().useGravity = false;
+            gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero; 
+           GetComponent<PlayerController>().enabled = false;
+        }        
+        elapsedTime = 0;
     }
 }
