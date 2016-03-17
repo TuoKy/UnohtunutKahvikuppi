@@ -1,2 +1,0 @@
-# UnohtunutKahvikuppi
-video gamez
