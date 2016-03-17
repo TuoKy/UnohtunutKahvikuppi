@@ -8,11 +8,13 @@ public class PlayerController : MonoBehaviour {
 
     private Rigidbody rb;
 
+    // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
         player = new Player();
     }
-
+	
+	// Update is called once per frame
 	void Update () {
         CalculateActualDirection();
         
@@ -60,6 +62,7 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
+    //TODO: Can player move while attacking?
     void FixedUpdate()
     {
         player.Movement = player.ActualDirection.normalized * Time.deltaTime * player.Speed;

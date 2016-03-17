@@ -10,7 +10,11 @@ public class PlayerAnimations : NetworkBehaviour
     //For attacks
     public GameObject attackHitboxLeftHand;
     public GameObject attackHitboxRightHand;
+<<<<<<< HEAD
+	
+=======
 
+>>>>>>> 04416bef47853c214f4ef08104fe8f0a759e06b5
     [Command]
     public void CmdSetTrigger(string trigger)
     {
