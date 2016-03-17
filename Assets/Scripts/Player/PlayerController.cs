@@ -60,6 +60,11 @@ public class PlayerController : MonoBehaviour {
         {
             GetComponent<PlayerAnimations>().CmdSetTrigger("RightLongPunch");
         }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.instance.ActivatePauseMenu();
+        }
     }
 
     //TODO: Can player move while attacking?

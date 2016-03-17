@@ -75,16 +75,7 @@ public class CameraController : MonoBehaviour
 
     void ToggleCursorLock()
     {
-        if (Cursor.lockState == CursorLockMode.Locked)
-        {
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-        }
-        else
-        {
-            Cursor.lockState = CursorLockMode.Locked;
-            Cursor.visible = false;
-        }
+        GameManager.instance.ToggleCursorLock();
     }
 
     public void setSpeed(float value)
