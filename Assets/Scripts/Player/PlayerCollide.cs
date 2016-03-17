@@ -10,9 +10,12 @@ public class PlayerCollide : NetworkBehaviour{
         {
             gameObject.GetComponent<PlayerScore>().StartReSpawn();
         }
-        if (info.gameObject.CompareTag("Weapon"))
+        if (isLocalPlayer && info.gameObject.CompareTag("Weapon"))
         {
             GetComponent<PlayerAnimations>().CmdSetTrigger("Knockback");
+            //Vector3 heading = 
+            //info.gameObject.GetComponent<Attack>().UpdateDirection(heading)
+            Debug.Log(info.GetComponentInParent<Transform>().position);
             GetComponent<PlayerController>().GetHitByAttack(info.gameObject.GetComponent<Attack>());
         }
         if (info.gameObject.CompareTag("CameraTrigger"))

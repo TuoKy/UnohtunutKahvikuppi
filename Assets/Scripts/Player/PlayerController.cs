@@ -86,7 +86,8 @@ public class PlayerController : MonoBehaviour {
     public void GetHitByAttack(Attack attack)
     {
         //player.TakeDamage(attack.damage);
-        rb.AddForce(10, 0, 0);
+        rb.AddForce(attack.direction * 10000);
+        //Debug.Log(attack.direction);
     }
 
     private void CalculateActualDirection()
