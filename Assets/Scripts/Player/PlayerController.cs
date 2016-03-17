@@ -8,6 +8,9 @@ public class PlayerController : MonoBehaviour {
 
     private Rigidbody rb;
 
+    public GameObject projectilePrefab;
+    public Transform firePoint;
+
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
@@ -62,6 +65,7 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.H))
         {
+            Shoot();
             GetComponent<PlayerAnimations>().CmdSetTrigger("Hadouken");
         }
 
@@ -100,5 +104,10 @@ public class PlayerController : MonoBehaviour {
         player.ActualDirection = transform.TransformDirection(direction);
 
         player.ActualDirection.Set(player.ActualDirection.x, 0, player.ActualDirection.z);
+    }
+
+    public void Shoot()
+    {
+        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation) as GameObject;
     }
 }

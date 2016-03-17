@@ -457,6 +457,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &154964
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 496638}
+  m_Layer: 0
+  m_Name: FirePoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &158988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,7 +1259,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.147661, y: 0.4624009, z: -2.9252372}
+  m_LocalPosition: {x: 2.691757, y: 0.4623991, z: -13.218324}
   m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
   m_Children:
   - {fileID: 424058}
@@ -1252,6 +1267,7 @@ Transform:
   - {fileID: 439160}
   - {fileID: 425982}
   - {fileID: 498218}
+  - {fileID: 496638}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &474982
@@ -1387,6 +1403,18 @@ Transform:
   - {fileID: 401070}
   m_Father: {fileID: 449120}
   m_RootOrder: 0
+--- !u!4 &496638
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154964}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 5.4, z: 4}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 473846}
+  m_RootOrder: 5
 --- !u!4 &497152
 Transform:
   m_ObjectHideFlags: 1
@@ -1744,6 +1772,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cccb136c0857ac4dad14465d9df94d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 189628, guid: c37afe16855cc5b40a1dfab71f4d6db2, type: 2}
+  firePoint: {fileID: 496638}
 --- !u!114 &11495112
 MonoBehaviour:
   m_ObjectHideFlags: 1

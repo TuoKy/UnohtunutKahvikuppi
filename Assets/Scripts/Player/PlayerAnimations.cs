@@ -35,7 +35,6 @@ public class PlayerAnimations : NetworkBehaviour
         anim.SetBool(trigger, value);
     }
 
-
     //Hitbox activations etc
     [Command]
     public void CmdActivateRightHandAttackBox()

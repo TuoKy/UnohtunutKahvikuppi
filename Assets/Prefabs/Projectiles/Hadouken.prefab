@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 493756}
   - 54: {fileID: 5447560}
   - 135: {fileID: 13516988}
-  - 114: {fileID: 11491812}
+  - 114: {fileID: 11487200}
   m_Layer: 0
   m_Name: Hadouken
   m_TagString: Untagged
@@ -54,7 +54,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 189628}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.0989325, y: 2.09, z: -7.68}
+  m_LocalPosition: {x: 2.2189746, y: 2.31, z: -12.490346}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 425190}
@@ -75,7 +75,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &11491812
+--- !u!114 &11487200
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -83,10 +83,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 189628}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b8e2ed4532b1ea440994cd054d026f7e, type: 3}
+  m_Script: {fileID: 11500000, guid: b5b957098ad2f0c4ba0a77ea9149e4c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  lifeTime: 2
+  player: {fileID: 0}
 --- !u!135 &13516988
 SphereCollider:
   m_ObjectHideFlags: 1
