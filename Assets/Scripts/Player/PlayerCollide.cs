@@ -26,6 +26,7 @@ public class PlayerCollide : NetworkBehaviour{
         // check if player touches ground
         if (isLocalPlayer && info.gameObject.CompareTag("Ground"))
         {
+            GetComponent<PlayerController>().player.DoubleJumped = false;
             GetComponent<PlayerController>().player.Grounded = true;
         }
     }
