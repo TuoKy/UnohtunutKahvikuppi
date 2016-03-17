@@ -14,10 +14,13 @@ public class MainMenuManager : MonoBehaviour {
         oldMenu = mainMenu;
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
+
+        StartCoroutine(hideExtraMenus());
     }
 
-    void Awake()
+    IEnumerator hideExtraMenus()
     {
+        yield return new WaitForSeconds(0.3f);
         foreach (Transform panel in canvas.transform)
         {
             panel.gameObject.SetActive(false);
