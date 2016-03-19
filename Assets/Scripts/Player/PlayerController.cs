@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour {
             player.DoubleJumped = true;
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.velocity += new Vector3(0, player.JumpStrength, 0);
-            GetComponent<PlayerAnimations>().CmdSetBool("Jumping", true);
+            GetComponent<PlayerAnimations>().CmdSetTrigger("DoubleJumping");
         }
 
         // Animation
