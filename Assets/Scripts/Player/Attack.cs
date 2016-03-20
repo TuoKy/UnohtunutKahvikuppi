@@ -12,13 +12,9 @@ public class Attack : MonoBehaviour {
         direction = new Vector3();
     }
 
-    // Update is called once per frame
-    void Update () {
-        UpdateDirection();
-	}
-
-    public void UpdateDirection()
+    public void UpdateDirection(Vector3 heading)
     {
-        direction = new Vector3();
+        float distance = heading.magnitude;
+        direction = heading / distance;
     }
 }

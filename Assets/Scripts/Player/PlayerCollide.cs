@@ -13,9 +13,8 @@ public class PlayerCollide : NetworkBehaviour{
         if (isLocalPlayer && info.gameObject.CompareTag("Weapon"))
         {
             GetComponent<PlayerAnimations>().CmdSetTrigger("Knockback");
-            //Vector3 heading = 
-            //info.gameObject.GetComponent<Attack>().UpdateDirection(heading)
-            Debug.Log(info.GetComponentInParent<Transform>().position);
+            Vector3 heading = info.GetComponentInParent<Transform>().position - this.GetComponentInParent<Transform>().position;
+            info.gameObject.GetComponent<Attack>().UpdateDirection(heading);
             GetComponent<PlayerController>().GetHitByAttack(info.gameObject.GetComponent<Attack>());
         }
         if (info.gameObject.CompareTag("CameraTrigger"))
