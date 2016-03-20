@@ -20,17 +20,6 @@ public class PlayerSynchPos : NetworkBehaviour
     private float threshold = 0.5f;
     private Quaternion lastRot;
 
-
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
     void FixedUpdate()
     {
         TransmitPos();
