@@ -3,22 +3,27 @@ using System.Collections;
 using UnityEngine.Networking;
 
 public class PlayerNetworkSetup : NetworkBehaviour {
+       
+    public GameObject camPrefab;
 
     [SerializeField]
-    Camera cam;
+    Transform camPosition;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
         if (isLocalPlayer)
         {
-            ActivateChildObjects();
+            InitCamera();
             GetComponent<PlayerController>().enabled = true;
             GetComponent<PlayerScore>().enabled = true;
         }
 	}
 
-    void ActivateChildObjects()
+    private void InitCamera()
     {
-        transform.FindChild("PlayerCamera").gameObject.SetActive(true);
+        GameObject playerCam = Instantiate(camPrefab, camPosition.position, camPosition.rotation) as GameObject;
+        playerCam.SetActive(true);
+        playerCam.GetComponent<NewCamController>().Target = camPosition;
+        playerCam.GetComponent<NewCamController>().Player = gameObject.transform;
     }
 }

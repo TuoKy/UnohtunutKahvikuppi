@@ -5,11 +5,11 @@ using System.Collections.Generic;
 public class PlayerController : MonoBehaviour {
 
     public Player player;
-
-    private Rigidbody rb;
-
     public GameObject projectilePrefab;
     public Transform firePoint;
+
+    private float totalXRotation;
+    private Rigidbody rb;
 
     // Use this for initialization
     void Start () {
@@ -20,7 +20,8 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         CalculateActualDirection();
-        
+        Rotation();
+
         // Jump
         if (Input.GetButtonDown("Jump") && player.Grounded)
         {
@@ -104,6 +105,12 @@ public class PlayerController : MonoBehaviour {
         player.ActualDirection = transform.TransformDirection(direction);
 
         player.ActualDirection.Set(player.ActualDirection.x, 0, player.ActualDirection.z);
+    }
+
+    void Rotation()
+    {
+        totalXRotation = (Input.GetAxis("Mouse X"));
+        transform.Rotate(0, totalXRotation, 0);
     }
 
     public void Shoot()

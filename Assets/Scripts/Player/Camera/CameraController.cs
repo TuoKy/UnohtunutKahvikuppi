@@ -15,7 +15,6 @@ public class CameraController : MonoBehaviour
     public float cameraZoomDamp = 5f;
     public bool invertXAxis = false;
 
-    private Vector2 oldMousePos;
     private float totalXRotation;
 
     private float zoomlvl = 0.5f;
@@ -87,7 +86,6 @@ public class CameraController : MonoBehaviour
     {
         parent.position = target.position;
     }
-
 
     //TODO: Fix and set rotation
     public void setFalltoDeathPosition()
