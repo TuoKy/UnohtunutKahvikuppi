@@ -5,9 +5,10 @@ public class NewCamController : MonoBehaviour {
 
     public Transform Target { get { return target; } set { target = value; } }
     public Transform Player { get { return player; } set { player = value; } }
+    public bool Falling { get { return falling; } set { falling = value; } }
 
     public int zoomMin, zoomMax;
-    public float posX, posY, speed = 700f,
+    public float posX, posY,
         cameraSensitivity = 3f, cameraZoomSensitivity = 10f, cameraZoomDamp = 5f;
     public bool invertXAxis = false;
 
@@ -15,17 +16,22 @@ public class NewCamController : MonoBehaviour {
     private Transform player;
     private float totalXRotation, zoomlvl = 0.5f;
     private Vector3 vel = Vector3.zero;
+    private bool falling;
+
 
     void Start()
     {
-
+        falling = false;
         Cursor.lockState = CursorLockMode.Locked;
     }
     //TODO: Jos pelaajan ja kameran välissä seinä. nini raycastaa enenn sijaintia pelaajan ja kameran väliin. jos törmää johonkin muuhun kuin pelajaaan ota osuman position 
     void Update()
     {
-        SetRot();
-        Zoom();
+        if (!falling)
+        {
+            SetRot();
+            Zoom();
+        }
        
         if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
@@ -54,9 +60,10 @@ public class NewCamController : MonoBehaviour {
         GameManager.instance.ToggleCursorLock();
     }
 
-    public void setSpeed(float value)
+    public void setFalltoDeathPosition()
     {
-        speed = value;
+        falling = true;
+        transform.Rotate(90f,0,0, Space.Self);
     }
-   
+
 }

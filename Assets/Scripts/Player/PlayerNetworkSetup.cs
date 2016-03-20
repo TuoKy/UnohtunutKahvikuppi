@@ -25,5 +25,6 @@ public class PlayerNetworkSetup : NetworkBehaviour {
         playerCam.SetActive(true);
         playerCam.GetComponent<NewCamController>().Target = camPosition;
         playerCam.GetComponent<NewCamController>().Player = gameObject.transform;
+        GetComponent<PlayerController>().Camera = playerCam;
     }
 }

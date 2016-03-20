@@ -7,7 +7,10 @@ public class PlayerController : MonoBehaviour {
     public Player player;
     public GameObject projectilePrefab;
     public Transform firePoint;
+    public GameObject Camera { get { return cam; } set { cam = value; } }
 
+
+    private GameObject cam;
     private float totalXRotation;
     private Rigidbody rb;
 
@@ -48,7 +51,6 @@ public class PlayerController : MonoBehaviour {
             GetComponent<PlayerAnimations>().CmdSetBool("Moving", false);
         }
 
-        //TODO: Fix block animation premature looping
         if (Input.GetMouseButtonDown(1))
         {
             GetComponent<PlayerAnimations>().CmdSetBool("Blocking", true);

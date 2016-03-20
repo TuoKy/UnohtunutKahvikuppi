@@ -20,7 +20,7 @@ public class PlayerCollide : NetworkBehaviour{
         }
         if (info.gameObject.CompareTag("CameraTrigger"))
         {
-            transform.FindChild("PlayerCamera").GetComponent<CameraController>().setFalltoDeathPosition();
+            GetComponent<PlayerController>().Camera.GetComponent<NewCamController>().setFalltoDeathPosition();
         }
     }
 

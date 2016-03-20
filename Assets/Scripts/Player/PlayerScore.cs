@@ -36,6 +36,7 @@ public class PlayerScore : MonoBehaviour {
 
     public void ReSpawn()
     {
+        GetComponent<PlayerController>().Camera.GetComponent<NewCamController>().Falling = false;     
         gameObject.transform.position = spawnPointsList[Random.Range(0, spawnPointsList.Capacity - 1)].position; 
     }
 
