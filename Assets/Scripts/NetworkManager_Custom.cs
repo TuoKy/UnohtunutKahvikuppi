@@ -7,8 +7,8 @@ using System.Collections.Generic;
 
 public class NetworkManager_Custom : NetworkManager {
 
-    public GameObject matchButtonPrefab;
     public Transform buttonGrid;
+    public GameObject matchButtonPrefab;
     public List<GameObject> matchButtonList;
 
     public void LanHostStart()
@@ -18,12 +18,26 @@ public class NetworkManager_Custom : NetworkManager {
 
     public void LanGameJoin()
     {
+        string ipAddress = GameObject.Find("IPAddressField").transform.FindChild("Text").GetComponent<Text>().text;
+        if (networkAddress != "")
+        {
+            NetworkManager.singleton.networkAddress = ipAddress;
+        }
+        else
+        {
+            NetworkManager.singleton.networkAddress = "localhost";
+        }
         NetworkManager.singleton.StartClient();
     }
 
     public void MatchMakerStart()
     {
         NetworkManager.singleton.StartMatchMaker();
+    }
+
+    public void MatchMakerStop()
+    {
+        NetworkManager.singleton.StopMatchMaker();
     }
 
     public void MatchCreate()
@@ -100,6 +114,10 @@ public class NetworkManager_Custom : NetworkManager {
 
         GameObject.Find("InternetButton").GetComponent<Button>().onClick.RemoveAllListeners();
         GameObject.Find("InternetButton").GetComponent<Button>().onClick.AddListener(MatchMakerStart);
+
+        //GameObject.Find("MMBackButton").GetComponent<Button>().onClick.RemoveAllListeners();
+        //GameObject.Find("MMBackButton").GetComponent<Button>().onClick.AddListener(MatchMakerStop);
+        //GameObject.Find("MMBackButton").GetComponent<Button>().onClick.AddListener(GameManager.);
 
         GameObject.Find("InternetHostButton").GetComponent<Button>().onClick.RemoveAllListeners();
         GameObject.Find("InternetHostButton").GetComponent<Button>().onClick.AddListener(MatchCreate);
