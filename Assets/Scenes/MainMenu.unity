@@ -388,7 +388,7 @@ GameObject:
   - 114: {fileID: 115016364}
   - 114: {fileID: 115016363}
   m_Layer: 5
-  m_Name: BackButton
+  m_Name: MMBackButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -457,6 +457,17 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1616309465}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 588810207}
+        m_MethodName: MatchMakerStop
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -1064,7 +1075,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &323260916
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1135,7 +1146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &350870811
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1469,7 +1480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &464028858
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1967,7 +1978,6 @@ MonoBehaviour:
   matchSize: 4
   buttonGrid: {fileID: 375905599}
   matchButtonPrefab: {fileID: 123478, guid: 957532993edf5a240aa1cd71f79fa03a, type: 2}
-  networkAddressText: {fileID: 1592546258}
   matchButtonList: []
 --- !u!1 &602162766
 GameObject:
@@ -4292,7 +4302,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter text...
+  m_Text: Match Name
 --- !u!222 &1549127649
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4388,7 +4398,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1616309465
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4458,7 +4468,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1660145202
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4641,7 +4651,7 @@ GameObject:
   - 114: {fileID: 1689867506}
   - 114: {fileID: 1689867505}
   m_Layer: 5
-  m_Name: NetworkAddressField
+  m_Name: IPAddressField
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4791,8 +4801,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 317566983}
   m_RootOrder: 0
-  m_AnchorMin: {x: 0, y: 0.00759135}
-  m_AnchorMax: {x: 1, y: 0.7709247}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
