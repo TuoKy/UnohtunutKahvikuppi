@@ -9,7 +9,9 @@ public class PlayerCollide : NetworkBehaviour{
         if (info.gameObject.CompareTag("Death"))
         {
             gameObject.GetComponent<PlayerScore>().KillMe();
-            gameObject.GetComponent<PlayerScore>().StartReSpawn();           
+            gameObject.GetComponent<PlayerScore>().StartReSpawn();
+            GameManager.instance.TakePlayerLifeToken();
+
         }
         if (isLocalPlayer && info.gameObject.CompareTag("Weapon"))
         {
@@ -17,6 +19,8 @@ public class PlayerCollide : NetworkBehaviour{
             Vector3 heading = info.GetComponentInParent<Transform>().position - this.GetComponentInParent<Transform>().position;
             info.gameObject.GetComponent<Attack>().UpdateDirection(heading);
             GetComponent<PlayerController>().GetHitByAttack(info.gameObject.GetComponent<Attack>());
+            // Update UI
+            GameManager.instance.UpdateKnockoutPercent(GetComponent<PlayerController>().player.KnockoutPercent);
         }
         if (info.gameObject.CompareTag("CameraTrigger"))
         {

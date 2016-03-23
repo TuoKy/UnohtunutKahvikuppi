@@ -1,11 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
 
-    public GameObject pausePanel;
+    public GameObject pausePanel, LifeTokenPrefab;
+    public Transform playerPercentPanel;
+    public Text knockoutText;
+    public Vector3 startPosition = new Vector3(90f, 50f, 0f);
     private static GameManager _instance;
+    private List<GameObject> lifeTokens;
 
     public static GameManager instance
     {
@@ -23,6 +29,7 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         backToGame();
+        SetPlayerLives(3);
         /*Cursor.lockState = CursorLockMode.Locked;
      pausePanel.SetActive(false);*/
     }
@@ -52,5 +59,37 @@ public class GameManager : MonoBehaviour
     {
         pausePanel.SetActive(false);
         ToggleCursorLock();
+    }
+
+    public void UpdateKnockoutPercent(float value)
+    {
+        knockoutText.text = value.ToString() + "%";
+    }
+
+    public void SetPlayerLives(int lives)
+    {
+
+        lifeTokens = new List<GameObject>();
+        float posX = startPosition.x;
+        Quaternion orientation = Quaternion.identity;
+
+        for (int i = 0; i < lives; i++)
+        {
+            // Instatiate new token from prefab and put it in the ui-panel
+            GameObject newLifeToken = Instantiate(LifeTokenPrefab, new Vector3(posX, startPosition.y, startPosition.z), orientation) as GameObject;
+            newLifeToken.transform.parent = playerPercentPanel;
+            lifeTokens.Add(newLifeToken);
+
+            // Change x position for the next token
+            posX += ((RectTransform)LifeTokenPrefab.transform).rect.width + 10f;
+        }
+    }
+
+    public void TakePlayerLifeToken()
+    {
+        int index = lifeTokens.Count - 1;
+        GameObject lastLife = lifeTokens[index];
+        Destroy(lastLife);
+        lifeTokens.RemoveAt(index);
     }
 }
