@@ -7,6 +7,7 @@ public class PlayerScore : MonoBehaviour {
 
     private Text countDownText;
     private int elapsedTime;
+    private bool startFabulousText; 
 
     private Transform spawnPoints;
     private List<Transform> spawnPointsList;
@@ -16,6 +17,7 @@ public class PlayerScore : MonoBehaviour {
         InitSpawnPoints();
         countDownText = GameObject.Find("CountDownText").GetComponent<Text>();
         elapsedTime = 0;
+        startFabulousText = false;
     }
 	
     private void InitSpawnPoints()
@@ -33,6 +35,12 @@ public class PlayerScore : MonoBehaviour {
 	void Update () {
 	
 	}
+
+    void FixedUpdate()
+    {
+        if(startFabulousText)
+            countDownText.transform.localScale += Vector3.Lerp(countDownText.transform.localScale, new Vector3(1, 1, 1), 1);
+    }
 
     public void ReSpawn()
     {
@@ -54,9 +62,13 @@ public class PlayerScore : MonoBehaviour {
         {
             while (elapsedTime < 6)
             {            
-            countDownText.text = elapsedTime.ToString();
-            yield return new WaitForSeconds(0.5f);
-            elapsedTime++;
+                countDownText.text = elapsedTime.ToString();
+                
+                startFabulousText = true;
+                yield return new WaitForSeconds(1.0f);
+                startFabulousText = false;
+                countDownText.transform.localScale = new Vector3(1, 1, 1);
+                elapsedTime++;
             }
 
             GetComponent<PlayerController>().player.Lives -= 1;
@@ -70,7 +82,8 @@ public class PlayerScore : MonoBehaviour {
            GetComponent<Rigidbody>().useGravity = false;
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero; 
            GetComponent<PlayerController>().enabled = false;
-        }        
+        }
+        countDownText.transform.localScale = new Vector3(1, 1, 1);
         elapsedTime = 0;
     }
 }
