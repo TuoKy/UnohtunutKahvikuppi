@@ -9,6 +9,7 @@ public class Player {
     private float defaultSpeed = 400f;
     private float speed = 400f;
     private float jumpStrength = 15f;
+    private float turnSpeed = 10f;
     private bool grounded;
     private bool doubleJumped;
     private Vector3 actualDirection, movement;
@@ -19,6 +20,7 @@ public class Player {
     public float Score { get { return score; } }
     public float Speed { get { return speed; } }
     public float JumpStrength { get { return jumpStrength; } }
+    public float TurnSpeed { get { return turnSpeed; } }
     public bool Grounded { get { return grounded; } set { grounded = value; } }
     public bool DoubleJumped { get { return doubleJumped; } set { doubleJumped = value; } }
     public Vector3 ActualDirection { get { return actualDirection; } set { actualDirection = value; } }
