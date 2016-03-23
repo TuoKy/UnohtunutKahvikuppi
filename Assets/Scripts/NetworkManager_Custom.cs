@@ -96,6 +96,8 @@ public class NetworkManager_Custom : NetworkManager {
         if(level == 0)
         {
             StartCoroutine(SetupMenuSceneButtons());
+            // ToDo: Korjaa tämä niin että hostia ei yritetä pysäyttää jos sitä ei ole!!!
+            NetworkManager.singleton.StopHost();
         }
         else
         {
