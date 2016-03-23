@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour {
     {
         player.TakeDamage(attack.damage);
         rb.AddForce(attack.direction * 10000);
-        Debug.Log(attack.direction + ", " + player.KnockoutPercent);
+        //Debug.Log(attack.direction + ", " + player.KnockoutPercent);
     }
 
     private void CalculateActualDirection()
