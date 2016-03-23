@@ -112,7 +112,7 @@ public class PlayerController : MonoBehaviour {
     void Rotation()
     {
         totalXRotation = (Input.GetAxis("Mouse X"));
-        transform.Rotate(0, totalXRotation, 0);
+        transform.Rotate(0, totalXRotation * player.TurnSpeed, 0);
     }
 
     public void Shoot()

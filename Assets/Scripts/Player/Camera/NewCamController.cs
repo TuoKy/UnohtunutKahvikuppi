@@ -14,7 +14,7 @@ public class NewCamController : MonoBehaviour {
 
     private Transform target;
     private Transform player;
-    private float totalXRotation, zoomlvl = 0.5f;
+    private float totalXRotation, zoomlvl = 0.5f, yRotation, xRotation;
     private Vector3 vel = Vector3.zero;
     private bool falling;
 
@@ -41,7 +41,10 @@ public class NewCamController : MonoBehaviour {
 
     void SetRot()
     {
-        transform.rotation = player.rotation;
+        yRotation = cameraZoomSensitivity * Input.GetAxis("Mouse Y");
+            target.Rotate(yRotation, 0, 0);
+       // Debug.Log(yRotation +" "+ target.transform.rotation.x);
+        transform.rotation = target.rotation;
     }
 
     void Zoom()
@@ -50,8 +53,6 @@ public class NewCamController : MonoBehaviour {
         zoomlvl -= Input.GetAxis("Mouse ScrollWheel") * Time.deltaTime * cameraZoomSensitivity;
         zoomlvl = Mathf.Clamp(zoomlvl, 0.0f, 1.0f);
         newPosition = target.position + transform.rotation * new Vector3(0, 0, zoomMin - zoomlvl * zoomMax);
-
-        //transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref vel, 0.1f);
         transform.position = newPosition;
     }
 
