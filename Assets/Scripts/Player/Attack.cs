@@ -5,6 +5,7 @@ public class Attack : MonoBehaviour {
 
     public float force;
     public float damage;
+    public float launch;
     public Vector3 direction;
 
     void Start()
@@ -16,5 +17,6 @@ public class Attack : MonoBehaviour {
     {
         float distance = heading.magnitude;
         direction = heading / distance;
+        direction = new Vector3(direction.x, launch, direction.z);
     }
 }
