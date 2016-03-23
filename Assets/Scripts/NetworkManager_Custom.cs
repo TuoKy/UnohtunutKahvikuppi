@@ -13,13 +13,14 @@ public class NetworkManager_Custom : NetworkManager {
 
     public void LanHostStart()
     {
+        Debug.Log("HOST");
         NetworkManager.singleton.StartHost();
     }
 
     public void LanGameJoin()
     {
         string ipAddress = GameObject.Find("IPAddressField").transform.FindChild("Text").GetComponent<Text>().text;
-        if (networkAddress != "")
+        if (ipAddress != "")
         {
             NetworkManager.singleton.networkAddress = ipAddress;
         }
@@ -27,11 +28,13 @@ public class NetworkManager_Custom : NetworkManager {
         {
             NetworkManager.singleton.networkAddress = "localhost";
         }
+        Debug.Log("OMG");
         NetworkManager.singleton.StartClient();
     }
 
     public void MatchMakerStart()
     {
+        Debug.Log("Match");
         NetworkManager.singleton.StartMatchMaker();
     }
 

@@ -15,7 +15,6 @@ public class NewCamController : MonoBehaviour {
     private Transform target;
     private Transform player;
     private float totalXRotation, zoomlvl = 0.5f;
-    private Vector3 vel = Vector3.zero;
     private bool falling;
 
 
@@ -41,7 +40,7 @@ public class NewCamController : MonoBehaviour {
 
     void SetRot()
     {
-        transform.rotation = player.rotation;
+        transform.rotation = target.rotation;
     }
 
     void Zoom()
