@@ -8,7 +8,8 @@ public class PlayerCollide : NetworkBehaviour{
     {
         if (info.gameObject.CompareTag("Death"))
         {
-            gameObject.GetComponent<PlayerScore>().StartReSpawn();
+            gameObject.GetComponent<PlayerScore>().KillMe();
+            gameObject.GetComponent<PlayerScore>().StartReSpawn();           
         }
         if (isLocalPlayer && info.gameObject.CompareTag("Weapon"))
         {

@@ -69,4 +69,8 @@ public class Player {
     {
         score--;
     }
+    public void LoseLive()
+    {
+        lives--;
+    }
 }

@@ -44,6 +44,7 @@ public class NewCamController : MonoBehaviour {
         yRotation = cameraZoomSensitivity * Input.GetAxis("Mouse Y");
             target.Rotate(yRotation, 0, 0);
        // Debug.Log(yRotation +" "+ target.transform.rotation.x);
+
         transform.rotation = target.rotation;
     }
 

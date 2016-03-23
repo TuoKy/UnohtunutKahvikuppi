@@ -71,7 +71,7 @@ public class PlayerScore : MonoBehaviour {
                 elapsedTime++;
             }
 
-            GetComponent<PlayerController>().player.Lives -= 1;
+            
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
             countDownText.text = "";
             ReSpawn();
@@ -85,5 +85,10 @@ public class PlayerScore : MonoBehaviour {
         }
         countDownText.transform.localScale = new Vector3(1, 1, 1);
         elapsedTime = 0;
+    }
+
+    public void KillMe()
+    {
+        GetComponent<PlayerController>().player.Lives -= 1;
     }
 }
