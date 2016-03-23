@@ -68,7 +68,6 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            //Shoot();
             GetComponent<PlayerAnimations>().CmdSetTrigger("Hadouken");
         }
 
