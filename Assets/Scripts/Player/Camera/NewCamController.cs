@@ -10,12 +10,11 @@ public class NewCamController : MonoBehaviour {
     public int zoomMin, zoomMax;
     public float speed = 700f,
         cameraSensitivity = 3f, cameraZoomSensitivity = 10f, cameraZoomDamp = 5f;
-    public bool invertXAxis = false;
 
     private Transform target;
     private Transform player;
-    private float totalXRotation, zoomlvl = 0.5f, yRotation, xRotation;
-    private Vector3 vel = Vector3.zero;
+    public bool invertVertical = true;
+    private float totalXRotation, zoomlvl = 0.5f, xRotation = 0, minVerticalLimit = 15, maxVerticalLimit = 70;
     private bool falling;
 
 
@@ -30,21 +29,18 @@ public class NewCamController : MonoBehaviour {
         if (!falling && Cursor.lockState == CursorLockMode.Locked)
         {
             SetRot();
-            Zoom();
         }
-
         if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
             ToggleCursorLock();
         }
+        Zoom();
     }
 
     void SetRot()
     {
-        yRotation = cameraZoomSensitivity * Input.GetAxis("Mouse Y");
-            target.Rotate(yRotation, 0, 0);
-       // Debug.Log(yRotation +" "+ target.transform.rotation.x);
-
+        xRotation = CalculateXRotation();
+        target.transform.localEulerAngles = new Vector3(xRotation, target.transform.localEulerAngles.y, target.transform.localEulerAngles.z);
         transform.rotation = target.rotation;
     }
 
@@ -68,4 +64,17 @@ public class NewCamController : MonoBehaviour {
         transform.Rotate(90f,0,0, Space.Self);
     }
 
+    public float CalculateXRotation()
+    {
+        if (invertVertical)
+        {
+            xRotation += cameraSensitivity * Input.GetAxis("Mouse Y");
+        }
+        else
+        {
+            xRotation -= cameraSensitivity * Input.GetAxis("Mouse Y");
+        }
+        return Mathf.Clamp(xRotation, minVerticalLimit, maxVerticalLimit);
+
+    }
 }

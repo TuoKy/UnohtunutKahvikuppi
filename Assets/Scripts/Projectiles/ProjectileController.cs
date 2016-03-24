@@ -17,12 +17,6 @@ public class ProjectileController : MonoBehaviour {
         StartCoroutine(DestroyProjectile());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     IEnumerator DestroyProjectile()
     {
         yield return new WaitForSeconds(lifeTime);
