@@ -5,7 +5,6 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
-
     public GameObject pausePanel, LifeTokenPrefab;
     public Transform playerPercentPanel;
     public Text knockoutText;
@@ -29,7 +28,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         backToGame();
-        SetPlayerLives(3);
         /*Cursor.lockState = CursorLockMode.Locked;
      pausePanel.SetActive(false);*/
     }

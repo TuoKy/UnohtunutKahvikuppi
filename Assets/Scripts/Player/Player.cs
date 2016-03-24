@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Player {
+public class Player : MonoBehaviour {
 
     private string characterName;
     private float knockoutPercent = 0f;
@@ -27,6 +27,11 @@ public class Player {
     public Vector3 Movement { get { return movement; } set { movement = value; } }
 
     public int Lives { get { return lives; } set { lives = value; } }
+
+    void Start()
+    {
+
+    }
 
     public Player()
     {

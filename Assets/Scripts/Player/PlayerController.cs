@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour {
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
-        player = new Player();
+        player = GetComponent<Player>();
+        GameManager.instance.SetPlayerLives(player.Lives);
     }
 	
 	// Update is called once per frame

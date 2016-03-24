@@ -13,7 +13,6 @@ public class NetworkManager_Custom : NetworkManager {
 
     public void LanHostStart()
     {
-        Debug.Log("HOST");
         NetworkManager.singleton.StartHost();
     }
 
@@ -28,7 +27,6 @@ public class NetworkManager_Custom : NetworkManager {
         {
             NetworkManager.singleton.networkAddress = "localhost";
         }
-        Debug.Log("OMG");
         NetworkManager.singleton.StartClient();
     }
 

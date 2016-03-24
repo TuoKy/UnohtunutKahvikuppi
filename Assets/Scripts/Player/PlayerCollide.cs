@@ -6,7 +6,7 @@ public class PlayerCollide : NetworkBehaviour{
 
     void OnTriggerEnter(Collider info)
     {
-        if (info.gameObject.CompareTag("Death"))
+        if (info.gameObject.CompareTag("Death") && isLocalPlayer)
         {
             gameObject.GetComponent<PlayerScore>().KillMe();
             gameObject.GetComponent<PlayerScore>().StartReSpawn();
@@ -17,7 +17,6 @@ public class PlayerCollide : NetworkBehaviour{
         {
             GetComponent<PlayerAnimations>().CmdSetTrigger("Knockback");
             Vector3 heading = this.GetComponentInParent<Transform>().position - info.GetComponentInParent<Transform>().position;
-            //Debug.Log(info.GetComponentInParent<Transform>().position + ", " + this.GetComponentInParent<Transform>().position);
             info.gameObject.GetComponent<Attack>().UpdateDirection(heading);
             GetComponent<PlayerController>().GetHitByAttack(info.gameObject.GetComponent<Attack>());
             // Update UI
@@ -25,6 +24,7 @@ public class PlayerCollide : NetworkBehaviour{
         }
         if (info.gameObject.CompareTag("CameraTrigger"))
         {
+            if(isLocalPlayer)
             GetComponent<PlayerController>().Camera.GetComponent<NewCamController>().setFalltoDeathPosition();
         }
     }

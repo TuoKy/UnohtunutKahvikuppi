@@ -45,7 +45,8 @@ public class PlayerScore : MonoBehaviour {
     public void ReSpawn()
     {
         GetComponent<PlayerController>().Camera.GetComponent<NewCamController>().Falling = false;     
-        gameObject.transform.position = spawnPointsList[Random.Range(0, spawnPointsList.Capacity - 1)].position; 
+        gameObject.transform.position = spawnPointsList[Random.Range(0, spawnPointsList.Capacity - 1)].position;
+        GetComponent<PlayerSynchPos>().CmdProvidePosToServer(gameObject.transform.position);
     }
 
     public void StartReSpawn()
@@ -78,13 +79,19 @@ public class PlayerScore : MonoBehaviour {
         }
         else
         {
-           countDownText.text = "You lost";
-           GetComponent<Rigidbody>().useGravity = false;
+            countDownText.text = "You lost";
+            GetComponent<Rigidbody>().useGravity = false;
             gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero; 
-           GetComponent<PlayerController>().enabled = false;
+            GetComponent<PlayerController>().enabled = false;
+            NetGameManager.instance.CmdRemovePlayerFromList(gameObject);
         }
         countDownText.transform.localScale = new Vector3(1, 1, 1);
         elapsedTime = 0;
+    }
+
+    public void setCountDownText(string message)
+    {
+        countDownText.text = message;
     }
 
     public void KillMe()

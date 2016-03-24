@@ -16,6 +16,7 @@ public class PlayerNetworkSetup : NetworkBehaviour {
             InitCamera();
             GetComponent<PlayerController>().enabled = true;
             GetComponent<PlayerScore>().enabled = true;
+            NetGameManager.instance.CmdAddPlayerToList(gameObject);
         }
 	}
 

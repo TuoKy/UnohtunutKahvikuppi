@@ -38,7 +38,7 @@ public class PlayerSynchPos : NetworkBehaviour
 
     //Client calls server "Cmd" is must in name
     [Command]
-    void CmdProvidePosToServer(Vector3 pos)
+    public void CmdProvidePosToServer(Vector3 pos)
     {
         syncPos = pos;
     }
@@ -52,7 +52,7 @@ public class PlayerSynchPos : NetworkBehaviour
     [ClientCallback]
     void TransmitPos()
     {
-        if (isLocalPlayer && Vector3.Distance(myTransform.position, lastPos) > threshold)
+        if (isLocalPlayer)// && Vector3.Distance(myTransform.position, lastPos) > threshold)
         {
             CmdProvidePosToServer(myTransform.position);
             lastPos = myTransform.position;
