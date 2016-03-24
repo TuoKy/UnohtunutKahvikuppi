@@ -4,6 +4,8 @@ using UnityEngine.Networking;
 
 public class PlayerSynchPos : NetworkBehaviour
 {
+    public bool falling;
+
     [SyncVar]
     private Vector3 syncPos;
     [SyncVar]
@@ -20,6 +22,11 @@ public class PlayerSynchPos : NetworkBehaviour
     private float threshold = 0.5f;
     private Quaternion lastRot;
 
+    void Start()
+    {
+        falling = false;
+    }
+
     void FixedUpdate()
     {
         TransmitPos();
@@ -29,7 +36,7 @@ public class PlayerSynchPos : NetworkBehaviour
 
     void LerpPosition()
     {
-        if (!isLocalPlayer)
+        if (!isLocalPlayer && !falling)
         {
             myTransform.position = Vector3.Lerp(myTransform.position, syncPos, Time.deltaTime * lerpRate);
             transform.rotation = Quaternion.Lerp(transform.rotation, synchPlayerRotation, Time.deltaTime * lerpRate);            
@@ -44,6 +51,14 @@ public class PlayerSynchPos : NetworkBehaviour
     }
 
     [Command]
+    void CmdTeleportOnServer(Vector3 pos)
+    {
+        lastPos = myTransform.position;
+        syncPos = pos;
+        myTransform.position = pos;
+    }
+
+    [Command]
     void CmdProvideRotToServer(Quaternion rot)
     {
         synchPlayerRotation = rot;
@@ -52,7 +67,7 @@ public class PlayerSynchPos : NetworkBehaviour
     [ClientCallback]
     void TransmitPos()
     {
-        if (isLocalPlayer)// && Vector3.Distance(myTransform.position, lastPos) > threshold)
+        if (isLocalPlayer && Vector3.Distance(myTransform.position, lastPos) > threshold)
         {
             CmdProvidePosToServer(myTransform.position);
             lastPos = myTransform.position;
@@ -71,4 +86,14 @@ public class PlayerSynchPos : NetworkBehaviour
             }
         }
     }
+
+    [ClientCallback]
+    public void TeleportPlayer(Vector3 teleportHere)
+    {
+        if (isLocalPlayer)
+        {
+            CmdTeleportOnServer(teleportHere);
+        }
+    }
+
 }

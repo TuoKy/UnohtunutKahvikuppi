@@ -47,7 +47,7 @@ public class PlayerCollide : NetworkBehaviour{
 
     void OnCollisionEnter(Collision info)
     {
-        if (info.gameObject.CompareTag("Ground"))
+        if (isLocalPlayer && info.gameObject.CompareTag("Ground"))
         {
             GetComponent<PlayerAnimations>().CmdSetBool("Jumping", false);
         }

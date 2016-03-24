@@ -44,9 +44,14 @@ public class PlayerScore : MonoBehaviour {
 
     public void ReSpawn()
     {
+        GetComponent<PlayerSynchPos>().falling = true;
+
+        gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         GetComponent<PlayerController>().Camera.GetComponent<NewCamController>().Falling = false;     
         gameObject.transform.position = spawnPointsList[Random.Range(0, spawnPointsList.Capacity - 1)].position;
-        GetComponent<PlayerSynchPos>().CmdProvidePosToServer(gameObject.transform.position);
+        GetComponent<PlayerSynchPos>().TeleportPlayer(gameObject.transform.position);
+
+        GetComponent<PlayerSynchPos>().falling = false;
     }
 
     public void StartReSpawn()
@@ -71,9 +76,7 @@ public class PlayerScore : MonoBehaviour {
                 countDownText.transform.localScale = new Vector3(1, 1, 1);
                 elapsedTime++;
             }
-
-            
-            gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+           
             countDownText.text = "";
             ReSpawn();
         }
@@ -85,6 +88,7 @@ public class PlayerScore : MonoBehaviour {
             GetComponent<PlayerController>().enabled = false;
             NetGameManager.instance.CmdRemovePlayerFromList(gameObject);
         }
+
         countDownText.transform.localScale = new Vector3(1, 1, 1);
         elapsedTime = 0;
     }
