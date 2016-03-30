@@ -4,8 +4,9 @@ using UnityEngine.Networking;
 
 public class PlayerSynchPos : NetworkBehaviour
 {
-    public bool falling;
 
+    [SyncVar]
+    private bool falling;
     [SyncVar]
     private Vector3 syncPos;
     [SyncVar]
@@ -41,6 +42,11 @@ public class PlayerSynchPos : NetworkBehaviour
             myTransform.position = Vector3.Lerp(myTransform.position, syncPos, Time.deltaTime * lerpRate);
             transform.rotation = Quaternion.Lerp(transform.rotation, synchPlayerRotation, Time.deltaTime * lerpRate);            
         }
+        if (falling)
+        {
+            if (gameObject.transform.position.y > -5)
+                falling = false;
+        }
     }
 
     //Client calls server "Cmd" is must in name
@@ -51,11 +57,13 @@ public class PlayerSynchPos : NetworkBehaviour
     }
 
     [Command]
-    void CmdTeleportOnServer(Vector3 pos)
+    public void CmdTeleportOnServer(Vector3 pos)
     {
+        gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         lastPos = myTransform.position;
         syncPos = pos;
         myTransform.position = pos;
+        falling = true;
     }
 
     [Command]
@@ -86,14 +94,4 @@ public class PlayerSynchPos : NetworkBehaviour
             }
         }
     }
-
-    [ClientCallback]
-    public void TeleportPlayer(Vector3 teleportHere)
-    {
-        if (isLocalPlayer)
-        {
-            CmdTeleportOnServer(teleportHere);
-        }
-    }
-
 }

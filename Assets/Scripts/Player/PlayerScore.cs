@@ -44,14 +44,13 @@ public class PlayerScore : MonoBehaviour {
 
     public void ReSpawn()
     {
-        GetComponent<PlayerSynchPos>().falling = true;
-
         gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        GetComponent<PlayerController>().Camera.GetComponent<NewCamController>().Falling = false;     
-        gameObject.transform.position = spawnPointsList[Random.Range(0, spawnPointsList.Capacity - 1)].position;
-        GetComponent<PlayerSynchPos>().TeleportPlayer(gameObject.transform.position);
+        GetComponent<PlayerController>().Camera.GetComponent<NewCamController>().Falling = false;
+        Vector3 temp = spawnPointsList[Random.Range(0, spawnPointsList.Capacity - 1)].position;
+        GetComponent<PlayerSynchPos>().CmdTeleportOnServer(temp);
+        gameObject.transform.position = temp;
+        GetComponent<PlayerSynchPos>().CmdTeleportOnServer(temp);
 
-        GetComponent<PlayerSynchPos>().falling = false;
     }
 
     public void StartReSpawn()
