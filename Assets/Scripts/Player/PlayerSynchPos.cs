@@ -61,8 +61,9 @@ public class PlayerSynchPos : NetworkBehaviour
     public void CmdTeleportOnServer(Vector3 pos)
     {
         gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+        myTransform.position = pos;
         lastPos = pos;
-        syncPos = pos;
+        syncPos = pos;    
         falling = true;
     }
 
