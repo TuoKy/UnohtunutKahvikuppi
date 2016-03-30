@@ -4,6 +4,7 @@ using UnityEngine.Networking;
 
 public class PlayerSynchPos : NetworkBehaviour
 {
+    public int fallTreshold = -5;
 
     [SyncVar]
     private bool falling;
@@ -44,7 +45,7 @@ public class PlayerSynchPos : NetworkBehaviour
         }
         if (falling)
         {
-            if (gameObject.transform.position.y > -5)
+            if (gameObject.transform.position.y > fallTreshold)
                 falling = false;
         }
     }
@@ -60,9 +61,8 @@ public class PlayerSynchPos : NetworkBehaviour
     public void CmdTeleportOnServer(Vector3 pos)
     {
         gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        lastPos = myTransform.position;
+        lastPos = pos;
         syncPos = pos;
-        myTransform.position = pos;
         falling = true;
     }
 
