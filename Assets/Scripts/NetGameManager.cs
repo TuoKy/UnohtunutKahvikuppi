@@ -23,7 +23,6 @@ public class NetGameManager : NetworkBehaviour{
     // Use this for initialization
     void Start () {
         players = new List<GameObject>();
-        Debug.Log(players);
     }
 	
 	// Update is called once per frame
@@ -35,8 +34,6 @@ public class NetGameManager : NetworkBehaviour{
     {
         foreach (var player in players)
         {
-            Debug.Log(player);
-            Debug.Log(player.GetComponent<Player>());
             if (player.GetComponent<Player>().Lives == 0)
             {               
                 players.Remove(player);
@@ -52,6 +49,7 @@ public class NetGameManager : NetworkBehaviour{
     {
         players.Add(player);
         CheckIfPlayerHasWon();
+
     }
 
     [Command]
@@ -65,5 +63,11 @@ public class NetGameManager : NetworkBehaviour{
     public void RpcWeHaveWinner()
     {
         players[0].GetComponent<PlayerScore>().setCountDownText("You won :D");
+    }
+
+    [ClientRpc]
+    public void RpcClearText()
+    {
+        players[0].GetComponent<PlayerScore>().setCountDownText("");
     }
 }
