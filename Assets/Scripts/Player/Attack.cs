@@ -13,10 +13,9 @@ public class Attack : MonoBehaviour {
         direction = new Vector3();
     }
 
-    public void UpdateDirection(Vector3 heading)
+    public void UpdateDirection(Vector3 enemyRot)
     {
-        float distance = heading.magnitude;
-        direction = heading / distance;
-        direction = new Vector3(direction.x, launch, direction.z);
+        direction = new Vector3(Mathf.Sin(Mathf.Deg2Rad * enemyRot.y), launch, Mathf.Cos(Mathf.Deg2Rad * enemyRot.y));
+        //Debug.Log(enemyRot + ", " + direction);
     }
 }

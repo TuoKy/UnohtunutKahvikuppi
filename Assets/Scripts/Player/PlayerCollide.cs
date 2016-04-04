@@ -17,7 +17,7 @@ public class PlayerCollide : NetworkBehaviour{
         {
             GetComponent<PlayerAnimations>().CmdSetTrigger("Knockback");
             Vector3 heading = this.GetComponentInParent<Transform>().position - info.GetComponentInParent<Transform>().position;
-            info.gameObject.GetComponent<Attack>().UpdateDirection(heading);
+            info.gameObject.GetComponent<Attack>().UpdateDirection(info.GetComponentInParent<Transform>().rotation.eulerAngles);
             GetComponent<PlayerController>().GetHitByAttack(info.gameObject.GetComponent<Attack>());
             // Update UI
             GameManager.instance.UpdateKnockoutPercent(GetComponent<PlayerController>().player.KnockoutPercent);

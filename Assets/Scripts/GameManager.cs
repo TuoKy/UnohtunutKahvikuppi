@@ -75,7 +75,7 @@ public class GameManager : MonoBehaviour
         {
             // Instatiate new token from prefab and put it in the ui-panel
             GameObject newLifeToken = Instantiate(LifeTokenPrefab, new Vector3(posX, startPosition.y, startPosition.z), orientation) as GameObject;
-            newLifeToken.transform.parent = playerPercentPanel;
+            newLifeToken.transform.SetParent(playerPercentPanel, false);
             lifeTokens.Add(newLifeToken);
 
             // Change x position for the next token
