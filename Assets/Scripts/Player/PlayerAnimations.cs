@@ -10,6 +10,8 @@ public class PlayerAnimations : NetworkBehaviour
     //For attacks
     public GameObject attackHitboxLeftHand;
     public GameObject attackHitboxRightHand;
+    public GameObject attackHitboxRightLong;
+    public GameObject attackHitboxKick;
 
     [Command]
     public void CmdSetTrigger(string trigger)
@@ -36,6 +38,7 @@ public class PlayerAnimations : NetworkBehaviour
     }
 
     //Hitbox activations etc
+    //Right Punch
     [Command]
     public void CmdActivateRightHandAttackBox()
     {
@@ -51,4 +54,51 @@ public class PlayerAnimations : NetworkBehaviour
         attackHitboxRightHand.GetComponent<DeactivateMe>().setCooldown(0.5f);
     }
     
+    //Right long punch
+    [Command]
+    public void CmdActivateRightLongAttackBox()
+    {
+        attackHitboxRightLong.SetActive(true);
+        attackHitboxRightLong.GetComponent<DeactivateMe>().setCooldown(0.5f);
+        RpcActivateRightLongAttackBox();
+    }
+
+    [ClientCallback]
+    void RpcActivateRightLongAttackBox()
+    {
+        attackHitboxRightLong.SetActive(true);
+        attackHitboxRightLong.GetComponent<DeactivateMe>().setCooldown(0.5f);
+    }
+
+    //Left punch
+    [Command]
+    public void CmdActivateLeftHandAttackBox()
+    {
+        attackHitboxLeftHand.SetActive(true);
+        attackHitboxLeftHand.GetComponent<DeactivateMe>().setCooldown(0.5f);
+        RpcActivateLeftHandAttackBox();
+    }
+
+    [ClientCallback]
+    void RpcActivateLeftHandAttackBox()
+    {
+        attackHitboxLeftHand.SetActive(true);
+        attackHitboxLeftHand.GetComponent<DeactivateMe>().setCooldown(0.5f);
+    }
+
+    //Kick
+    [Command]
+    public void CmdActivateKickAttackBox()
+    {
+        attackHitboxKick.SetActive(true);
+        attackHitboxKick.GetComponent<DeactivateMe>().setCooldown(0.5f);
+        RpcActivateKickAttackBox();
+    }
+
+    [ClientCallback]
+    void RpcActivateKickAttackBox()
+    {
+        attackHitboxKick.SetActive(true);
+        attackHitboxKick.GetComponent<DeactivateMe>().setCooldown(0.5f);
+    }
 }
