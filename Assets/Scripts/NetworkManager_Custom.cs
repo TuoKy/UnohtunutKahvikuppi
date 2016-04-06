@@ -142,18 +142,13 @@ public class NetworkManager_Custom : NetworkManager {
         base.OnClientConnect(conn);
         //var player = (GameObject)GameObject.Instantiate(playerPrefab, Vector3.zero, Quaternion.identity);
         //GameObject.Find("NetGameManager").GetComponent<NetGameManager>().CmdAddPlayerToList(player);
-        Debug.Log(conn);
+        //Debug.Log(conn);
     }
-    /*
-    override
-    public  void OnServerRemovePlayer(NetworkConnection conn, short playerControllerId)
+
+    public override void OnServerAddPlayer(NetworkConnection conn, short playerControllerId, NetworkReader extraMessageReader)
     {
-        PlayerController player;
-        if (conn.GetPlayer(playerControllerId, out player))
-        {
-            if (player.NetworkIdentity != null && player.NetworkIdentity.gameObject != null)
-                NetworkServer.Destroy(player.NetworkIdentity.gameObject);
-        }
+        base.OnServerAddPlayer(conn, playerControllerId, extraMessageReader);
+        GameObject.Find("NetGameManager").GetComponent<NetGameManager>().CmdAddPlayerToList(conn.playerControllers[0].gameObject);
     }
-    */
+
 }

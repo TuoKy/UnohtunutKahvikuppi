@@ -2,10 +2,11 @@
 using System.Collections;
 using UnityEngine.Networking;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 public class NetGameManager : NetworkBehaviour{
 
-    private List<GameObject> players;
+    public List<GameObject> players;
     private static NetGameManager _instance;
 
     public static NetGameManager instance
@@ -23,22 +24,36 @@ public class NetGameManager : NetworkBehaviour{
     // Use this for initialization
     void Start () {
         players = new List<GameObject>();
+        for (int i = 0; i < GetComponent<NetworkIdentity>().observers.Count; i++)
+        {
+            players.Add(GetComponent<NetworkIdentity>().observers[i].playerControllers[0].gameObject);
+
+        }
     }
 	
+    /*
+    private void CheapPlayerList()
+    {
+        players.Clear(); 
+           
+        //Is read only property, seems hardcoded.
+        for (int i = 0; i < GetComponent<NetworkIdentity>().observers.Count; i++)
+        {
+            players.Add(GetComponent<NetworkIdentity>().observers[i].playerControllers[0].gameObject);
+
+        }
+    }
+    */
 	// Update is called once per frame
 	void Update () {
-	
-	}
+
+    }
 
     private void CheckIfPlayerHasWon()
     {
         foreach (var player in players)
         {
-            if (player.GetComponent<Player>().Lives == 0)
-            {               
-                players.Remove(player);
-            }
-                
+            Debug.Log(player);                
         }
         if (players.Count == 1)
             RpcWeHaveWinner();
@@ -62,6 +77,7 @@ public class NetGameManager : NetworkBehaviour{
     [ClientRpc]
     public void RpcWeHaveWinner()
     {
+        Debug.Log("asd");
         //Not currently working
         //players[0].GetComponent<PlayerScore>().setCountDownText("You won :D");
     }
@@ -69,9 +85,11 @@ public class NetGameManager : NetworkBehaviour{
     [ClientRpc]
     public void RpcClearText()
     {
+        /*
         for (int i = 0; i < players.Count; i++)
         {
             players[i].GetComponent<PlayerScore>().setCountDownText("");
-        }        
+        } 
+        */       
     }
 }
