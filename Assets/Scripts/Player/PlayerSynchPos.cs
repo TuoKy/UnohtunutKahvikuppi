@@ -60,12 +60,27 @@ public class PlayerSynchPos : NetworkBehaviour
     [Command]
     public void CmdTeleportOnServer(Vector3 pos)
     {
+        RpcTeleportOnServer(pos);       
         gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
         lastPos = myTransform.position;
         syncPos = pos;
         myTransform.position = pos;
         falling = true;
     }
+
+    [ClientRpc]
+    void RpcTeleportOnServer(Vector3 pos)
+    {
+        if (!isLocalPlayer)
+        {
+            gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
+            lastPos = myTransform.position;
+            syncPos = pos;
+            myTransform.position = pos;
+            falling = true;
+        }
+    }
+
 
     [Command]
     void CmdProvideRotToServer(Quaternion rot)
