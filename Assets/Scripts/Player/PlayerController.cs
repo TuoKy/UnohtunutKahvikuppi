@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour {
     public GameObject projectilePrefab;
     public Transform firePoint;
     public GameObject Camera { get { return cam; } set { cam = value; } }
+    private PlayerAnimations anim;
 
 
     private GameObject cam;
@@ -19,6 +20,7 @@ public class PlayerController : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         player = GetComponent<Player>();
         GameManager.instance.SetPlayerLives(player.Lives);
+        anim = GetComponent<PlayerAnimations>();
     }
 	
 	// Update is called once per frame
@@ -39,42 +41,42 @@ public class PlayerController : MonoBehaviour {
             player.DoubleJumped = true;
             rb.velocity = new Vector3(rb.velocity.x, 0, rb.velocity.z);
             rb.velocity += new Vector3(0, player.JumpStrength, 0);
-            GetComponent<PlayerAnimations>().CmdSetTrigger("DoubleJumping");
+            anim.CmdSetTrigger("DoubleJumping");
         }
 
         // Animation
         if (player.Movement.x != 0 || player.Movement.z != 0)
         {
-            GetComponent<PlayerAnimations>().CmdSetBool("Moving", true);
+            anim.CmdSetBool("Moving", true);
         }
         else
         {
-            GetComponent<PlayerAnimations>().CmdSetBool("Moving", false);
+            anim.CmdSetBool("Moving", false);
         }
 
         if (Input.GetMouseButtonDown(1))
         {
-            GetComponent<PlayerAnimations>().CmdSetBool("Blocking", true);
+            anim.CmdSetBool("Blocking", true);
         }
 
         if (Input.GetMouseButtonUp(1))
         {
-            GetComponent<PlayerAnimations>().CmdSetBool("Blocking", false);
+            anim.CmdSetBool("Blocking", false);
         }
 
         if (Input.GetMouseButtonDown(0))
         {
-            GetComponent<PlayerAnimations>().CmdSetTrigger("RightPunch");
+            anim.CmdSetTrigger("LeftPunch");
         }
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            GetComponent<PlayerAnimations>().CmdSetTrigger("Hadouken");
+            anim.CmdSetTrigger("Hadouken");
         }
 
         if (Input.GetKeyDown(KeyCode.G))
         {
-            GetComponent<PlayerAnimations>().CmdSetTrigger("RightLongPunch");
+            anim.CmdSetTrigger("RightLongPunch");
         }
 
         if(Input.GetKeyDown(KeyCode.Escape))
@@ -93,7 +95,7 @@ public class PlayerController : MonoBehaviour {
     public void GetHitByAttack(Attack attack)
     {
         player.TakeDamage(attack.damage);
-        rb.AddForce(attack.direction * (player.KnockoutPercent / 100) * 10000);
+        rb.AddForce(attack.direction * attack.force * (player.KnockoutPercent / 100) * 10000);
     }
 
     private void CalculateActualDirection()
