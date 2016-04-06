@@ -101,4 +101,12 @@ public class PlayerAnimations : NetworkBehaviour
         attackHitboxKick.SetActive(true);
         attackHitboxKick.GetComponent<DeactivateMe>().setCooldown(0.5f);
     }
+
+    public void IsAnimationPlaying(string animationName)
+    {
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName(animationName))
+        {
+
+        }
+    }
 }

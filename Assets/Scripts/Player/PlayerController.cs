@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour {
     private GameObject cam;
     private float totalXRotation;
     private Rigidbody rb;
+    private bool isAttacking;
+    public float cooldown;
 
     // Use this for initialization
     void Start () {
@@ -71,7 +73,11 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.H))
         {
-            anim.CmdSetTrigger("Hadouken");
+            if (!isAttacking)
+            {
+                anim.CmdSetTrigger("Hadouken");
+                startAttacking(2f, 0.2f);
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.G))
@@ -82,6 +88,18 @@ public class PlayerController : MonoBehaviour {
         if(Input.GetKeyDown(KeyCode.Escape))
         {
             GameManager.instance.ActivatePauseMenu();
+        }
+
+        if (isAttacking)
+        {
+            cooldown -= Time.deltaTime;
+            if(cooldown <= 0)
+            {
+                
+                isAttacking = false;
+                cooldown = 0;
+                player.ReturnToDefaultSpeed();
+            }
         }
     }
 
@@ -118,6 +136,13 @@ public class PlayerController : MonoBehaviour {
         {
             transform.Rotate(0, totalXRotation * player.TurnSpeed, 0);
         }
+    }
+
+    void startAttacking(float cooldown, float playerSpeed)
+    {
+        this.cooldown = cooldown;
+        isAttacking = true;
+        player.MultiplySpeed(playerSpeed);
     }
 
     public void Shoot()

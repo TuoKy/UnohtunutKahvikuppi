@@ -6,26 +6,29 @@ public class PlayerCollide : NetworkBehaviour{
 
     void OnTriggerEnter(Collider info)
     {
-        if (info.gameObject.CompareTag("Death") && isLocalPlayer)
+        if (isLocalPlayer)
         {
-            gameObject.GetComponent<PlayerScore>().KillMe();
-            gameObject.GetComponent<PlayerScore>().StartReSpawn();
-            GameManager.instance.TakePlayerLifeToken();
+            if (info.gameObject.CompareTag("Death"))
+            {
+                gameObject.GetComponent<PlayerScore>().KillMe();
+                gameObject.GetComponent<PlayerScore>().StartReSpawn();
+                GameManager.instance.TakePlayerLifeToken();
 
-        }
-        if (isLocalPlayer && info.gameObject.CompareTag("Weapon"))
-        {
-            GetComponent<PlayerAnimations>().CmdSetTrigger("Knockback");
-            Vector3 heading = this.GetComponentInParent<Transform>().position - info.GetComponentInParent<Transform>().position;
-            info.gameObject.GetComponent<Attack>().UpdateDirection(info.GetComponentInParent<Transform>().rotation.eulerAngles);
-            GetComponent<PlayerController>().GetHitByAttack(info.gameObject.GetComponent<Attack>());
-            // Update UI
-            GameManager.instance.UpdateKnockoutPercent(GetComponent<PlayerController>().player.KnockoutPercent);
-        }
-        if (info.gameObject.CompareTag("CameraTrigger"))
-        {
-            if(isLocalPlayer)
-            GetComponent<PlayerController>().Camera.GetComponent<NewCamController>().setFalltoDeathPosition();
+            }
+            if (info.gameObject.CompareTag("Weapon"))
+            {
+                GetComponent<PlayerAnimations>().CmdSetTrigger("Knockback");
+                Vector3 heading = this.GetComponentInParent<Transform>().position - info.GetComponentInParent<Transform>().position;
+                info.gameObject.GetComponent<Attack>().UpdateDirection(info.GetComponentInParent<Transform>().rotation.eulerAngles);
+                GetComponent<PlayerController>().GetHitByAttack(info.gameObject.GetComponent<Attack>());
+                // Update UI
+                GameManager.instance.UpdateKnockoutPercent(GetComponent<PlayerController>().player.KnockoutPercent);
+            }
+            if (info.gameObject.CompareTag("CameraTrigger"))
+            {
+                if (isLocalPlayer)
+                    GetComponent<PlayerController>().Camera.GetComponent<NewCamController>().setFalltoDeathPosition();
+            }
         }
     }
 
