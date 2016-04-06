@@ -135,16 +135,23 @@ public class NetworkManager_Custom : NetworkManager {
         GameObject.Find("DisconnectButton").GetComponent<Button>().onClick.RemoveAllListeners();
         GameObject.Find("DisconnectButton").GetComponent<Button>().onClick.AddListener(NetworkManager.singleton.StopHost);
     }
-
+    /*
     override
     public void OnServerAddPlayer(NetworkConnection conn, short playerControllerId)
     {
-        Debug.Log("asd");
+        var player = (GameObject)GameObject.Instantiate(playerPrefab, playerSpawnPos, Quaternion.identity);
+        NetworkServer.AddPlayerForConnection(conn, player, playerControllerId);
     }
 
-    public override void OnServerConnect(NetworkConnection conn)
+    override
+    public  void OnServerRemovePlayer(NetworkConnection conn, short playerControllerId)
     {
-        Debug.Log("OnPlayerConnected");
+        PlayerController player;
+        if (conn.GetPlayer(playerControllerId, out player))
+        {
+            if (player.NetworkIdentity != null && player.NetworkIdentity.gameObject != null)
+                NetworkServer.Destroy(player.NetworkIdentity.gameObject);
+        }
     }
-
+    */
 }
