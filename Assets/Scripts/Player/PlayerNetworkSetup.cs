@@ -6,6 +6,8 @@ public class PlayerNetworkSetup : NetworkBehaviour {
        
     public GameObject camPrefab;
 
+    private NetGameManager netGamemanager;
+
     [SerializeField]
     Transform camPosition;
 
@@ -16,7 +18,17 @@ public class PlayerNetworkSetup : NetworkBehaviour {
             InitCamera();
             GetComponent<PlayerController>().enabled = true;
             GetComponent<PlayerScore>().enabled = true;
-            NetGameManager.instance.CmdAddPlayerToList(gameObject);
+            try
+            {
+                netGamemanager = GameObject.Find("NetGameManager").GetComponent<NetGameManager>();
+                netGamemanager.CmdAddPlayerToList(gameObject);
+            }
+            catch (System.Exception)
+            {
+
+                Debug.Log("Hyss, pöpi nukkuu");
+            }
+
         }
 	}
 
@@ -27,5 +39,5 @@ public class PlayerNetworkSetup : NetworkBehaviour {
         playerCam.GetComponent<NewCamController>().Target = camPosition;
         playerCam.GetComponent<NewCamController>().Player = gameObject.transform;
         GetComponent<PlayerController>().Camera = playerCam;
-    }
+    }    
 }

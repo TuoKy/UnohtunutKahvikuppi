@@ -62,12 +62,16 @@ public class NetGameManager : NetworkBehaviour{
     [ClientRpc]
     public void RpcWeHaveWinner()
     {
-        players[0].GetComponent<PlayerScore>().setCountDownText("You won :D");
+        //Not currently working
+        //players[0].GetComponent<PlayerScore>().setCountDownText("You won :D");
     }
 
     [ClientRpc]
     public void RpcClearText()
     {
-        players[0].GetComponent<PlayerScore>().setCountDownText("");
+        for (int i = 0; i < players.Count; i++)
+        {
+            players[i].GetComponent<PlayerScore>().setCountDownText("");
+        }        
     }
 }
