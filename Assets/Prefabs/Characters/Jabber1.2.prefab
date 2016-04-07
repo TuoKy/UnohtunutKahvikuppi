@@ -624,6 +624,7 @@ GameObject:
   - 65: {fileID: 6518314}
   - 114: {fileID: 11467706}
   - 114: {fileID: 11480944}
+  - 114: {fileID: 11415484}
   m_Layer: 0
   m_Name: LeftPunchAttackBox
   m_TagString: Weapon
@@ -1012,7 +1013,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 183362}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4071813, y: 0.46239915, z: -12.787863}
+  m_LocalPosition: {x: -2.0458128, y: 0.46239808, z: -15.209296}
   m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
   m_Children:
   - {fileID: 433638}
@@ -1349,7 +1350,7 @@ Transform:
   m_GameObject: {fileID: 181906}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.3, y: -0.47, z: 0.65}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 426740}
   m_RootOrder: 2
@@ -1646,6 +1647,21 @@ MonoBehaviour:
     i15: 17
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 1
+--- !u!114 &11415484
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 181906}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9b3e92c7b3b2c94d95bcb93d4037ee4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  force: 0
+  damage: 0
+  launch: 0
+  direction: {x: 0, y: 0, z: 0}
 --- !u!114 &11416910
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1884,6 +1900,7 @@ MonoBehaviour:
   player: {fileID: 0}
   projectilePrefab: {fileID: 189628, guid: c37afe16855cc5b40a1dfab71f4d6db2, type: 2}
   firePoint: {fileID: 429310}
+  cooldown: 0
 --- !u!114 &11475198
 MonoBehaviour:
   m_ObjectHideFlags: 1
