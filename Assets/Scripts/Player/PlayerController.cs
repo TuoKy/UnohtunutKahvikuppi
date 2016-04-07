@@ -68,7 +68,14 @@ public class PlayerController : MonoBehaviour {
 
         if (Input.GetMouseButtonDown(0))
         {
-            anim.CmdSetTrigger("LeftPunch");
+            if (anim.IsAnimationPlaying("LeftPunch"))
+            {
+                anim.CmdSetTrigger("Combo");
+            }
+            else
+            {
+                anim.CmdSetTrigger("LeftPunch");
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.H))

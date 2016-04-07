@@ -42,9 +42,9 @@ public class PlayerAnimations : NetworkBehaviour
     [Command]
     public void CmdActivateRightHandAttackBox()
     {
-            attackHitboxRightHand.SetActive(true);
-            attackHitboxRightHand.GetComponent<DeactivateMe>().setCooldown(0.5f);
-            RpcActivateRightHandAttackBox();
+        attackHitboxRightHand.SetActive(true);
+        attackHitboxRightHand.GetComponent<DeactivateMe>().setCooldown(0.5f);
+        RpcActivateRightHandAttackBox();
     }
 
     [ClientCallback]
@@ -102,11 +102,13 @@ public class PlayerAnimations : NetworkBehaviour
         attackHitboxKick.GetComponent<DeactivateMe>().setCooldown(0.5f);
     }
 
-    public void IsAnimationPlaying(string animationName)
+    public bool IsAnimationPlaying(string animationName)
     {
-        if (anim.GetCurrentAnimatorStateInfo(0).IsName(animationName))
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName(animationName) || anim.GetCurrentAnimatorStateInfo(1).IsName(animationName))
         {
-
+            Debug.Log(animationName);
+            return true;
         }
+        return false;
     }
 }
