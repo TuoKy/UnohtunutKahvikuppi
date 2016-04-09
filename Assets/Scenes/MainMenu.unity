@@ -1976,6 +1976,15 @@ MonoBehaviour:
   matchMaker: {fileID: 0}
   matchName: default
   matchSize: 4
+  m_ShowLobbyGUI: 1
+  m_MaxPlayers: 4
+  m_MaxPlayersPerConnection: 1
+  m_MinPlayers: 0
+  m_LobbyPlayerPrefab: {fileID: 0}
+  m_GamePlayerPrefab: {fileID: 183362, guid: 598fd21d753c95d44afedcb241a11211, type: 2}
+  m_LobbyScene: MainMenu
+  m_PlayScene: 
+  lobbySlots: []
   buttonGrid: {fileID: 375905599}
   matchButtonPrefab: {fileID: 123478, guid: 957532993edf5a240aa1cd71f79fa03a, type: 2}
   matchButtonList: []
@@ -2202,7 +2211,7 @@ RectTransform:
   m_RootOrder: 0
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 68.72256}
+  m_AnchoredPosition: {x: 0, y: 125}
   m_SizeDelta: {x: 0, y: 300}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &633748437
@@ -4665,7 +4674,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1854314360}
   m_HandleRect: {fileID: 1854314359}
   m_Direction: 2
-  m_Value: 0.45021948
+  m_Value: 0
   m_Size: 0.5833333
   m_NumberOfSteps: 0
   m_OnValueChanged:

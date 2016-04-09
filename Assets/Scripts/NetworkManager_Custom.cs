@@ -5,7 +5,8 @@ using UnityEngine.UI;
 using UnityEngine.Networking.Match;
 using System.Collections.Generic;
 
-public class NetworkManager_Custom : NetworkManager {
+public class NetworkManager_Custom : NetworkManager
+{
 
     public Transform buttonGrid;
     public GameObject matchButtonPrefab;
