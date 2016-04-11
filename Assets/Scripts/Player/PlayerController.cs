@@ -46,6 +46,13 @@ public class PlayerController : MonoBehaviour {
             anim.CmdSetTrigger("DoubleJumping");
         }
 
+        // Stomp
+        /* DOTO: Implement */
+        if (Input.GetKeyDown(KeyCode.Q) && player.DoubleJumped && !player.Grounded)
+        {
+            anim.CmdSetTrigger("Stomp");
+        }
+
         // Animation
         if (player.Movement.x != 0 || player.Movement.z != 0)
         {
