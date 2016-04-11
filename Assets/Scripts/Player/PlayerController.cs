@@ -48,9 +48,9 @@ public class PlayerController : MonoBehaviour {
 
         // Stomp
         /* DOTO: Implement */
-        if (Input.GetKeyDown(KeyCode.Q) && player.DoubleJumped && !player.Grounded)
+        if (Input.GetKeyDown(KeyCode.Q) && !player.Grounded)
         {
-            anim.CmdSetTrigger("Stomp");
+            anim.CmdSetBool("Stomp", true);
         }
 
         // Animation
@@ -109,11 +109,14 @@ public class PlayerController : MonoBehaviour {
             cooldown -= Time.deltaTime;
             if(cooldown <= 0)
             {
-                
                 isAttacking = false;
                 cooldown = 0;
                 player.ReturnToDefaultSpeed();
             }
+        }
+        if (anim.IsAnimationPlaying("Stomp") && player.Grounded)
+        {
+            anim.CmdSetBool("Stomp", false);
         }
     }
 

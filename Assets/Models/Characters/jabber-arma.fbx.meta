@@ -111,8 +111,8 @@ ModelImporter:
     7400016: DoubleJump
     7400018: LeftPunch
     7400020: Kick
-    7400022: Skeleton|SidePunch
-    7400024: Skeleton|Stomp
+    7400022: SidePunch
+    7400024: Stomp
     9500000: //RootNode
     13700000: Character
   materials:
@@ -1479,7 +1479,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Skeleton|SidePunch
+      name: SidePunch
       takeName: Skeleton|SidePunch
       firstFrame: 0
       lastFrame: 25
@@ -1601,7 +1601,7 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Skeleton|Stomp
+      name: Stomp
       takeName: Skeleton|Stomp
       firstFrame: 0
       lastFrame: 16

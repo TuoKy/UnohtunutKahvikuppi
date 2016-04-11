@@ -106,7 +106,6 @@ public class PlayerAnimations : NetworkBehaviour
     {
         if (anim.GetCurrentAnimatorStateInfo(0).IsName(animationName) || anim.GetCurrentAnimatorStateInfo(1).IsName(animationName))
         {
-            Debug.Log(animationName);
             return true;
         }
         return false;
