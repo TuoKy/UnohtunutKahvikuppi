@@ -13,7 +13,7 @@ public class Player : MonoBehaviour {
     private bool grounded;
     private bool doubleJumped;
     private Vector3 actualDirection, movement;
-    private int lives = 3; //Default value. Remember to add option somewhere for players to adjust
+    private int lives;
 
     public string CharacterName { get { return characterName; } set { characterName = value; } }
     public float KnockoutPercent { get { return knockoutPercent; } }
