@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class NewCamController : MonoBehaviour {
+public class CamController : MonoBehaviour {
 
     public Transform Target { get { return target; } set { target = value; } }
     public Transform Player { get { return player; } set { player = value; } }

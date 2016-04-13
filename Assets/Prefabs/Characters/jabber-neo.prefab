@@ -40,7 +40,7 @@ GameObject:
   - 4: {fileID: 408182}
   - 137: {fileID: 13730260}
   m_Layer: 0
-  m_Name: Jabber.001
+  m_Name: Jabber
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1037,7 +1037,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150850}
-  m_LocalRotation: {x: 0.73340553, y: -0.25545803, z: -0.62512434, w: 0.07795665}
+  m_LocalRotation: {x: 0.7334055, y: -0.255458, z: -0.6251243, w: 0.07795664}
   m_LocalPosition: {x: -0.0063079833, y: -0.00051080424, z: 0.00011053196}
   m_LocalScale: {x: 1.0000019, y: 0.9999995, z: 1.0000012}
   m_Children:

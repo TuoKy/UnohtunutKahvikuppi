@@ -27,7 +27,7 @@ public class PlayerCollide : NetworkBehaviour{
             if (info.gameObject.CompareTag("CameraTrigger"))
             {
                 if (isLocalPlayer)
-                    GetComponent<PlayerController>().Camera.GetComponent<NewCamController>().setFalltoDeathPosition();
+                    GetComponent<PlayerController>().Camera.GetComponent<CamController>().setFalltoDeathPosition();
             }
         }
     }

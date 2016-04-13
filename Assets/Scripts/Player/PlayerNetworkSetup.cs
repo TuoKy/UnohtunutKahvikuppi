@@ -23,8 +23,8 @@ public class PlayerNetworkSetup : NetworkBehaviour {
     {
         GameObject playerCam = Instantiate(camPrefab, camPosition.position, camPosition.rotation) as GameObject;
         playerCam.SetActive(true);
-        playerCam.GetComponent<NewCamController>().Target = camPosition;
-        playerCam.GetComponent<NewCamController>().Player = gameObject.transform;
+        playerCam.GetComponent<CamController>().Target = camPosition;
+        playerCam.GetComponent<CamController>().Player = gameObject.transform;
         GetComponent<PlayerController>().Camera = playerCam;
     }    
 }
