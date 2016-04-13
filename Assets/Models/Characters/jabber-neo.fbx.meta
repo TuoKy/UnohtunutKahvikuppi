@@ -1,0 +1,1770 @@
+fileFormatVersion: 2
+guid: 9c9adb7467ca7934e8a824b77e48c063
+timeCreated: 1460532592
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Fingers.L
+    100002: Fingers.L_end
+    100004: Fingers.R
+    100006: Fingers.R_end
+    100008: Foot roll.L
+    100010: Foot roll.R
+    100012: Foot.L
+    100014: Foot.R
+    100016: Hand.L
+    100018: Hand.R
+    100020: Head
+    100022: Head_end
+    100024: //RootNode
+    100026: Jabber.001
+    100028: Leg control.L
+    100030: Leg control.R
+    100032: Leg ik.L
+    100034: Leg ik.L_end
+    100036: Leg ik.R
+    100038: Leg ik.R_end
+    100040: Leg pole target.L
+    100042: Leg pole target.L_end
+    100044: Leg pole target.R
+    100046: Leg pole target.R_end
+    100048: Lower Arm.L
+    100050: Lower Arm.R
+    100052: Lower Leg.L
+    100054: Lower Leg.L_end
+    100056: Lower Leg.R
+    100058: Lower Leg.R_end
+    100060: Lower Torso
+    100062: Neck
+    100064: Root
+    100066: Skeleton
+    100068: Toes control.L
+    100070: Toes control.L_end
+    100072: Toes control.R
+    100074: Toes control.R_end
+    100076: Toes.L
+    100078: Toes.L_end
+    100080: Toes.R
+    100082: Toes.R_end
+    100084: Upper Arm.L
+    100086: Upper Arm.R
+    100088: Upper Leg.L
+    100090: Upper Leg.R
+    100092: Upper Torso
+    400000: Fingers.L
+    400002: Fingers.L_end
+    400004: Fingers.R
+    400006: Fingers.R_end
+    400008: Foot roll.L
+    400010: Foot roll.R
+    400012: Foot.L
+    400014: Foot.R
+    400016: Hand.L
+    400018: Hand.R
+    400020: Head
+    400022: Head_end
+    400024: //RootNode
+    400026: Jabber.001
+    400028: Leg control.L
+    400030: Leg control.R
+    400032: Leg ik.L
+    400034: Leg ik.L_end
+    400036: Leg ik.R
+    400038: Leg ik.R_end
+    400040: Leg pole target.L
+    400042: Leg pole target.L_end
+    400044: Leg pole target.R
+    400046: Leg pole target.R_end
+    400048: Lower Arm.L
+    400050: Lower Arm.R
+    400052: Lower Leg.L
+    400054: Lower Leg.L_end
+    400056: Lower Leg.R
+    400058: Lower Leg.R_end
+    400060: Lower Torso
+    400062: Neck
+    400064: Root
+    400066: Skeleton
+    400068: Toes control.L
+    400070: Toes control.L_end
+    400072: Toes control.R
+    400074: Toes control.R_end
+    400076: Toes.L
+    400078: Toes.L_end
+    400080: Toes.R
+    400082: Toes.R_end
+    400084: Upper Arm.L
+    400086: Upper Arm.R
+    400088: Upper Leg.L
+    400090: Upper Leg.R
+    400092: Upper Torso
+    4300000: Jabber.001
+    7400000: Block
+    7400002: DoubleJump
+    7400004: Hadouken
+    7400006: Idle
+    7400008: Jump
+    7400010: Kick
+    7400012: Knockback
+    7400014: LeftPunch
+    7400016: RightLongPunch
+    7400018: Skeleton|LeftPunch.001
+    7400020: RightPunch
+    7400022: Run
+    7400024: SidePunch
+    7400026: Stomp
+    7400028: Skeleton|Stomp.001
+    7400030: Jabber.001|LeftPunch.001
+    9500000: //RootNode
+    13700000: Jabber.001
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleRotations: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Block
+      takeName: Skeleton|Block
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Jabber.001
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/Root
+        weight: 1
+      - path: Skeleton/Root/Leg control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L/Leg ik.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L/Toes.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L/Toes control.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R/Leg ik.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R/Toes.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R/Toes control.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L/Leg pole target.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R/Leg pole target.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L/Lower Leg.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R/Lower Leg.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head/Head_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L/Fingers.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/Fingers.R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: DoubleJump
+      takeName: Skeleton|DoubleJump
+      firstFrame: 0
+      lastFrame: 12
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Jabber.001
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/Root
+        weight: 1
+      - path: Skeleton/Root/Leg control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L/Leg ik.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L/Toes.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L/Toes control.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R/Leg ik.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R/Toes.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R/Toes control.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L/Leg pole target.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R/Leg pole target.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L/Lower Leg.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R/Lower Leg.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head/Head_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L/Fingers.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/Fingers.R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Hadouken
+      takeName: Skeleton|Hadouken
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Jabber.001
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/Root
+        weight: 1
+      - path: Skeleton/Root/Leg control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L/Leg ik.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L/Toes.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L/Toes control.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R/Leg ik.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R/Toes.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R/Toes control.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L/Leg pole target.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R/Leg pole target.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L/Lower Leg.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R/Lower Leg.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head/Head_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L/Fingers.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/Fingers.R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Idle
+      takeName: Skeleton|Idle
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Jabber.001
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/Root
+        weight: 1
+      - path: Skeleton/Root/Leg control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L/Leg ik.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L/Toes.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L/Toes control.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R/Leg ik.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R/Toes.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R/Toes control.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L/Leg pole target.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R/Leg pole target.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L/Lower Leg.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R/Lower Leg.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head/Head_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L/Fingers.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/Fingers.R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Jump
+      takeName: Skeleton|Jump
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Jabber.001
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/Root
+        weight: 1
+      - path: Skeleton/Root/Leg control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L/Leg ik.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L/Toes.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L/Toes control.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R/Leg ik.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R/Toes.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R/Toes control.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L/Leg pole target.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R/Leg pole target.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L/Lower Leg.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R/Lower Leg.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head/Head_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L/Fingers.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/Fingers.R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Kick
+      takeName: Skeleton|Kick
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Jabber.001
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/Root
+        weight: 1
+      - path: Skeleton/Root/Leg control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L/Leg ik.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L/Toes.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L/Toes control.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R/Leg ik.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R/Toes.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R/Toes control.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L/Leg pole target.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R/Leg pole target.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L/Lower Leg.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R/Lower Leg.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head/Head_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L/Fingers.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/Fingers.R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Knockback
+      takeName: Skeleton|Knockback
+      firstFrame: 0
+      lastFrame: 1
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Jabber.001
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/Root
+        weight: 1
+      - path: Skeleton/Root/Leg control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L/Leg ik.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L/Toes.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L/Toes control.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R/Leg ik.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R/Toes.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R/Toes control.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L/Leg pole target.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R/Leg pole target.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L/Lower Leg.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R/Lower Leg.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head/Head_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L/Fingers.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/Fingers.R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: LeftPunch
+      takeName: Skeleton|LeftPunch
+      firstFrame: 0
+      lastFrame: 10
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Jabber.001
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/Root
+        weight: 1
+      - path: Skeleton/Root/Leg control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L/Leg ik.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L/Toes.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L/Toes control.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R/Leg ik.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R/Toes.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R/Toes control.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L/Leg pole target.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R/Leg pole target.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L/Lower Leg.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R/Lower Leg.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head/Head_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L/Fingers.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/Fingers.R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RightLongPunch
+      takeName: Skeleton|RightLongPunch
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Jabber.001
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/Root
+        weight: 1
+      - path: Skeleton/Root/Leg control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L/Leg ik.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L/Toes.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L/Toes control.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R/Leg ik.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R/Toes.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R/Toes control.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L/Leg pole target.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R/Leg pole target.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L/Lower Leg.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R/Lower Leg.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head/Head_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L/Fingers.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/Fingers.R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RightPunch
+      takeName: Skeleton|RightPunch
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Jabber.001
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/Root
+        weight: 1
+      - path: Skeleton/Root/Leg control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L/Leg ik.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L/Toes.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L/Toes control.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R/Leg ik.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R/Toes.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R/Toes control.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L/Leg pole target.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R/Leg pole target.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L/Lower Leg.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R/Lower Leg.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head/Head_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L/Fingers.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/Fingers.R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run
+      takeName: Skeleton|Run
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Jabber.001
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/Root
+        weight: 1
+      - path: Skeleton/Root/Leg control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L/Leg ik.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L/Toes.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L/Toes control.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R/Leg ik.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R/Toes.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R/Toes control.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L/Leg pole target.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R/Leg pole target.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L/Lower Leg.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R/Lower Leg.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head/Head_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L/Fingers.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/Fingers.R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: SidePunch
+      takeName: Skeleton|SidePunch
+      firstFrame: 0
+      lastFrame: 25
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Jabber.001
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/Root
+        weight: 1
+      - path: Skeleton/Root/Leg control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L/Leg ik.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L/Toes.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L/Toes control.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R/Leg ik.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R/Toes.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R/Toes control.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L/Leg pole target.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R/Leg pole target.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L/Lower Leg.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R/Lower Leg.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head/Head_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L/Fingers.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/Fingers.R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Stomp
+      takeName: Skeleton|Stomp
+      firstFrame: 0
+      lastFrame: 16
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Jabber.001
+        weight: 1
+      - path: Skeleton
+        weight: 1
+      - path: Skeleton/Root
+        weight: 1
+      - path: Skeleton/Root/Leg control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot roll.L/Leg ik.L/Leg ik.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Foot.L/Toes.L/Toes.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L
+        weight: 1
+      - path: Skeleton/Root/Leg control.L/Toes control.L/Toes control.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot roll.R/Leg ik.R/Leg ik.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Foot.R/Toes.R/Toes.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R
+        weight: 1
+      - path: Skeleton/Root/Leg control.R/Toes control.R/Toes control.R_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.L/Leg pole target.L_end
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R
+        weight: 1
+      - path: Skeleton/Root/Leg pole target.R/Leg pole target.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.L/Lower Leg.L/Lower Leg.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Leg.R/Lower Leg.R/Lower Leg.R_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Neck/Head/Head_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.L/Lower Arm.L/Hand.L/Fingers.L/Fingers.L_end
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R
+        weight: 1
+      - path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/Fingers.R_end
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
