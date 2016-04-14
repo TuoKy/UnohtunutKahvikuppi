@@ -6,9 +6,10 @@ using System.Collections.Generic;
 
 public class NetworkGameManager : NetworkBehaviour
 {
-    static public List<NetworkSpaceship> sShips = new List<NetworkSpaceship>();
+    
+    static public List<Player> sPlayers = new List<Player>();
     static public NetworkGameManager sInstance = null;
-
+    /*
     public GameObject uiScoreZone;
     public Font uiScoreFont;
     
@@ -20,7 +21,7 @@ public class NetworkGameManager : NetworkBehaviour
 
     protected bool _spawningAsteroid = true;
     protected bool _running = true;
-
+    */
     void Awake()
     {
         sInstance = this;
@@ -28,35 +29,40 @@ public class NetworkGameManager : NetworkBehaviour
 
     void Start()
     {
+        /*
         if (isServer)
         {
             StartCoroutine(AsteroidCoroutine());
         }
-
-        for(int i = 0; i < sShips.Count; ++i)
+        
+        for(int i = 0; i < sPlayers.Count; ++i)
         {
-            sShips[i].Init();
+            sPlayers[i].Init(); //ei ole eikä varmaan tule
         }
+        */
     }
+
 
     [ServerCallback]
     void Update()
     {
-        if (!_running || sShips.Count == 0)
+        if (sPlayers.Count == 0)
             return;
 
         bool allDestroyed = true;
-        for (int i = 0; i < sShips.Count; ++i)
+        for (int i = 0; i < sPlayers.Count; ++i)
         {
-            allDestroyed &= (sShips[i].lifeCount == 0);
+            allDestroyed &= (sPlayers[i].Lives == 0);
         }
 
-        if(allDestroyed)
+        if (allDestroyed)
         {
             StartCoroutine(ReturnToLoby());
         }
     }
 
+    /*
+    
     public override void OnStartClient()
     {
         base.OnStartClient();
@@ -66,14 +72,13 @@ public class NetworkGameManager : NetworkBehaviour
             ClientScene.RegisterPrefab(obj);
         }
     }
-
+    */
     IEnumerator ReturnToLoby()
     {
-        _running = false;
         yield return new WaitForSeconds(3.0f);
         LobbyManager.s_Singleton.ServerReturnToLobby();
     }
-
+    /*
     IEnumerator AsteroidCoroutine()
     {
         const float MIN_TIME = 5.0f;
@@ -119,4 +124,5 @@ public class NetworkGameManager : NetworkBehaviour
 
         ship.Respawn();
     }
+    */
 }

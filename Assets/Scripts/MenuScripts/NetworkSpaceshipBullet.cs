@@ -3,6 +3,7 @@ using System.Collections;
 
 public class NetworkSpaceshipBullet : MonoBehaviour
 {
+    /*
     public Vector3 originalDirection;
 
     //The spaceship that shoot that bullet, use to attribute point correctly
@@ -19,5 +20,5 @@ public class NetworkSpaceshipBullet : MonoBehaviour
     {
         Destroy(gameObject);
     }
-
+    */
 }

@@ -6,6 +6,7 @@ using UnityEngine.Networking;
 [RequireComponent(typeof(Rigidbody))]
 public class NetworkSpaceship : NetworkBehaviour
 {
+    /*
     public float rotationSpeed = 45.0f;
     public float speed = 2.0f;
     public float maxSpeed = 3.0f;
@@ -308,4 +309,5 @@ public class NetworkSpaceship : NetworkBehaviour
         killParticle.gameObject.SetActive(false);
         killParticle.Stop();
     }
+    */
 }

@@ -6,6 +6,7 @@ using System.Collections;
 [RequireComponent(typeof(NetworkTransform))]
 public class NetworkAsteroid : NetworkBehaviour
 {
+    /*
     //current level of asteroid. When destroyed it spawn a number of
     //other asteroid of lower level except if level == 1, then destroyed
     public int level = 2;
@@ -104,4 +105,5 @@ public class NetworkAsteroid : NetworkBehaviour
         //destroy that asteroid too
         NetworkServer.Destroy(gameObject);
     }
+    */
 }
