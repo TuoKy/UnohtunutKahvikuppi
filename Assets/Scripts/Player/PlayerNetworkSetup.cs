@@ -12,6 +12,8 @@ public class PlayerNetworkSetup : NetworkBehaviour {
        
     public GameObject camPrefab;
 
+    private GameObject playerCam;
+
     [SerializeField]
     Transform camPosition;
 
@@ -32,7 +34,7 @@ public class PlayerNetworkSetup : NetworkBehaviour {
 
     private void InitCamera()
     {
-        GameObject playerCam = Instantiate(camPrefab, camPosition.position, camPosition.rotation) as GameObject;
+        playerCam = Instantiate(camPrefab, camPosition.position, camPosition.rotation) as GameObject;
         playerCam.SetActive(true);
         playerCam.GetComponent<NewCamController>().Target = camPosition;
         playerCam.GetComponent<NewCamController>().Player = gameObject.transform;
@@ -41,6 +43,9 @@ public class PlayerNetworkSetup : NetworkBehaviour {
 
     void OnDestroy()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        playerCam.SetActive(false);
         Debug.Log("Piotriino");
         NetworkGameManager.sPlayers.Remove(GetComponent<Player>());
     }
