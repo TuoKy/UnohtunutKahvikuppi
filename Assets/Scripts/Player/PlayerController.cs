@@ -99,11 +99,6 @@ public class PlayerController : MonoBehaviour {
             anim.CmdSetTrigger("RightLongPunch");
         }
 
-        if(Input.GetKeyDown(KeyCode.Escape))
-        {
-            GameManager.instance.ActivatePauseMenu();
-        }
-
         if (isAttacking)
         {
             cooldown -= Time.deltaTime;

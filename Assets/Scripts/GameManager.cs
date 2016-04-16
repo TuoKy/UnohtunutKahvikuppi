@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject pausePanel, LifeTokenPrefab;
+    public GameObject LifeTokenPrefab;
     public Transform playerPercentPanel;
     public Text knockoutText;
     public Vector3 startPosition = new Vector3(90f, 50f, 0f);
@@ -27,9 +27,6 @@ public class GameManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        backToGame();
-        /*Cursor.lockState = CursorLockMode.Locked;
-     pausePanel.SetActive(false);*/
     }
 
     public void ToggleCursorLock()
@@ -44,19 +41,6 @@ public class GameManager : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;
             Cursor.visible = false;
         }
-    }
-
-    public void ActivatePauseMenu()
-    {
-        pausePanel.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-    }
-
-    public void backToGame()
-    {
-        pausePanel.SetActive(false);
-        ToggleCursorLock();
     }
 
     public void UpdateKnockoutPercent(float value)
