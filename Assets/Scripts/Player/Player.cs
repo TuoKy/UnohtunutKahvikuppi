@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Networking;
 
-public class Player : MonoBehaviour {
+public class Player : NetworkBehaviour
+{
 
     private string characterName;
     private float knockoutPercent = 0f;
@@ -13,7 +15,7 @@ public class Player : MonoBehaviour {
     private bool grounded;
     private bool doubleJumped;
     private Vector3 actualDirection, movement;
-    private int lives = 3; //Default value. Remember to add option somewhere for players to adjust
+    //private int lives;
 
     public string CharacterName { get { return characterName; } set { characterName = value; } }
     public float KnockoutPercent { get { return knockoutPercent; } }
@@ -26,7 +28,8 @@ public class Player : MonoBehaviour {
     public Vector3 ActualDirection { get { return actualDirection; } set { actualDirection = value; } }
     public Vector3 Movement { get { return movement; } set { movement = value; } }
 
-    public int Lives { get { return lives; } set { lives = value; } }
+    [SyncVar]
+    public int Lives;
 
     void Start()
     {
@@ -74,8 +77,11 @@ public class Player : MonoBehaviour {
     {
         score--;
     }
+
+    [Server]
     public void LoseLive()
     {
-        lives--;
+        Lives--;
     }
+
 }
