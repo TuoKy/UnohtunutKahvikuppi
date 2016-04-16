@@ -2,8 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
-public class PlayerScore : MonoBehaviour {
+public class PlayerScore : NetworkBehaviour
+{
 
     private Text countDownText;
     private int elapsedTime;
@@ -11,13 +13,18 @@ public class PlayerScore : MonoBehaviour {
 
     private Transform spawnPoints;
     private List<Transform> spawnPointsList;
-    
+    private Rigidbody rig;
+    private PlayerController controls;
+
     // Use this for initialization
-	void Start () {
+    void Start () {
         InitSpawnPoints();
         countDownText = GameObject.Find("CountDownText").GetComponent<Text>();
         elapsedTime = 0;
         startFabulousText = false;
+
+        rig = gameObject.GetComponent<Rigidbody>();
+        controls = GetComponent<PlayerController>();
     }
 	
     private void InitSpawnPoints()
@@ -44,8 +51,8 @@ public class PlayerScore : MonoBehaviour {
 
     public void ReSpawn()
     {
-        gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero;
-        GetComponent<PlayerController>().Camera.GetComponent<NewCamController>().Falling = false;
+        rig.velocity = Vector3.zero;
+        controls.Camera.GetComponent<NewCamController>().Falling = false;
         Vector3 temp = spawnPointsList[Random.Range(0, spawnPointsList.Capacity - 1)].position;
         GetComponent<PlayerSynchPos>().CmdTeleportOnServer(temp);
         gameObject.transform.position = temp;
@@ -53,19 +60,11 @@ public class PlayerScore : MonoBehaviour {
 
     }
 
-    public void StartReSpawn()
+    public IEnumerator StartReSpawn()
     {
-        //Add various stuff regarding death and respawn here
-
-        //Start countdown before respawning
-        StartCoroutine(PauseBetweenRespawn());
-    }
-
-    IEnumerator PauseBetweenRespawn()
-    {
-        if (GetComponent<PlayerController>().player.Lives > 0)
+        if (controls.player.Lives > 0)
         {
-            while (elapsedTime < 6)
+            while (elapsedTime < 4)
             {            
                 countDownText.text = elapsedTime.ToString();
                 
@@ -81,11 +80,7 @@ public class PlayerScore : MonoBehaviour {
         }
         else
         {
-            countDownText.text = "You lost";
-            GetComponent<Rigidbody>().useGravity = false;
-            gameObject.GetComponent<Rigidbody>().velocity = Vector3.zero; 
-            GetComponent<PlayerController>().enabled = false;
-            NetGameManager.instance.CmdRemovePlayerFromList(gameObject);
+            DeclareLoss();
         }
 
         countDownText.transform.localScale = new Vector3(1, 1, 1);
@@ -96,9 +91,12 @@ public class PlayerScore : MonoBehaviour {
     {
         countDownText.text = message;
     }
-
-    public void KillMe()
+    
+    public void DeclareLoss()
     {
-        GetComponent<PlayerController>().player.Lives -= 1;
-    }
+        countDownText.text = "You lost";
+        rig.useGravity = false;
+        rig.velocity = Vector3.zero;
+        controls.enabled = false;
+    }    
 }

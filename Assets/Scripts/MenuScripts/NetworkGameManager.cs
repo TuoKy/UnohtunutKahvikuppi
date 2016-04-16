@@ -29,17 +29,7 @@ public class NetworkGameManager : NetworkBehaviour
 
     void Start()
     {
-        /*
-        if (isServer)
-        {
-            StartCoroutine(AsteroidCoroutine());
-        }
-        
-        for(int i = 0; i < sPlayers.Count; ++i)
-        {
-            sPlayers[i].Init(); //ei ole eikä varmaan tule
-        }
-        */
+
     }
 
 
@@ -52,6 +42,7 @@ public class NetworkGameManager : NetworkBehaviour
         bool allDestroyed = true;
         for (int i = 0; i < sPlayers.Count; ++i)
         {
+            Debug.Log(sPlayers[i] + " Monesko: " + i + ", Elämät:" + sPlayers[i].Lives);
             allDestroyed &= (sPlayers[i].Lives == 0);
         }
 

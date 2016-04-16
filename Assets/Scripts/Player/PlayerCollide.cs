@@ -4,32 +4,44 @@ using UnityEngine.Networking;
 
 public class PlayerCollide : NetworkBehaviour{
 
+    private Rigidbody rig;
+    private PlayerController controls;
+    private PlayerAnimations anim;
+
+    void Start()
+    {
+        rig = gameObject.GetComponent<Rigidbody>();
+        controls = GetComponent<PlayerController>();
+        anim = GetComponent<PlayerAnimations>();
+    }
+
     void OnTriggerEnter(Collider info)
     {
-        if (isLocalPlayer)
+        if (info.gameObject.CompareTag("Death") && isLocalPlayer)
         {
-            if (info.gameObject.CompareTag("Death"))
+            if(controls.player.Lives > 0)
             {
-                gameObject.GetComponent<PlayerScore>().KillMe();
-                gameObject.GetComponent<PlayerScore>().StartReSpawn();
+                StartCoroutine(gameObject.GetComponent<PlayerScore>().StartReSpawn());
                 GameManager.instance.TakePlayerLifeToken();
-
             }
-            if (info.gameObject.CompareTag("Weapon"))
-            {
-                GetComponent<PlayerAnimations>().CmdSetTrigger("Knockback");
-                Vector3 heading = this.GetComponentInParent<Transform>().position - info.GetComponentInParent<Transform>().position;
-                info.gameObject.GetComponent<Attack>().UpdateDirection(info.GetComponentInParent<Transform>().rotation.eulerAngles);
-                GetComponent<PlayerController>().GetHitByAttack(info.gameObject.GetComponent<Attack>());
-                // Update UI
-                GameManager.instance.UpdateKnockoutPercent(GetComponent<PlayerController>().player.KnockoutPercent);
-            }
-            if (info.gameObject.CompareTag("CameraTrigger"))
-            {
-                if (isLocalPlayer)
-                    GetComponent<PlayerController>().Camera.GetComponent<NewCamController>().setFalltoDeathPosition();
+            else{
+                gameObject.GetComponent<PlayerScore>().DeclareLoss();
             }
         }
+        if (info.gameObject.CompareTag("Weapon"))
+        {
+            anim.CmdSetTrigger("Knockback");
+            Vector3 heading = this.GetComponentInParent<Transform>().position - info.GetComponentInParent<Transform>().position;
+            info.gameObject.GetComponent<Attack>().UpdateDirection(info.GetComponentInParent<Transform>().rotation.eulerAngles);
+            controls.GetHitByAttack(info.gameObject.GetComponent<Attack>());
+            // Update UI
+            GameManager.instance.UpdateKnockoutPercent(controls.player.KnockoutPercent);
+        }
+        if (info.gameObject.CompareTag("CameraTrigger"))
+        {
+            if (isLocalPlayer)
+                controls.Camera.GetComponent<NewCamController>().setFalltoDeathPosition();
+        }        
     }
 
     void OnCollisionStay(Collision info)
@@ -37,22 +49,22 @@ public class PlayerCollide : NetworkBehaviour{
         // check if player touches ground
         if (isLocalPlayer && info.gameObject.CompareTag("Ground"))
         {
-            GetComponent<PlayerController>().player.DoubleJumped = false;
-            GetComponent<PlayerController>().player.Grounded = true;
+            controls.player.DoubleJumped = false;
+            controls.player.Grounded = true;
         }
     }
 
     void OnCollisionExit(Collision info)
     {
         if (isLocalPlayer && info.gameObject.CompareTag("Ground"))
-            GetComponent<PlayerController>().player.Grounded = false;  
+            controls.player.Grounded = false;  
     }
 
     void OnCollisionEnter(Collision info)
     {
         if (isLocalPlayer && info.gameObject.CompareTag("Ground"))
         {
-            GetComponent<PlayerAnimations>().CmdSetBool("Jumping", false);
+            anim.CmdSetBool("Jumping", false);
         }
     }
 

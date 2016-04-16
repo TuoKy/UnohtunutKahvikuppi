@@ -77,8 +77,11 @@ public class Player : NetworkBehaviour
     {
         score--;
     }
+
+    [Server]
     public void LoseLive()
     {
         Lives--;
     }
+
 }

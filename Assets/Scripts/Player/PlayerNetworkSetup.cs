@@ -1,6 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
+/*
+Class used to setup player for network and also to remove from there.
+Sets also camera in place
+
+*/
+
 
 public class PlayerNetworkSetup : NetworkBehaviour {
        
@@ -8,6 +14,11 @@ public class PlayerNetworkSetup : NetworkBehaviour {
 
     [SerializeField]
     Transform camPosition;
+
+    void Awake()
+    {
+        NetworkGameManager.sPlayers.Add(GetComponent<Player>());
+    }
 
     // Use this for initialization
     void Start () {
@@ -27,4 +38,10 @@ public class PlayerNetworkSetup : NetworkBehaviour {
         playerCam.GetComponent<NewCamController>().Player = gameObject.transform;
         GetComponent<PlayerController>().Camera = playerCam;
     }    
+
+    void OnDestroy()
+    {
+        Debug.Log("Piotriino");
+        NetworkGameManager.sPlayers.Remove(GetComponent<Player>());
+    }
 }
