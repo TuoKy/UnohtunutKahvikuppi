@@ -4,13 +4,11 @@ using UnityEngine.Networking;
 
 public class PlayerCollide : NetworkBehaviour{
 
-    private Rigidbody rig;
     private PlayerController controls;
     private PlayerAnimations anim;
 
     void Start()
     {
-        rig = gameObject.GetComponent<Rigidbody>();
         controls = GetComponent<PlayerController>();
         anim = GetComponent<PlayerAnimations>();
     }
@@ -31,6 +29,7 @@ public class PlayerCollide : NetworkBehaviour{
         if (info.gameObject.CompareTag("Weapon"))
         {
             anim.CmdSetTrigger("Knockback");
+            //heading is never used?
             Vector3 heading = this.GetComponentInParent<Transform>().position - info.GetComponentInParent<Transform>().position;
             info.gameObject.GetComponent<Attack>().UpdateDirection(info.GetComponentInParent<Transform>().rotation.eulerAngles);
             controls.GetHitByAttack(info.gameObject.GetComponent<Attack>());
@@ -40,8 +39,8 @@ public class PlayerCollide : NetworkBehaviour{
         if (info.gameObject.CompareTag("CameraTrigger"))
         {
             if (isLocalPlayer)
-                controls.Camera.GetComponent<NewCamController>().setFalltoDeathPosition();
-        }        
+                controls.Camera.GetComponent<CamController>().setFalltoDeathPosition();
+        }
     }
 
     void OnCollisionStay(Collision info)
@@ -57,7 +56,7 @@ public class PlayerCollide : NetworkBehaviour{
     void OnCollisionExit(Collision info)
     {
         if (isLocalPlayer && info.gameObject.CompareTag("Ground"))
-            controls.player.Grounded = false;  
+            controls.player.Grounded = false;
     }
 
     void OnCollisionEnter(Collision info)

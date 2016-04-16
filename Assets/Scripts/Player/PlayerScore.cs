@@ -9,7 +9,7 @@ public class PlayerScore : NetworkBehaviour
 
     private Text countDownText;
     private int elapsedTime;
-    private bool startFabulousText; 
+    private bool startFabulousText;
 
     private Transform spawnPoints;
     private List<Transform> spawnPointsList;
@@ -26,7 +26,7 @@ public class PlayerScore : NetworkBehaviour
         rig = gameObject.GetComponent<Rigidbody>();
         controls = GetComponent<PlayerController>();
     }
-	
+
     private void InitSpawnPoints()
     {
         spawnPoints = GameObject.Find("SpawnPoints").transform;
@@ -40,7 +40,7 @@ public class PlayerScore : NetworkBehaviour
 
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
     void FixedUpdate()
@@ -52,7 +52,7 @@ public class PlayerScore : NetworkBehaviour
     public void ReSpawn()
     {
         rig.velocity = Vector3.zero;
-        controls.Camera.GetComponent<NewCamController>().Falling = false;
+        controls.Camera.GetComponent<CamController>().Falling = false;
         Vector3 temp = spawnPointsList[Random.Range(0, spawnPointsList.Capacity - 1)].position;
         GetComponent<PlayerSynchPos>().CmdTeleportOnServer(temp);
         gameObject.transform.position = temp;
@@ -65,16 +65,16 @@ public class PlayerScore : NetworkBehaviour
         if (controls.player.Lives > 0)
         {
             while (elapsedTime < 4)
-            {            
+            {
                 countDownText.text = elapsedTime.ToString();
-                
+
                 startFabulousText = true;
                 yield return new WaitForSeconds(1.0f);
                 startFabulousText = false;
                 countDownText.transform.localScale = new Vector3(1, 1, 1);
                 elapsedTime++;
             }
-           
+
             countDownText.text = "";
             ReSpawn();
         }
@@ -91,12 +91,12 @@ public class PlayerScore : NetworkBehaviour
     {
         countDownText.text = message;
     }
-    
+
     public void DeclareLoss()
     {
         countDownText.text = "You lost";
         rig.useGravity = false;
         rig.velocity = Vector3.zero;
         controls.enabled = false;
-    }    
+    }
 }
