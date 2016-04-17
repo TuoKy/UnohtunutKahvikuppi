@@ -671,7 +671,7 @@ GameObject:
   - 65: {fileID: 6576824}
   - 114: {fileID: 11436366}
   m_Layer: 0
-  m_Name: Jabber
+  m_Name: jabber
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1902,6 +1902,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bce67e4d6f467a4c999b32df6d33266, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Lives: 0
 --- !u!114 &11447132
 MonoBehaviour:
   m_ObjectHideFlags: 1

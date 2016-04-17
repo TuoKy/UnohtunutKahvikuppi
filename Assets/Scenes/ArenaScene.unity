@@ -459,10 +459,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 188992, guid: a085b7fbebd24224db7db302bb8d8b23, type: 2}
-      propertyPath: m_StaticEditorFlags
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a085b7fbebd24224db7db302bb8d8b23, type: 2}
   m_IsPrefabParent: 0
@@ -975,7 +971,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a5dda023807668488dc0568730a4a31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pausePanel: {fileID: 0}
   LifeTokenPrefab: {fileID: 127434, guid: c807eb6f3a2eb7744964e0414a6b5b1f, type: 2}
   playerPercentPanel: {fileID: 372722948}
   knockoutText: {fileID: 783199878}
