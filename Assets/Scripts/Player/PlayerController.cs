@@ -68,9 +68,14 @@ public class PlayerController : MonoBehaviour {
             anim.CmdSetBool("Blocking", true);
         }
 
-        if (Input.GetMouseButtonUp(1))
+        else if (Input.GetMouseButtonUp(1))
         {
             anim.CmdSetBool("Blocking", false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            anim.CmdSetTrigger("SidePunch");
         }
 
         if (Input.GetMouseButtonDown(0))
