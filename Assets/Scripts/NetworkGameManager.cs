@@ -11,6 +11,7 @@ public class NetworkGameManager : NetworkBehaviour
     static public NetworkGameManager sInstance = null;
 
     private bool waited;
+    protected bool running = true;
 
     void Awake()
     {
@@ -27,10 +28,7 @@ public class NetworkGameManager : NetworkBehaviour
     [ServerCallback]
     void Update()
     {
-        if (!waited)
-            return;
-
-        if (sPlayers.Count == 0)
+        if (!running && waited)
             return;
 
         bool weHaveWinner = false;
@@ -51,6 +49,7 @@ public class NetworkGameManager : NetworkBehaviour
 
         if (weHaveWinner && !noWeDoNOt)
         {
+            running = false;
             RpcDeclareWinner(whoWon);
             StartCoroutine(ReturnToLoby());
         }
@@ -59,13 +58,15 @@ public class NetworkGameManager : NetworkBehaviour
     IEnumerator WaitIRememberYou()
     {
         //In the mountains...
-        //There's a small time frame when other palyers are connecting and being added to player list on server
-        yield return new WaitForSeconds(3.0f);
+        //There's a small time frame when other players are connecting and being added to player list on server
         waited = true;
+        yield return new WaitForSeconds(3.0f);        
     }
 
     IEnumerator ReturnToLoby()
     {
+        Debug.Log(LobbyManager.s_Singleton.client.connection + " running " + running + "waited " + waited + "Summa " + (!running && waited));
+        running = false;
         yield return new WaitForSeconds(6.0f);
         LobbyManager.s_Singleton.ServerReturnToLobby();
     }

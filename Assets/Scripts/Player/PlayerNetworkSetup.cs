@@ -46,7 +46,6 @@ public class PlayerNetworkSetup : NetworkBehaviour {
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         playerCam.SetActive(false);
-        Debug.Log("Piotriino");
         NetworkGameManager.sPlayers.Remove(GetComponent<Player>());
     }
 }

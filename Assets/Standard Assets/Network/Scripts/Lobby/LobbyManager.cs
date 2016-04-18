@@ -68,6 +68,8 @@ namespace UnityStandardAssets.Network
 
         public override void OnLobbyClientSceneChanged(NetworkConnection conn)
         {
+
+            Debug.Log(conn);
             if (SceneManager.GetSceneAt(0).name == lobbyScene)
             {
                 if (topPanel.isInGame)
@@ -86,6 +88,7 @@ namespace UnityStandardAssets.Network
                     }
                     else
                     {
+                        Debug.Log(conn.playerControllers[0]);
                         if (conn.playerControllers[0].unetView.isClient)
                         {
                             backDelegate = StopHostClbk;
