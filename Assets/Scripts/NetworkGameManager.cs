@@ -65,7 +65,6 @@ public class NetworkGameManager : NetworkBehaviour
 
     IEnumerator ReturnToLoby()
     {
-        Debug.Log(LobbyManager.s_Singleton.client.connection + " running " + running + "waited " + waited + "Summa " + (!running && waited));
         running = false;
         yield return new WaitForSeconds(6.0f);
         LobbyManager.s_Singleton.ServerReturnToLobby();
