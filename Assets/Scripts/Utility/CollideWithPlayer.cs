@@ -23,6 +23,7 @@ public class CollideWithPlayer : NetworkBehaviour
             Player player = collision.gameObject.GetComponent<Player>();
             if(player.Lives > 0)
             player.LoseLive();
+            player.ResetKnockoutPercent();
         }
         /* Doesn't obviosly work duh
         else
