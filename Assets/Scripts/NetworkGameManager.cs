@@ -28,30 +28,31 @@ public class NetworkGameManager : NetworkBehaviour
     [ServerCallback]
     void Update()
     {
-        if (!running && waited)
-            return;
-
-        bool weHaveWinner = false;
-        bool noWeDoNOt = false;
-        int whoWon = 0;
-        for (int i = 0; i < sPlayers.Count; ++i)
+        if (running && waited)
         {
-            if(sPlayers[i].Lives > 0 && !weHaveWinner)
-            {
-                whoWon = i;
-                weHaveWinner = true;
-            }
-            else if(sPlayers[i].Lives > 0 && weHaveWinner)
-            {
-                noWeDoNOt = true;
-            }
-        }
 
-        if (weHaveWinner && !noWeDoNOt)
-        {
-            running = false;
-            RpcDeclareWinner(whoWon);
-            StartCoroutine(ReturnToLoby());
+            bool weHaveWinner = false;
+            bool noWeDoNOt = false;
+            int whoWon = 0;
+            for (int i = 0; i < sPlayers.Count; ++i)
+            {
+                if (sPlayers[i].Lives > 0 && !weHaveWinner)
+                {
+                    whoWon = i;
+                    weHaveWinner = true;
+                }
+                else if (sPlayers[i].Lives > 0 && weHaveWinner)
+                {
+                    noWeDoNOt = true;
+                }
+            }
+
+            if (weHaveWinner && !noWeDoNOt)
+            {
+                running = false;
+                RpcDeclareWinner(whoWon);
+                StartCoroutine(ReturnToLoby());
+            }
         }
     }
 
@@ -59,8 +60,9 @@ public class NetworkGameManager : NetworkBehaviour
     {
         //In the mountains...
         //There's a small time frame when other players are connecting and being added to player list on server
+        
+        yield return new WaitForSeconds(3.0f);
         waited = true;
-        yield return new WaitForSeconds(3.0f);        
     }
 
     IEnumerator ReturnToLoby()

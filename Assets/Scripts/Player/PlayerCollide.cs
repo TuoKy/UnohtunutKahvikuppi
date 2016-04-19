@@ -21,6 +21,7 @@ public class PlayerCollide : NetworkBehaviour{
             {
                 StartCoroutine(gameObject.GetComponent<PlayerScore>().StartReSpawn());
                 GameManager.instance.TakePlayerLifeToken();
+                GameManager.instance.UpdateKnockoutPercent(controls.player.KnockoutPercent);
             }
             else{
                 gameObject.GetComponent<PlayerScore>().DeclareLoss();
