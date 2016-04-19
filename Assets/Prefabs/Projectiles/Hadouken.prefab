@@ -117,8 +117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9b3e92c7b3b2c94d95bcb93d4037ee4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 20
-  damage: 60
+  force: 0.6
+  damage: 20
   launch: 0.4
   direction: {x: 0, y: 0, z: 0}
 --- !u!114 &11487200

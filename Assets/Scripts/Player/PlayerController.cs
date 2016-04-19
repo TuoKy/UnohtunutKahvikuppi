@@ -82,11 +82,16 @@ public class PlayerController : MonoBehaviour {
         {
             if (anim.IsAnimationPlaying("LeftPunch"))
             {
-                anim.CmdSetTrigger("Combo");
+                anim.CmdSetBool("Combo", true);
             }
+            //else if(anim.IsAnimationPlaying("Kick"))
+            //{
+            //    anim.CmdSetBool("Combo", true);
+            //}
             else
             {
                 anim.CmdSetTrigger("LeftPunch");
+                anim.CmdSetBool("Combo", false);
             }
         }
 
