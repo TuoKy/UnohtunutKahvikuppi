@@ -172,7 +172,7 @@ MonoBehaviour:
   cameraSensitivity: 3
   cameraZoomSensitivity: 30
   cameraZoomDamp: 5
-  invertVertical: 1
+  invertVertical: 0
 --- !u!124 &12446192
 Behaviour:
   m_ObjectHideFlags: 1
@@ -186,7 +186,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: invertVertical
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 109110}
