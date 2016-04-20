@@ -95,7 +95,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.H))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             if (!isAttacking)
             {
