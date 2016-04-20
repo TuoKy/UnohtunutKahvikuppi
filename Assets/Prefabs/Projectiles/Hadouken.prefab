@@ -119,7 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   force: 0.6
   damage: 20
-  launch: 0.4
+  launch: 0.1
   direction: {x: 0, y: 0, z: 0}
 --- !u!114 &11487200
 MonoBehaviour:
@@ -3216,6 +3216,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Weapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: launch
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

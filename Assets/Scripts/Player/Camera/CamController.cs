@@ -14,7 +14,7 @@ public class CamController : MonoBehaviour {
     private Transform target;
     private Transform player;
     public bool invertVertical = true;
-    private float totalXRotation, zoomlvl = 0.5f, xRotation = 0, minVerticalLimit = 15, maxVerticalLimit = 70;
+    private float totalXRotation, zoomlvl = 0.5f, xRotation = 0, minVerticalLimit = 5, maxVerticalLimit = 70;
     private bool falling;
 
 

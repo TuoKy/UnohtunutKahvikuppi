@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour {
             }
         }
 
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             anim.CmdSetTrigger("RightLongPunch");
         }
@@ -135,7 +135,7 @@ public class PlayerController : MonoBehaviour {
     public void GetHitByAttack(Attack attack)
     {
         player.TakeDamage(attack.damage);
-        rb.AddForce(attack.direction * attack.force * (player.KnockoutPercent / 100) * 10000);
+        rb.AddForce(attack.direction * attack.force * (player.KnockoutPercent / 100) * 10000, ForceMode.Acceleration);
     }
 
     private void CalculateActualDirection()
