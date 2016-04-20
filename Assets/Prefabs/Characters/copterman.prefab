@@ -344,7 +344,7 @@ GameObject:
   - 65: {fileID: 6544524}
   m_Layer: 0
   m_Name: copterman
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -726,7 +726,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 180640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.766284, y: 0.46240193, z: 6.123359}
+  m_LocalPosition: {x: -10.786608, y: 0.4209795, z: -2.8931391}
   m_LocalScale: {x: 0.33, y: 0.33, z: 0.33}
   m_Children:
   - {fileID: 441168}
