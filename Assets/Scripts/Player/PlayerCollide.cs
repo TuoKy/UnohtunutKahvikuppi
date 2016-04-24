@@ -6,11 +6,13 @@ public class PlayerCollide : NetworkBehaviour{
 
     private PlayerController controls;
     private PlayerAnimations anim;
+    private PlayerScore score;
 
     void Start()
     {
         controls = GetComponent<PlayerController>();
         anim = GetComponent<PlayerAnimations>();
+        score = GetComponent<PlayerScore>();
     }
 
     void OnTriggerEnter(Collider info)
@@ -19,12 +21,12 @@ public class PlayerCollide : NetworkBehaviour{
         {
             if(controls.player.Lives > 0)
             {
-                StartCoroutine(gameObject.GetComponent<PlayerScore>().StartReSpawn());
+                StartCoroutine(score.StartReSpawn());
                 GameManager.instance.TakePlayerLifeToken();
                 GameManager.instance.UpdateKnockoutPercent(controls.player.KnockoutPercent);
             }
             else{
-                gameObject.GetComponent<PlayerScore>().DeclareLoss();
+                score.DeclareLoss();
             }
         }
         if (info.gameObject.CompareTag("Weapon"))

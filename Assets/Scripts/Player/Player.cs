@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class Player : NetworkBehaviour
 {
@@ -15,9 +16,7 @@ public class Player : NetworkBehaviour
     private bool grounded;
     private bool doubleJumped;
     private Vector3 actualDirection, movement;
-    //private int lives;
 
-    public string CharacterName { get { return characterName; } set { characterName = value; } }
     public float KnockoutPercent { get { return knockoutPercent; } }
     public float Score { get { return score; } }
     public float Speed { get { return speed; } }
@@ -28,6 +27,10 @@ public class Player : NetworkBehaviour
     public Vector3 ActualDirection { get { return actualDirection; } set { actualDirection = value; } }
     public Vector3 Movement { get { return movement; } set { movement = value; } }
 
+    [SyncVar]
+    public Color color;
+    [SyncVar]
+    public string playerName;
     [SyncVar]
     public int Lives;
 

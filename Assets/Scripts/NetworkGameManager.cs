@@ -21,6 +21,13 @@ public class NetworkGameManager : NetworkBehaviour
 
     void Start()
     {
+
+        for (int i = 0; i < sPlayers.Count; ++i)
+        {
+            sPlayers[i].GetComponent<PlayerNetworkSetup>().InitPlayer();
+        }
+        //We must first set up players and cameras. After that we can set up Name bars so that they can follow localplayer camera rotation
+        StartCoroutine(SetUpHeadBars());
         StartCoroutine(WaitIRememberYou());
     }
 
@@ -53,6 +60,15 @@ public class NetworkGameManager : NetworkBehaviour
                 RpcDeclareWinner(whoWon);
                 StartCoroutine(ReturnToLoby());
             }
+        }
+    }
+
+    IEnumerator SetUpHeadBars()
+    {
+        yield return new WaitForSeconds(0.5f);
+        for (int i = 0; i < sPlayers.Count; ++i)
+        {
+            sPlayers[i].GetComponent<PlayerNetworkSetup>().InitHeadPlate();
         }
     }
 

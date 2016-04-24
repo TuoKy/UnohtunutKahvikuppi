@@ -10,6 +10,8 @@ public class NetworkLobbyHook : LobbyHook
         LobbyPlayer lobby = lobbyPlayer.GetComponent<LobbyPlayer>();
         Player sPlayers = gamePlayer.GetComponent<Player>();
 
+        sPlayers.playerName = lobby.playerName;
+        sPlayers.color = lobby.playerColor;
         sPlayers.Lives = 3;
     }
 }
