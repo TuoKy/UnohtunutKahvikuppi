@@ -112,7 +112,10 @@ public class PlayerNetworkSetup : NetworkBehaviour {
 
     void OnDestroy()
     {
-        namePlate.SetActive(false);
+        Destroy(namePlate);
+        Destroy(namePlayer);
+        Destroy(percentPanel);
+        Destroy(playerCam);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         NetworkGameManager.sPlayers.Remove(GetComponent<Player>());
