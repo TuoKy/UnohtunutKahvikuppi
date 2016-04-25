@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.Networking;
 
-public class PlayerController : MonoBehaviour {
+public class PlayerController : NetworkBehaviour {
 
     public Player player;
     public GameObject projectilePrefab;
@@ -136,8 +137,17 @@ public class PlayerController : MonoBehaviour {
     {
         player.CmdTakeDamage(attack.damage);
         rb.AddForce(attack.direction * attack.force * (player.KnockoutPercent / 100) * 10000, ForceMode.Acceleration);
-
+        //if (isLocalPlayer)
+        //{
+        //    RpcPushPlayer(attack.direction, attack.force, player.KnockoutPercent);
+        //}
     }
+
+    //[ClientRpc]
+    //public void RpcPushPlayer(Vector3 direction, float force, float percent)
+    //{
+    //    rb.AddForce(direction * force * (percent / 100) * 10000, ForceMode.Acceleration);
+    //}
 
     private void CalculateActualDirection()
     {
