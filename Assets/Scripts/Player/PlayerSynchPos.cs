@@ -21,7 +21,7 @@ public class PlayerSynchPos : NetworkBehaviour
     float lerpRate = 15;
 
     private Vector3 lastPos;
-    private float threshold = 0.5f;
+    private float threshold = 0.2f;
     private Quaternion lastRot;
 
     void Start()
