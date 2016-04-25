@@ -37,6 +37,7 @@ public class PlayerCollide : NetworkBehaviour{
             info.gameObject.GetComponent<Attack>().UpdateDirection(info.GetComponentInParent<Transform>().rotation.eulerAngles);
             controls.GetHitByAttack(info.gameObject.GetComponent<Attack>());
             // Update UI
+            if(isLocalPlayer)
             GameManager.instance.UpdateKnockoutPercent(controls.player.KnockoutPercent);
         }
         if (info.gameObject.CompareTag("CameraTrigger"))

@@ -135,20 +135,21 @@ public class PlayerController : NetworkBehaviour {
 
     public void GetHitByAttack(Attack attack)
     {
-        player.CmdTakeDamage(attack.damage);
-        rb.AddForce(attack.direction * attack.force * (player.KnockoutPercent / 100) * 10000, ForceMode.Acceleration);
-        //if (isLocalPlayer)
-        //{
-        //    RpcPushPlayer(attack.direction, attack.force, player.KnockoutPercent);
-        //}
+        if (isLocalPlayer)
+        {
+            player.CmdTakeDamage(attack.damage);
+            rb.AddForce(attack.direction * attack.force * (player.KnockoutPercent / 100) * 1000, ForceMode.Impulse);
+        }
+        
+       //RpcPushPlayer(attack.direction, attack.force, player.KnockoutPercent);        
     }
-
-    //[ClientRpc]
-    //public void RpcPushPlayer(Vector3 direction, float force, float percent)
-    //{
-    //    rb.AddForce(direction * force * (percent / 100) * 10000, ForceMode.Acceleration);
-    //}
-
+    /*
+    [ClientRpc]
+    public void RpcPushPlayer(Vector3 direction, float force, float percent)
+    {
+        rb.AddForce(direction * force * (percent / 100) * 10000, ForceMode.Acceleration);
+    }
+    */
     private void CalculateActualDirection()
     {
         float verticalInput = Input.GetAxis("Vertical");
