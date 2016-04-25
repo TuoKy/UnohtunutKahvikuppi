@@ -7,7 +7,7 @@ public class Player : NetworkBehaviour
 {
 
     private string characterName;
-    private float knockoutPercent = 0f;
+    //private float knockoutPercent = 0f;
     private int score = 0;
     private float defaultSpeed = 400f;
     private float speed = 400f;
@@ -17,7 +17,7 @@ public class Player : NetworkBehaviour
     private bool doubleJumped;
     private Vector3 actualDirection, movement;
 
-    public float KnockoutPercent { get { return knockoutPercent; } }
+    //public float KnockoutPercent { get { return knockoutPercent; } }
     public float Score { get { return score; } }
     public float Speed { get { return speed; } }
     public float JumpStrength { get { return jumpStrength; } }
@@ -33,6 +33,8 @@ public class Player : NetworkBehaviour
     public string playerName;
     [SyncVar]
     public int Lives;
+    [SyncVar]
+    public float KnockoutPercent = 0f;
 
     void Start()
     {
@@ -53,12 +55,13 @@ public class Player : NetworkBehaviour
 
     public void ResetKnockoutPercent()
     {
-        knockoutPercent = 0f;
+        KnockoutPercent = 0f;
     }
 
-    public void TakeDamage(float damage)
+    [Command]
+    public void CmdTakeDamage(float damage)
     {
-        knockoutPercent += damage;
+        KnockoutPercent += damage;
     }
 
     public void ReturnToDefaultSpeed()

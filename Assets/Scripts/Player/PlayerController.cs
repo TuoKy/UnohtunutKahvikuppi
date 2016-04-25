@@ -134,8 +134,9 @@ public class PlayerController : MonoBehaviour {
 
     public void GetHitByAttack(Attack attack)
     {
-        player.TakeDamage(attack.damage);
+        player.CmdTakeDamage(attack.damage);
         rb.AddForce(attack.direction * attack.force * (player.KnockoutPercent / 100) * 10000, ForceMode.Acceleration);
+
     }
 
     private void CalculateActualDirection()

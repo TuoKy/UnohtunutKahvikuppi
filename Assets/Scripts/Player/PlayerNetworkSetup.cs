@@ -15,9 +15,11 @@ public class PlayerNetworkSetup : NetworkBehaviour {
     public GameObject namePlatePrefab;
 
     private GameObject namePlate;
-    private Text namePlayer; 
+    private Text namePlayer;
+    private GameObject percentPanel;
     private GameObject playerCam;
     private Player playerInfo;
+    
 
     //hard to control WHEN Init is called (networking make order between object spawning non deterministic)
     //so we call init from multiple location (depending on what between player & manager is created first).
@@ -39,7 +41,6 @@ public class PlayerNetworkSetup : NetworkBehaviour {
         
         if (NetworkGameManager.sInstance != null)
         {
-            Debug.Log("Käydäänkö täällä? " + playerInfo.playerName);
             InitPlayer();
         }
 
@@ -49,7 +50,6 @@ public class PlayerNetworkSetup : NetworkBehaviour {
     {
         if (wasInit)
         {
-            Debug.Log("Oli tehty ukkeli " + playerInfo.playerName);
             return;
         }
             
@@ -68,22 +68,33 @@ public class PlayerNetworkSetup : NetworkBehaviour {
     {
         if (wasPlateInit)
         {
-            Debug.Log("Oli tehty headeri " + playerInfo.playerName);
             return;
         }
-
+        //Own plate is not initialized on our own screen
         if (!isLocalPlayer)
         {
             namePlate = Instantiate(namePlatePrefab, transform.position, Quaternion.Euler(0, 0, 0)) as GameObject;
             namePlate.SetActive(true);
-            namePlayer = namePlate.GetComponentInChildren<Text>();
-            namePlayer.transform.Rotate(0, 180, 0);
             HeadTransform temp = namePlate.GetComponent<HeadTransform>();
-            Debug.Log(GameObject.Find("Camera"));
+            //Every client has camera other clients can't see
             temp.cam = GameObject.Find("Camera");
             temp.playerTransform = transform;
+
+            //Transform.LookAt() fuck ups rotation. so we force child objects to be otherway
+            //Most likely has nicer solution. 
+            namePlayer = namePlate.GetComponentInChildren<Text>();
             namePlayer.text = playerInfo.playerName;
-            namePlayer.color = playerInfo.color;
+            namePlayer.transform.Rotate(0, 180, 0);
+
+            //In prefab panel which color we want to change is second. DO NOT ALTER.
+            percentPanel = namePlate.transform.GetChild(1).gameObject;
+            percentPanel.GetComponent<Image>().color = playerInfo.color;
+
+            //nameplate has no way to get a hold of correct player information otherwise
+            temp.playerInfo = playerInfo;
+            //Percentage text is updatet in its own update loop 
+            temp.percentText = percentPanel.GetComponentInChildren<Text>();
+            temp.percentText.transform.Rotate(0, 180, 0);
         }
 
         wasPlateInit = true;
