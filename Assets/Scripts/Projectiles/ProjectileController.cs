@@ -16,11 +16,12 @@ public class ProjectileController : MonoBehaviour {
         rb = GetComponent<Rigidbody>();
         rb.velocity = transform.TransformDirection(Vector3.forward * speed);
 
+        /*
         if (startBurstEffect != null)
         {
             Instantiate(startBurstEffect, transform.position, transform.rotation);
-        }
-
+        }           
+        */
         StartCoroutine(DestroyProjectileCo());
     }
 
@@ -33,11 +34,12 @@ public class ProjectileController : MonoBehaviour {
 
     void DestroyProjectile()
     {
+        /*
         if (finishBurstEffect != null)
         {
             Instantiate(finishBurstEffect, transform.position, transform.rotation);
         }
-
+        */
         Destroy(gameObject);
     }
 }
