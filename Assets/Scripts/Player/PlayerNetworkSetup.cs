@@ -102,6 +102,8 @@ public class PlayerNetworkSetup : NetworkBehaviour {
 
     private void InitCamera()
     {
+        //Destroy other player camera
+        Destroy(GameObject.Find("Camera"));
         playerCam = Instantiate(camPrefab, camPosition.position, camPosition.rotation) as GameObject;
         playerCam.name = "Camera";
         playerCam.SetActive(true);
