@@ -998,7 +998,29 @@ AnimationClip:
       m_RotationOrder: 4
     path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R
   m_CompressedRotationCurves: []
-  m_EulerCurves: []
+  m_EulerCurves:
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 57.376698, y: 10.6015, z: -191.7778}
+        inSlope: {x: -3.255359, y: 77.66352, z: 81.978294}
+        outSlope: {x: -3.255359, y: 77.66352, z: 81.978294}
+        tangentMode: 0
+      - time: 0.20833333
+        value: {x: 56.698498, y: 26.781399, z: -174.69899}
+        inSlope: {x: 24.131548, y: -89.02341, z: -91.65646}
+        outSlope: {x: 24.131548, y: -89.02341, z: -91.65646}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 58.8451, y: 16.1268, z: -185.75279}
+        inSlope: {x: 51.518456, y: -255.71033, z: -265.29123}
+        outSlope: {x: 51.518456, y: -255.71033, z: -265.29123}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/FlameObject
   m_PositionCurves:
   - curve:
       serializedVersion: 2
@@ -1686,6 +1708,28 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/RightPunchAttackBox
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: {x: 0.0032, y: 0.007, z: -0.003}
+        inSlope: {x: 0.0000006772578, y: 0.0000024989247, z: 0.00000015981496}
+        outSlope: {x: 0.0000006772578, y: 0.0000024989247, z: 0.00000015981496}
+        tangentMode: 0
+      - time: 0.20833333
+        value: {x: 0.003200141, y: 0.007000521, z: -0.0029999667}
+        inSlope: {x: -0.02520135, y: 0.001195, z: 0.00959968}
+        outSlope: {x: -0.02520135, y: 0.001195, z: 0.00959968}
+        tangentMode: 0
+      - time: 0.25
+        value: {x: 0.0011, y: 0.0071, z: -0.0022}
+        inSlope: {x: -0.05040338, y: 0.002387501, z: 0.0191992}
+        outSlope: {x: -0.05040338, y: 0.002387501, z: 0.0191992}
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/FlameObject
   m_ScaleCurves:
   - curve:
       serializedVersion: 2
@@ -2279,6 +2323,31 @@ AnimationClip:
     path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/RightPunchAttackBox
     classID: 1
     script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
+      - time: 0.20833333
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
+      - time: 0.33333334
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/FlameObject
+    classID: 1
+    script: {fileID: 0}
   m_PPtrCurves: []
   m_SampleRate: 24
   m_WrapMode: 0
@@ -2312,6 +2381,12 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - path: 3059307794
+      attribute: 1
+      script: {fileID: 0}
+      classID: 4
+      customType: 0
+      isPPtrCurve: 0
+    - path: 3565665177
       attribute: 1
       script: {fileID: 0}
       classID: 4
@@ -2389,6 +2464,12 @@ AnimationClip:
       classID: 4
       customType: 0
       isPPtrCurve: 0
+    - path: 3565665177
+      attribute: 4
+      script: {fileID: 0}
+      classID: 4
+      customType: 14
+      isPPtrCurve: 0
     - path: 3059307794
       attribute: 3
       script: {fileID: 0}
@@ -2396,6 +2477,12 @@ AnimationClip:
       customType: 0
       isPPtrCurve: 0
     - path: 3059307794
+      attribute: 2086281974
+      script: {fileID: 0}
+      classID: 1
+      customType: 0
+      isPPtrCurve: 0
+    - path: 3565665177
       attribute: 2086281974
       script: {fileID: 0}
       classID: 1
@@ -11598,6 +11685,181 @@ AnimationClip:
     path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/RightPunchAttackBox
     classID: 4
     script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
+      - time: 0.20833333
+        value: 1
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
+      - time: 0.33333334
+        value: 0
+        inSlope: Infinity
+        outSlope: Infinity
+        tangentMode: 31
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_IsActive
+    path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/FlameObject
+    classID: 1
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 57.376698
+        inSlope: -3.255359
+        outSlope: -3.255359
+        tangentMode: 10
+      - time: 0.20833333
+        value: 56.698498
+        inSlope: 24.131548
+        outSlope: 24.131548
+        tangentMode: 10
+      - time: 0.25
+        value: 58.8451
+        inSlope: 51.518456
+        outSlope: 51.518456
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.x
+    path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/FlameObject
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 10.6015
+        inSlope: 77.66352
+        outSlope: 77.66352
+        tangentMode: 10
+      - time: 0.20833333
+        value: 26.781399
+        inSlope: -89.02341
+        outSlope: -89.02341
+        tangentMode: 10
+      - time: 0.25
+        value: 16.1268
+        inSlope: -255.71033
+        outSlope: -255.71033
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.y
+    path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/FlameObject
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -191.7778
+        inSlope: 81.978294
+        outSlope: 81.978294
+        tangentMode: 10
+      - time: 0.20833333
+        value: -174.69899
+        inSlope: -91.65646
+        outSlope: -91.65646
+        tangentMode: 10
+      - time: 0.25
+        value: -185.75279
+        inSlope: -265.29123
+        outSlope: -265.29123
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: localEulerAnglesRaw.z
+    path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/FlameObject
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0.0032
+        inSlope: 0.0000006772578
+        outSlope: 0.0000006772578
+        tangentMode: 10
+      - time: 0.20833333
+        value: 0.003200141
+        inSlope: -0.02520135
+        outSlope: -0.02520135
+        tangentMode: 10
+      - time: 0.25
+        value: 0.0011
+        inSlope: -0.05040338
+        outSlope: -0.05040338
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.x
+    path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/FlameObject
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: 0.007
+        inSlope: 0.0000024989247
+        outSlope: 0.0000024989247
+        tangentMode: 10
+      - time: 0.20833333
+        value: 0.007000521
+        inSlope: 0.001195
+        outSlope: 0.001195
+        tangentMode: 10
+      - time: 0.25
+        value: 0.0071
+        inSlope: 0.002387501
+        outSlope: 0.002387501
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.y
+    path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/FlameObject
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - time: 0
+        value: -0.003
+        inSlope: 0.00000015981496
+        outSlope: 0.00000015981496
+        tangentMode: 10
+      - time: 0.20833333
+        value: -0.0029999667
+        inSlope: 0.00959968
+        outSlope: 0.00959968
+        tangentMode: 10
+      - time: 0.25
+        value: -0.0022
+        inSlope: 0.0191992
+        outSlope: 0.0191992
+        tangentMode: 10
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalPosition.z
+    path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/FlameObject
+    classID: 4
+    script: {fileID: 0}
   m_EulerEditorCurves:
   - curve:
       serializedVersion: 2
@@ -14837,6 +15099,36 @@ AnimationClip:
       m_RotationOrder: 4
     attribute: localEulerAngles.z
     path: Skeleton/Root/Leg control.R/Toes control.R
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.x
+    path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/FlameObject
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.y
+    path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/FlameObject
+    classID: 4
+    script: {fileID: 0}
+  - curve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    attribute: m_LocalEulerAngles.z
+    path: Skeleton/Root/Lower Torso/Upper Torso/Upper Arm.R/Lower Arm.R/Hand.R/Fingers.R/FlameObject
     classID: 4
     script: {fileID: 0}
   m_HasGenericRootTransform: 0
