@@ -13,8 +13,9 @@ public class Player : NetworkBehaviour
     private float speed = 400f;
     private float jumpStrength = 15f;
     private float turnSpeed = 10f;
-    private bool grounded;
-    private bool doubleJumped;
+    //REMEMBER TO TUR PRIVATE
+    public bool grounded;
+    public bool doubleJumped;
     private Vector3 actualDirection, movement;
 
     //public float KnockoutPercent { get { return knockoutPercent; } }

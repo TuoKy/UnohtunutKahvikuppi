@@ -7,17 +7,22 @@ public class PlayerCollide : NetworkBehaviour{
     private PlayerController controls;
     private PlayerAnimations anim;
     private PlayerScore score;
+    protected BoxCollider _collider;
 
     void Start()
     {
+        _collider = GetComponent<BoxCollider>();
+        //We don't want to handle collision on client, so disable collider there
+        _collider.enabled = isServer;
         controls = GetComponent<PlayerController>();
         anim = GetComponent<PlayerAnimations>();
         score = GetComponent<PlayerScore>();
     }
 
+    [ServerCallback]
     void OnTriggerEnter(Collider info)
     {
-        if (info.gameObject.CompareTag("Death") && isLocalPlayer)
+        if (info.gameObject.CompareTag("Death"))
         {
             if(controls.player.Lives > 0)
             {
@@ -32,43 +37,48 @@ public class PlayerCollide : NetworkBehaviour{
         if (info.gameObject.CompareTag("Weapon"))
         {
             anim.CmdSetTrigger("Knockback");
-            //heading is never used?
-            Vector3 heading = this.GetComponentInParent<Transform>().position - info.GetComponentInParent<Transform>().position;
             info.gameObject.GetComponent<Attack>().UpdateDirection(info.GetComponentInParent<Transform>().rotation.eulerAngles);
             controls.GetHitByAttack(info.gameObject.GetComponent<Attack>());
             // Update UI
-            if(isLocalPlayer)
             GameManager.instance.UpdateKnockoutPercent(controls.player.KnockoutPercent);
         }
         if (info.gameObject.CompareTag("CameraTrigger"))
         {
-            if (isLocalPlayer)
-                controls.Camera.GetComponent<CamController>().setFalltoDeathPosition();
+            controls.Camera.GetComponent<CamController>().setFalltoDeathPosition();
         }
     }
 
+    [ServerCallback]
     void OnCollisionStay(Collision info)
     {
         // check if player touches ground
-        if (isLocalPlayer && info.gameObject.CompareTag("Ground"))
+        if (info.gameObject.CompareTag("Ground"))
         {
-            controls.player.DoubleJumped = false;
-            controls.player.Grounded = true;
+            CmdTouchground();
         }
     }
 
+    [ClientCallback]
+    private void CmdTouchground()
+    {
+        controls.player.DoubleJumped = false;
+        controls.player.Grounded = true;
+    }
+
+    [ServerCallback]
     void OnCollisionExit(Collision info)
     {
-        if (isLocalPlayer && info.gameObject.CompareTag("Ground"))
+        if (info.gameObject.CompareTag("Ground"))
             controls.player.Grounded = false;
     }
 
+    [ServerCallback]
     void OnCollisionEnter(Collision info)
-    {
-        if (isLocalPlayer && info.gameObject.CompareTag("Ground"))
+    { 
+
+        if (info.gameObject.CompareTag("Ground"))
         {
             anim.CmdSetBool("Jumping", false);
         }
     }
-
 }

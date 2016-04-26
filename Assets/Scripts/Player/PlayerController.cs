@@ -25,9 +25,13 @@ public class PlayerController : NetworkBehaviour {
         GameManager.instance.SetPlayerLives(player.Lives);
         anim = GetComponent<PlayerAnimations>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    [ClientCallback]
+    void Update () {
+        if (!isLocalPlayer)
+            return;
+
         CalculateActualDirection();
         Rotation();
 
@@ -129,27 +133,19 @@ public class PlayerController : NetworkBehaviour {
     //TODO: Can player move while attacking?
     void FixedUpdate()
     {
+        if (!isLocalPlayer)
+            return;
         player.Movement = player.ActualDirection.normalized * Time.deltaTime * player.Speed;
         rb.velocity = new Vector3(player.Movement.x, rb.velocity.y, player.Movement.z);
     }
 
+    [Client]
     public void GetHitByAttack(Attack attack)
     {
-        if (isLocalPlayer)
-        {
-            player.CmdTakeDamage(attack.damage);
-            rb.AddForce(attack.direction * attack.force * (player.KnockoutPercent / 100) * 1000, ForceMode.Impulse);
-        }
-        
-       //RpcPushPlayer(attack.direction, attack.force, player.KnockoutPercent);        
+        player.CmdTakeDamage(attack.damage);
+        rb.AddForce(attack.direction * attack.force * (player.KnockoutPercent / 100) * 1000, ForceMode.Impulse);       
     }
-    /*
-    [ClientRpc]
-    public void RpcPushPlayer(Vector3 direction, float force, float percent)
-    {
-        rb.AddForce(direction * force * (percent / 100) * 10000, ForceMode.Acceleration);
-    }
-    */
+
     private void CalculateActualDirection()
     {
         float verticalInput = Input.GetAxis("Vertical");

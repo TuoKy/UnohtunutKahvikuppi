@@ -53,7 +53,6 @@ public class PlayerNetworkSetup : NetworkBehaviour {
             return;
         }
             
-
         if (isLocalPlayer)
         {
             InitCamera();
