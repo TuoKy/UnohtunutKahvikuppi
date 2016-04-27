@@ -2229,8 +2229,13 @@ AnimationClip:
         tangentMode: 0
       - time: 0.29166666
         value: {x: 0.0030000322, y: 0.007000365, z: -0.0012996861}
-        inSlope: {x: 0.00000038556757, y: 0.000004375354, z: 0.0000037662687}
-        outSlope: {x: 0.00000038556757, y: 0.000004375354, z: 0.0000037662687}
+        inSlope: {x: 0.0047999998, y: 4.5474735e-13, z: 0.012599998}
+        outSlope: {x: 0.0047999998, y: 4.5474735e-13, z: 0.012599998}
+        tangentMode: 0
+      - time: 0.375
+        value: {x: 0.0038, y: 0.007, z: 0.0008}
+        inSlope: {x: 0.009599614, y: -0.000004375353, z: 0.02519623}
+        outSlope: {x: 0.009599614, y: -0.000004375353, z: 0.02519623}
         tangentMode: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -14177,8 +14182,13 @@ AnimationClip:
         tangentMode: 10
       - time: 0.29166666
         value: 0.0030000322
-        inSlope: 0.00000038556757
-        outSlope: 0.00000038556757
+        inSlope: 0.0047999998
+        outSlope: 0.0047999998
+        tangentMode: 10
+      - time: 0.375
+        value: 0.0038
+        inSlope: 0.009599614
+        outSlope: 0.009599614
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -14202,8 +14212,13 @@ AnimationClip:
         tangentMode: 10
       - time: 0.29166666
         value: 0.007000365
-        inSlope: 0.000004375354
-        outSlope: 0.000004375354
+        inSlope: 4.5474735e-13
+        outSlope: 4.5474735e-13
+        tangentMode: 10
+      - time: 0.375
+        value: 0.007
+        inSlope: -0.000004375353
+        outSlope: -0.000004375353
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -14227,8 +14242,13 @@ AnimationClip:
         tangentMode: 10
       - time: 0.29166666
         value: -0.0012996861
-        inSlope: 0.0000037662687
-        outSlope: 0.0000037662687
+        inSlope: 0.012599998
+        outSlope: 0.012599998
+        tangentMode: 10
+      - time: 0.375
+        value: 0.0008
+        inSlope: 0.02519623
+        outSlope: 0.02519623
         tangentMode: 10
       m_PreInfinity: 2
       m_PostInfinity: 2
