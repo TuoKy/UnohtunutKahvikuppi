@@ -7,7 +7,7 @@ public class UpAndDown : NetworkBehaviour
 {
     private float verticalSpeed = 0.2f;
 
-    private float maxY = 6;
+    private float maxY = 5.5f;
     public bool movingUp;
 
     [ClientCallback]
